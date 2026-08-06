@@ -14,7 +14,10 @@ export type EduPayloadType =
   | "student_profile"
   | "learning_paths"
   | "planteles"
-  | "invoices";
+  | "invoices"
+  | "course_not_found"
+  | "main_menu"
+  | "not_found";
 
 export interface EduPayload {
   type: EduPayloadType;

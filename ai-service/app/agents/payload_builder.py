@@ -5,7 +5,12 @@ Prioriza detalle de un curso cuando la pregunta es específica.
 
 from typing import Any
 
-from app.agents.course_query import is_specific_course_query, match_course_from_query
+from app.agents.conversation_intent import is_announcements_query, is_learning_paths_query
+from app.agents.course_query import (
+    extract_requested_course_title,
+    is_specific_course_query,
+    match_course_from_query,
+)
 from app.agents.announcement_timeframe import filter_announcements_by_timeframe
 from app.agents.invoices_query import (
     compute_invoice_summary,
@@ -61,8 +66,9 @@ def build_ui_payload(
         Dict { type, data } o None.
     """
     specific = is_specific_course_query(user_message)
+    priority = _payload_tool_priority(user_message)
 
-    for tool_name in PAYLOAD_TOOL_PRIORITY:
+    for tool_name in priority:
         if tool_name not in tools_used:
             continue
         raw = tool_outputs.get(tool_name)
@@ -78,6 +84,26 @@ def build_ui_payload(
             return data
 
     return None
+
+
+def _payload_tool_priority(user_message: str) -> tuple[str, ...]:
+    """
+    Orden de tools para elegir tarjeta UI según la intención de la pregunta.
+
+    Las preguntas sobre rutas o eventos deben priorizar la tool correcta aunque
+    el LLM invoque otras (p. ej. perfil del alumno).
+    """
+    if is_learning_paths_query(user_message):
+        preferred = ("get_learning_paths",)
+        rest = tuple(name for name in PAYLOAD_TOOL_PRIORITY if name not in preferred)
+        return preferred + rest
+
+    if is_announcements_query(user_message):
+        preferred = ("get_announcements",)
+        rest = tuple(name for name in PAYLOAD_TOOL_PRIORITY if name not in preferred)
+        return preferred + rest
+
+    return PAYLOAD_TOOL_PRIORITY
 
 
 def _normalize_data(
@@ -107,6 +133,26 @@ def _normalize_data(
             if matched:
                 return {"type": "course_detail", "data": matched}
 
+            requested = extract_requested_course_title(user_message)
+            if requested:
+                limit = get_max_ui_cards()
+                sorted_courses = sorted(
+                    courses,
+                    key=lambda course: course.get("progressPercentage", 0),
+                    reverse=True,
+                )
+                visible = sorted_courses[:limit]
+                return {
+                    "type": "course_not_found",
+                    "data": {
+                        "requested_title": requested,
+                        "reason": "not_enrolled",
+                        "entity_type": "course",
+                        "courses": visible,
+                        "total_enrolled": len(courses),
+                    },
+                }
+
         # Pregunta general ("cuántos cursos", "mis cursos") → grid resumido limitado
         total = len(courses)
         limit = get_max_ui_cards()
@@ -127,6 +173,15 @@ def _normalize_data(
         courses = raw.get("courses", [])
         limit = get_max_ui_cards()
         visible = courses[:limit]
+        if not visible and user_message.strip():
+            return {
+                "type": "not_found",
+                "data": {
+                    "entity_type": "catalog",
+                    "requested_label": user_message.strip()[:120],
+                    "reason": "no_catalog_results",
+                },
+            }
         return (
             {
                 "type": "course_catalog",
@@ -224,6 +279,17 @@ def _normalize_data(
             for p in items
             if p.get("lat") is not None and p.get("lng") is not None
         ]
+        filtered = filter_meta.get("filtered", False)
+        if not items and filtered:
+            return {
+                "type": "not_found",
+                "data": {
+                    "entity_type": "plantel",
+                    "requested_label": filter_meta.get("filter_label") or user_message.strip()[:80],
+                    "reason": "no_plantel_match",
+                    "catalog_total": catalog_total,
+                },
+            }
         return (
             {
                 "type": "planteles",
@@ -232,7 +298,7 @@ def _normalize_data(
                     "map_planteles": map_planteles,
                     "total": len(items),
                     "catalog_total": catalog_total,
-                    "filtered": filter_meta.get("filtered", False),
+                    "filtered": filtered,
                     "filter_label": filter_meta.get("filter_label"),
                     "show_all": filter_meta.get("show_all", len(items) >= catalog_total),
                 },

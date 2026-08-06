@@ -37,7 +37,7 @@ export function ChatInput({
   return (
     <form
       onSubmit={handleSubmit}
-      className="border-t border-slate-200 bg-slate-100/80 p-4 dark:border-white/10 dark:bg-slate-950/80"
+      className="shrink-0 border-t border-slate-200 bg-slate-100/80 p-4 dark:border-white/10 dark:bg-slate-950/80"
     >
       <div className="flex items-end gap-3">
         <textarea

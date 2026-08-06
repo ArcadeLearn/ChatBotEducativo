@@ -19,6 +19,8 @@ interface MessageBubbleProps {
   now?: Date;
   feedback?: "positive" | "negative";
   onFeedback?: (messageId: string, rating: "positive" | "negative") => void;
+  onMenuOptionClick?: (question: string) => void;
+  menuDisabled?: boolean;
 }
 
 function CopyIcon() {
@@ -143,6 +145,8 @@ export function MessageBubble({
   now,
   feedback,
   onFeedback,
+  onMenuOptionClick,
+  menuDisabled,
 }: MessageBubbleProps) {
   if (role === "user") {
     return (
@@ -166,7 +170,11 @@ export function MessageBubble({
           </div>
           <div className="min-w-0 flex-1 rounded-2xl rounded-tl-md border border-slate-200 bg-white px-4 py-3 text-sm text-slate-800 shadow-sm dark:border-white/10 dark:bg-slate-900/80 dark:text-slate-100">
             <MarkdownContent content={content} />
-            <EduPayloadRenderer payload={payload} />
+            <EduPayloadRenderer
+              payload={payload}
+              onMenuOptionClick={onMenuOptionClick}
+              menuDisabled={menuDisabled}
+            />
           </div>
         </div>
         <MessageActions

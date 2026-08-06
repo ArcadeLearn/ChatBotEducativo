@@ -12,6 +12,13 @@ from langgraph.graph import END, StateGraph
 from langgraph.graph.message import add_messages
 from typing_extensions import TypedDict
 
+from app.agents.conversation_intent import (
+    build_main_menu_payload,
+    is_announcements_query,
+    is_learning_paths_query,
+    should_show_main_menu,
+)
+from app.agents.announcement_timeframe import is_event_question
 from app.agents.payload_builder import build_ui_payload
 from app.agents.response_formatter import format_response_for_ui
 from app.prompts.system_prompt import build_system_prompt
@@ -58,6 +65,74 @@ def _parse_tool_result(raw: str) -> Any | None:
     if isinstance(parsed, dict) and parsed.get("error"):
         return None
     return parsed
+
+
+async def _ensure_learning_paths_data(
+    student_id: str,
+    tool_outputs: dict[str, Any],
+    tools_used: list[str],
+) -> None:
+    """
+    Garantiza datos de rutas cuando la pregunta es sobre trayectorias.
+
+    El LLM a veces invoca get_student_profile en lugar de get_learning_paths;
+    aquí se corrige antes de construir el payload UI.
+    """
+    existing = tool_outputs.get("get_learning_paths")
+    if isinstance(existing, dict) and existing.get("paths"):
+        return
+
+    try:
+        result = await invoke_mcp_tool("get_learning_paths", {"student_id": student_id})
+    except Exception:  # noqa: BLE001
+        return
+
+    if not result.get("success"):
+        return
+
+    data = result.get("data")
+    if not isinstance(data, dict) or not data.get("paths"):
+        return
+
+    tool_outputs["get_learning_paths"] = data
+    if "get_learning_paths" not in tools_used:
+        tools_used.append("get_learning_paths")
+
+
+async def _ensure_announcements_data(
+    user_message: str,
+    tool_outputs: dict[str, Any],
+    tools_used: list[str],
+) -> None:
+    """
+    Garantiza datos de avisos/eventos cuando la pregunta es sobre el calendario del campus.
+
+    El LLM a veces responde en texto sin invocar get_announcements; aquí se corrige
+    antes de construir el payload UI.
+    """
+    existing = tool_outputs.get("get_announcements")
+    if isinstance(existing, dict) and existing.get("announcements"):
+        return
+
+    payload: dict[str, Any] = {}
+    if is_event_question(user_message):
+        payload["type"] = "evento"
+
+    try:
+        result = await invoke_mcp_tool("get_announcements", payload)
+    except Exception:  # noqa: BLE001
+        return
+
+    if not result.get("success"):
+        return
+
+    data = result.get("data")
+    if not isinstance(data, dict) or not data.get("announcements"):
+        return
+
+    tool_outputs["get_announcements"] = data
+    if "get_announcements" not in tools_used:
+        tools_used.append("get_announcements")
 
 
 async def _resolve_student_name(student_id: str) -> str | None:
@@ -184,6 +259,12 @@ async def run_educational_agent(
     tool_outputs: dict[str, Any] = result.get("tool_outputs") or {}
     tools_used = _extract_tools_used(result_messages)
 
+    if is_learning_paths_query(message):
+        await _ensure_learning_paths_data(student_id, tool_outputs, tools_used)
+
+    if is_announcements_query(message):
+        await _ensure_announcements_data(message, tool_outputs, tools_used)
+
     last_content = ""
     for msg in reversed(result_messages):
         if isinstance(msg, AIMessage) and msg.content:
@@ -194,6 +275,8 @@ async def run_educational_agent(
                 break
 
     payload = build_ui_payload(tools_used, tool_outputs, user_message=message)
+    if should_show_main_menu(message, payload):
+        payload = build_main_menu_payload()
     fallback = "No pude generar una respuesta. Intenta reformular tu pregunta."
     final_text = format_response_for_ui(last_content or fallback, payload, user_message=message)
     return final_text, tools_used, payload

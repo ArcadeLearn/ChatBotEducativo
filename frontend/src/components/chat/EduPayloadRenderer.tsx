@@ -11,15 +11,23 @@ import { CourseDetailCard } from "@/components/edu/CourseDetailCard";
 import { EnrolledCoursesCard } from "@/components/edu/EnrolledCoursesCard";
 import { InvoicesCard } from "@/components/edu/InvoicesCard";
 import { LearningPathsCard } from "@/components/edu/LearningPathsCard";
+import { MainMenuCard } from "@/components/edu/MainMenuCard";
+import { NotFoundCard } from "@/components/edu/NotFoundCard";
 import { PlantelesCard } from "@/components/edu/PlantelesCard";
 import { StudentProfileCard } from "@/components/edu/StudentProfileCard";
 import { StudentStatsCard } from "@/components/edu/StudentStatsCard";
 
 interface EduPayloadRendererProps {
   payload?: EduPayload | null;
+  onMenuOptionClick?: (question: string) => void;
+  menuDisabled?: boolean;
 }
 
-export function EduPayloadRenderer({ payload }: EduPayloadRendererProps) {
+export function EduPayloadRenderer({
+  payload,
+  onMenuOptionClick,
+  menuDisabled = false,
+}: EduPayloadRendererProps) {
   if (!payload?.type || payload.data === undefined) return null;
 
   const content = (() => {
@@ -44,6 +52,17 @@ export function EduPayloadRenderer({ payload }: EduPayloadRendererProps) {
       return <PlantelesCard data={payload.data as Parameters<typeof PlantelesCard>[0]["data"]} />;
     case "invoices":
       return <InvoicesCard data={payload.data as Parameters<typeof InvoicesCard>[0]["data"]} />;
+    case "course_not_found":
+    case "not_found":
+      return <NotFoundCard data={payload.data as Parameters<typeof NotFoundCard>[0]["data"]} />;
+    case "main_menu":
+      return (
+        <MainMenuCard
+          data={payload.data as Parameters<typeof MainMenuCard>[0]["data"]}
+          onOptionClick={onMenuOptionClick}
+          disabled={menuDisabled}
+        />
+      );
       default:
         return null;
     }

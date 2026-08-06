@@ -21,9 +21,16 @@ interface ChatWindowProps {
   skipHistory?: boolean;
   /** Callback al cerrar (widget) */
   onClose?: () => void;
+  /** Callback para salir de la sesión (página standalone) */
+  onLogout?: () => void;
 }
 
-export function ChatWindow({ compact = false, skipHistory = false, onClose }: ChatWindowProps) {
+export function ChatWindow({
+  compact = false,
+  skipHistory = false,
+  onClose,
+  onLogout,
+}: ChatWindowProps) {
   const {
     messages,
     input,
@@ -81,10 +88,10 @@ export function ChatWindow({ compact = false, skipHistory = false, onClose }: Ch
       className={`flex flex-col overflow-hidden ${
         compact
           ? "h-full bg-slate-50 dark:bg-slate-950"
-          : "min-h-[70vh] rounded-2xl border border-slate-200 bg-slate-50 shadow-2xl dark:border-white/10 dark:bg-slate-950"
+          : "h-full min-h-0 rounded-2xl border border-slate-200 bg-slate-50 shadow-2xl dark:border-white/10 dark:bg-slate-950"
       }`}
     >
-      <header className="flex items-center justify-between border-b border-slate-200 px-4 py-3 dark:border-white/10">
+      <header className="sticky top-0 z-10 flex shrink-0 items-center justify-between border-b border-slate-200 bg-white/95 px-4 py-3 backdrop-blur dark:border-white/10 dark:bg-slate-950/95">
         <div>
           <h2 className="text-sm font-semibold text-slate-900 dark:text-white">
             {compact ? "Asistente Campus IECA" : "Chat Educativo IECA"}
@@ -94,7 +101,7 @@ export function ChatWindow({ compact = false, skipHistory = false, onClose }: Ch
           </p>
         </div>
         <div className="flex items-center gap-2">
-          <ThemeToggle compact />
+          <ThemeToggle compact={compact} />
           <button
             type="button"
             onClick={startNewSession}
@@ -102,6 +109,15 @@ export function ChatWindow({ compact = false, skipHistory = false, onClose }: Ch
           >
             Nueva sesión
           </button>
+          {onLogout && (
+            <button
+              type="button"
+              onClick={onLogout}
+              className="rounded-lg border border-slate-200 px-3 py-1.5 text-xs text-slate-600 hover:bg-slate-100 dark:border-white/10 dark:text-slate-300 dark:hover:bg-white/5"
+            >
+              Salir
+            </button>
+          )}
           {onClose && (
             <button
               type="button"
@@ -115,7 +131,7 @@ export function ChatWindow({ compact = false, skipHistory = false, onClose }: Ch
         </div>
       </header>
 
-      <div className="flex-1 overflow-y-auto px-4 py-4">
+      <div className="min-h-0 flex-1 overflow-y-auto px-4 py-4">
         {isLoadingHistory && (
           <p className="text-center text-sm text-slate-400">Cargando historial...</p>
         )}
@@ -168,6 +184,8 @@ export function ChatWindow({ compact = false, skipHistory = false, onClose }: Ch
               now={now}
               feedback={feedbackByMessageId[message.id]}
               onFeedback={message.role === "assistant" ? handleFeedback : undefined}
+              onMenuOptionClick={sendSuggested}
+              menuDisabled={isLoading}
             />
           );
         })}

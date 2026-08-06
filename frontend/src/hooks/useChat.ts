@@ -109,25 +109,33 @@ export function useEduChat(options: UseEduChatOptions = {}) {
       const dbId = pending?.messageId;
       const now = new Date().toISOString();
 
-      if (pending?.payload && dbId) {
-        setPayloadByMessageId((prev) => ({ ...prev, [dbId]: pending.payload }));
+      if (pending?.payload) {
+        const targetId = dbId ?? message.id;
+        setPayloadByMessageId((prev) => ({ ...prev, [targetId]: pending.payload }));
         pendingPayloadRef.current = null;
-        chat.setMessages((prev) =>
-          prev.map((m) => (m.id === message.id && m.role === "assistant" ? { ...m, id: dbId } : m)),
-        );
-        setTimestampByMessageId((prev) => {
-          const ts = prev[dbId] ?? prev[message.id] ?? now;
-          const next = { ...prev, [dbId]: ts };
-          if (message.id !== dbId) delete next[message.id];
-          return next;
-        });
-        setFeedbackByMessageId((prev) => {
-          const rating = prev[dbId] ?? prev[message.id];
-          if (!rating) return prev;
-          const next = { ...prev, [dbId]: rating };
-          if (message.id !== dbId) delete next[message.id];
-          return next;
-        });
+
+        if (dbId && dbId !== message.id) {
+          chat.setMessages((prev) =>
+            prev.map((m) =>
+              m.id === message.id && m.role === "assistant" ? { ...m, id: dbId } : m,
+            ),
+          );
+          setTimestampByMessageId((prev) => {
+            const ts = prev[dbId] ?? prev[message.id] ?? now;
+            const next = { ...prev, [dbId]: ts };
+            if (message.id !== dbId) delete next[message.id];
+            return next;
+          });
+          setFeedbackByMessageId((prev) => {
+            const rating = prev[dbId] ?? prev[message.id];
+            if (!rating) return prev;
+            const next = { ...prev, [dbId]: rating };
+            if (message.id !== dbId) delete next[message.id];
+            return next;
+          });
+        } else if (message.id) {
+          setTimestampByMessageId((prev) => ({ ...prev, [message.id]: prev[message.id] ?? now }));
+        }
       } else if (message.id) {
         setTimestampByMessageId((prev) => ({ ...prev, [message.id]: now }));
       }

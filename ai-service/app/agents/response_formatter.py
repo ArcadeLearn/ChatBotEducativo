@@ -43,6 +43,12 @@ RICH_UI_TYPES = frozenset({
 
     "invoices",
 
+    "course_not_found",
+
+    "main_menu",
+
+    "not_found",
+
 })
 
 
@@ -166,6 +172,24 @@ def format_response_for_ui(
     if payload_type == "invoices":
 
         return _ensure_invoices_intro(trimmed, payload, user_message)
+
+
+
+    if payload_type == "course_not_found":
+
+        return _ensure_course_not_found_intro(trimmed, payload, user_message)
+
+
+
+    if payload_type == "main_menu":
+
+        return _ensure_main_menu_intro(trimmed, payload, user_message)
+
+
+
+    if payload_type == "not_found":
+
+        return _ensure_not_found_intro(trimmed, payload, user_message)
 
 
 
@@ -618,6 +642,88 @@ def _ensure_invoices_intro(text: str, payload: dict[str, Any], user_message: str
         context += f" (**{pending_count}** pendiente(s))."
     cta = "Aquí tienes el detalle de tus facturas y pagos:"
     return f"{context}\n\n{cta}"
+
+
+
+
+
+def _ensure_course_not_found_intro(text: str, payload: dict[str, Any], user_message: str) -> str:
+
+    """Curso solicitado no inscrito: aclara y muestra alternativas."""
+
+    data = payload.get("data") or {}
+    requested = data.get("requested_title") or "ese curso"
+    total = int(data.get("total_enrolled") or 0)
+    greeting = _extract_greeting(text)
+
+    context = (
+        f"{greeting} **No tienes inscrito** el curso **{requested}** "
+        f"en tu cuenta del campus IECA."
+    )
+    if total > 0:
+        cta = (
+            f"Estos son tus **{total} cursos activos** inscritos; "
+            "puedes elegir uno para ver tu avance:"
+        )
+        return f"{context}\n\n{cta}"
+    return f"{context}\n\nCuando te inscribas a un curso, aquí podrás consultar tu progreso."
+
+
+
+
+
+def _ensure_main_menu_intro(text: str, payload: dict[str, Any], user_message: str) -> str:
+
+    """Saludo + menú de opciones del asistente."""
+
+    greeting = _extract_greeting(text)
+    return (
+        f"{greeting} Soy tu **asistente educativo de Campus IECA**.\n\n"
+        "Puedo ayudarte con tus **cursos**, **certificados**, **eventos**, "
+        "**sedes**, **facturas** y **perfil**.\n\n"
+        "Elige una opción del menú o escribe tu pregunta en lenguaje natural:"
+    )
+
+
+
+
+
+def _ensure_not_found_intro(text: str, payload: dict[str, Any], user_message: str) -> str:
+
+    """Entidad no encontrada (plantel, catálogo, etc.)."""
+
+    data = payload.get("data") or {}
+    entity = data.get("entity_type") or "recurso"
+    label = data.get("requested_label") or "tu búsqueda"
+    catalog_total = data.get("catalog_total")
+    greeting = _extract_greeting(text)
+
+    if entity == "plantel":
+        suffix = (
+            f" La red IECA cuenta con **{catalog_total} sedes**; "
+            "prueba otra especialidad o ciudad."
+            if catalog_total
+            else ""
+        )
+        return (
+            f"{greeting} **No encontré una sede** que coincida con **{label}**.{suffix}\n\n"
+            "Puedes preguntar por ejemplo: *¿Dónde están las sedes IECA?* "
+            "o *Sedes con especialidad en robótica*."
+        )
+
+    if entity == "catalog":
+        return (
+            f"{greeting} **No encontré cursos en el catálogo** que coincidan con "
+            f"**{label}**.\n\n"
+            "Prueba con otra palabra clave, categoría o pregunta por cursos de "
+            "*automatización*, *robótica* o *metrología*."
+        )
+
+    return (
+        f"{greeting} **No tengo información** sobre **{label}** en tu cuenta "
+        "ni en los datos del campus.\n\n"
+        "Puedes usar el menú de opciones o reformular tu pregunta."
+    )
 
 
 
