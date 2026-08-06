@@ -35,7 +35,10 @@ export function ChatInput({
   };
 
   return (
-    <form onSubmit={handleSubmit} className="border-t border-white/10 bg-slate-950/80 p-4">
+    <form
+      onSubmit={handleSubmit}
+      className="border-t border-slate-200 bg-slate-100/80 p-4 dark:border-white/10 dark:bg-slate-950/80"
+    >
       <div className="flex items-end gap-3">
         <textarea
           value={value}
@@ -44,7 +47,7 @@ export function ChatInput({
           rows={2}
           disabled={disabled}
           placeholder={placeholder}
-          className="min-h-[48px] flex-1 resize-none rounded-xl border border-white/10 bg-slate-900/80 px-4 py-3 text-sm text-slate-100 placeholder:text-slate-500 focus:border-sky-500 focus:outline-none focus:ring-2 focus:ring-sky-500/20 disabled:opacity-60"
+          className="min-h-[48px] flex-1 resize-none rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm text-slate-900 placeholder:text-slate-400 focus:border-sky-500 focus:outline-none focus:ring-2 focus:ring-sky-500/20 disabled:opacity-60 dark:border-white/10 dark:bg-slate-900/80 dark:text-slate-100 dark:placeholder:text-slate-500"
         />
         <button
           type="submit"

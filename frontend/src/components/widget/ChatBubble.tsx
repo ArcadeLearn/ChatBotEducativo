@@ -32,7 +32,7 @@ export function ChatBubble({
   return (
     <div className={`fixed z-50 ${positionClass}`}>
       {open ? (
-        <div className="mb-4 h-[min(640px,calc(100vh-6rem))] w-[min(420px,calc(100vw-2rem))] overflow-hidden rounded-2xl border border-white/10 shadow-2xl shadow-black/40">
+        <div className="mb-4 h-[min(640px,calc(100vh-6rem))] w-[min(420px,calc(100vw-2rem))] overflow-hidden rounded-2xl border border-slate-200 shadow-2xl shadow-slate-300/40 dark:border-white/10 dark:shadow-black/40">
           <ProtectedRoute>
             <ChatWindow compact skipHistory={false} onClose={() => setOpen(false)} />
           </ProtectedRoute>

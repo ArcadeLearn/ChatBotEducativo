@@ -148,6 +148,19 @@ export interface AnnouncementItem {
   actionUrl?: string;
 }
 
+/** Factura CFDI del alumno */
+export interface InvoiceItem {
+  id: string;
+  folio?: string;
+  concept?: string;
+  date?: string;
+  amount?: number;
+  status?: string;
+  rfc?: string;
+  pdfUrl?: string;
+  xmlUrl?: string;
+}
+
 /** Plantel / sede IECA con coordenadas para mapa */
 export interface PlantelMapItem {
   id: string;

@@ -9,6 +9,7 @@ import { CertificatesCard } from "@/components/edu/CertificatesCard";
 import { CourseCatalogCard } from "@/components/edu/CourseCatalogCard";
 import { CourseDetailCard } from "@/components/edu/CourseDetailCard";
 import { EnrolledCoursesCard } from "@/components/edu/EnrolledCoursesCard";
+import { InvoicesCard } from "@/components/edu/InvoicesCard";
 import { LearningPathsCard } from "@/components/edu/LearningPathsCard";
 import { PlantelesCard } from "@/components/edu/PlantelesCard";
 import { StudentProfileCard } from "@/components/edu/StudentProfileCard";
@@ -21,7 +22,8 @@ interface EduPayloadRendererProps {
 export function EduPayloadRenderer({ payload }: EduPayloadRendererProps) {
   if (!payload?.type || payload.data === undefined) return null;
 
-  switch (payload.type) {
+  const content = (() => {
+    switch (payload.type) {
     case "enrolled_courses":
       return <EnrolledCoursesCard data={payload.data as Parameters<typeof EnrolledCoursesCard>[0]["data"]} />;
     case "course_detail":
@@ -40,7 +42,12 @@ export function EduPayloadRenderer({ payload }: EduPayloadRendererProps) {
       return <LearningPathsCard data={payload.data as Parameters<typeof LearningPathsCard>[0]["data"]} />;
     case "planteles":
       return <PlantelesCard data={payload.data as Parameters<typeof PlantelesCard>[0]["data"]} />;
-    default:
-      return null;
-  }
+    case "invoices":
+      return <InvoicesCard data={payload.data as Parameters<typeof InvoicesCard>[0]["data"]} />;
+      default:
+        return null;
+    }
+  })();
+
+  return <div className="chat-payload-theme">{content}</div>;
 }

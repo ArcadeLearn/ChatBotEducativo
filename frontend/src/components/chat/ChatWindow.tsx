@@ -8,6 +8,7 @@ import { SUGGESTED_QUESTIONS } from "@/lib/constants";
 import { getDateGroupLabelInMexico } from "@/lib/formatDateMexico";
 import { useEduChat } from "@/hooks/useChat";
 import { useRelativeTimeTick } from "@/hooks/useRelativeTimeTick";
+import { ThemeToggle } from "@/components/ui/ThemeToggle";
 import { ChatInput } from "./ChatInput";
 import { DateDivider } from "./DateDivider";
 import { MessageBubble } from "./MessageBubble";
@@ -77,22 +78,27 @@ export function ChatWindow({ compact = false, skipHistory = false, onClose }: Ch
 
   return (
     <div
-      className={`flex flex-col overflow-hidden bg-slate-950 ${
-        compact ? "h-full" : "min-h-[70vh] rounded-2xl border border-white/10 shadow-2xl"
+      className={`flex flex-col overflow-hidden ${
+        compact
+          ? "h-full bg-slate-50 dark:bg-slate-950"
+          : "min-h-[70vh] rounded-2xl border border-slate-200 bg-slate-50 shadow-2xl dark:border-white/10 dark:bg-slate-950"
       }`}
     >
-      <header className="flex items-center justify-between border-b border-white/10 px-4 py-3">
+      <header className="flex items-center justify-between border-b border-slate-200 px-4 py-3 dark:border-white/10">
         <div>
-          <h2 className="text-sm font-semibold text-white">
+          <h2 className="text-sm font-semibold text-slate-900 dark:text-white">
             {compact ? "Asistente Campus IECA" : "Chat Educativo IECA"}
           </h2>
-          <p className="text-xs text-slate-400">Cursos, avance, certificados y eventos</p>
+          <p className="text-xs text-slate-500 dark:text-slate-400">
+            Cursos, avance, certificados y eventos
+          </p>
         </div>
         <div className="flex items-center gap-2">
+          <ThemeToggle compact />
           <button
             type="button"
             onClick={startNewSession}
-            className="rounded-lg border border-white/10 px-3 py-1.5 text-xs text-slate-300 hover:bg-white/5"
+            className="rounded-lg border border-slate-200 px-3 py-1.5 text-xs text-slate-600 hover:bg-slate-100 dark:border-white/10 dark:text-slate-300 dark:hover:bg-white/5"
           >
             Nueva sesión
           </button>
@@ -101,7 +107,7 @@ export function ChatWindow({ compact = false, skipHistory = false, onClose }: Ch
               type="button"
               onClick={onClose}
               aria-label="Cerrar chat"
-              className="rounded-lg border border-white/10 px-2 py-1 text-slate-300 hover:bg-white/5"
+              className="rounded-lg border border-slate-200 px-2 py-1 text-slate-600 hover:bg-slate-100 dark:border-white/10 dark:text-slate-300 dark:hover:bg-white/5"
             >
               ✕
             </button>
@@ -120,8 +126,10 @@ export function ChatWindow({ compact = false, skipHistory = false, onClose }: Ch
               IA
             </div>
             <div>
-              <h3 className="text-lg font-semibold text-white">¿En qué te ayudo hoy?</h3>
-              <p className="mt-1 text-sm text-slate-400">
+              <h3 className="text-lg font-semibold text-slate-900 dark:text-white">
+                ¿En qué te ayudo hoy?
+              </h3>
+              <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
                 Pregunta en lenguaje natural sobre tu avance académico en Campus IECA.
               </p>
             </div>
@@ -131,7 +139,7 @@ export function ChatWindow({ compact = false, skipHistory = false, onClose }: Ch
                   key={question}
                   type="button"
                   onClick={() => sendSuggested(question)}
-                  className="rounded-full border border-sky-500/30 bg-sky-500/10 px-3 py-1.5 text-xs text-sky-200 hover:bg-sky-500/20"
+                  className="rounded-full border border-sky-500/30 bg-sky-500/10 px-3 py-1.5 text-xs text-sky-700 hover:bg-sky-500/20 dark:text-sky-200"
                 >
                   {question}
                 </button>
@@ -166,7 +174,7 @@ export function ChatWindow({ compact = false, skipHistory = false, onClose }: Ch
 
         {isLoading && <TypingIndicator />}
         {error && (
-          <div className="mb-4 rounded-xl border border-red-500/30 bg-red-500/10 px-4 py-3 text-sm text-red-200">
+          <div className="mb-4 rounded-xl border border-red-500/30 bg-red-500/10 px-4 py-3 text-sm text-red-700 dark:text-red-200">
             {error.message}
           </div>
         )}

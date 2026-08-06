@@ -19,7 +19,7 @@ export function TypingIndicator({ label = "Consultando Campus IECA..." }: Typing
           <span className="h-2 w-2 animate-typing-dot rounded-full bg-sky-400/80" />
           <span className="h-2 w-2 animate-typing-dot rounded-full bg-sky-400/80" />
         </div>
-        <p className="text-xs italic text-sky-300/80">{label}</p>
+        <p className="text-xs italic text-sky-600 dark:text-sky-300/80">{label}</p>
       </div>
     </div>
   );

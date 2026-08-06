@@ -534,23 +534,90 @@ def _ensure_planteles_intro(text: str, payload: dict[str, Any], user_message: st
 
 def _ensure_invoices_intro(text: str, payload: dict[str, Any], user_message: str) -> str:
 
-    """Intro breve para facturas y pagos."""
+    """Intro breve para facturas: historial, pendientes o total pagado."""
 
-    return _list_intro(
+    data = payload.get("data") or {}
+    items = data.get("invoices") or []
+    total = int(data.get("total") or len(items))
+    catalog_total = int(data.get("catalog_total") or total)
+    focus = data.get("focus") or "all"
+    paid_total = float(data.get("paid_total") or 0)
+    pending_count = int(data.get("pending_count") or 0)
+    greeting = _extract_greeting(text)
 
-        "invoices",
+    if focus == "total_paid":
+        if paid_total <= 0:
+            return (
+                f"{greeting} Aún **no tienes pagos registrados** en tu historial del campus."
+            )
+        formatted = f"${paid_total:,.0f} MXN".replace(",", ",")
+        context = (
+            f"{greeting} Has pagado un total de **{formatted}** "
+            f"en **{data.get('paid_count', total)}** comprobante(s) registrado(s)."
+        )
+        cta = (
+            "Aquí tienes el detalle de tus facturas y pagos:"
+            if total > 0
+            else ""
+        )
+        return f"{context}\n\n{cta}".strip() if cta else context
 
-        payload,
+    if focus == "pending":
+        if total == 0:
+            return (
+                f"{greeting} **No tienes facturas pendientes** de pago en este momento. "
+                f"Tu historial muestra **{catalog_total}** comprobante(s) ya liquidado(s)."
+            )
+        noun = "factura pendiente" if total == 1 else "facturas pendientes"
+        return (
+            f"{greeting} Tienes **{total} {noun}** por un total de "
+            f"**${float(data.get('pending_total') or 0):,.0f} MXN**.\n\n"
+            "Aquí tienes el detalle:"
+        )
 
-        text,
+    if total == 0:
+        if focus == "payment_history":
+            return (
+                f"{greeting} **No hay pagos registrados** en tu historial del campus IECA."
+            )
+        return (
+            f"{greeting} **No hay facturas ni pagos registrados** en tu cuenta del campus IECA."
+        )
 
-        user_message,
+    if focus == "payment_history":
+        noun = "pago" if total == 1 else "pagos"
+        formatted = f"${paid_total:,.0f} MXN".replace(",", ",")
+        context = (
+            f"{greeting} Tu **historial de pagos** incluye **{total} {noun}** "
+            f"por un total de **{formatted}**."
+        )
+        cta = "Aquí tienes el detalle de tus movimientos:"
+        return f"{context}\n\n{cta}"
 
-        total_key="total",
+    if focus == "invoices_list":
+        noun = "factura" if total == 1 else "facturas"
+        context = f"{greeting} Tienes **{total} {noun}** (CFDI) en tu cuenta."
+        if pending_count > 0:
+            context += f" (**{pending_count}** pendiente(s))."
+        cta = "Aquí tienes tus comprobantes fiscales:"
+        return f"{context}\n\n{cta}"
 
-        items_key="invoices",
+    if total < catalog_total:
+        return _list_intro(
+            "invoices",
+            payload,
+            text,
+            user_message,
+            total_key="total",
+            items_key="invoices",
+        )
 
-    )
+    noun = "factura" if total == 1 else "facturas"
+    context = f"{greeting} Tienes **{total} {noun}** registradas en tu historial de pagos."
+    if pending_count > 0:
+        context += f" (**{pending_count}** pendiente(s))."
+    cta = "Aquí tienes el detalle de tus facturas y pagos:"
+    return f"{context}\n\n{cta}"
 
 
 

@@ -7,6 +7,12 @@ from typing import Any
 
 from app.agents.course_query import is_specific_course_query, match_course_from_query
 from app.agents.announcement_timeframe import filter_announcements_by_timeframe
+from app.agents.invoices_query import (
+    compute_invoice_summary,
+    detect_invoice_focus,
+    filter_invoices_by_focus,
+    invoice_view_mode,
+)
 from app.agents.planteles_query import apply_planteles_query_filter, slim_plantel_for_map
 from app.settings import get_max_ui_cards
 
@@ -236,14 +242,33 @@ def _normalize_data(
         )
 
     if payload_type == "invoices":
-        items = raw.get("invoices", [])
-        limit = get_max_ui_cards()
-        visible = items[:limit]
-        return (
-            {"type": "invoices", "data": {"invoices": visible, "total": len(items)}}
-            if visible
-            else None
+        all_items = list(raw.get("invoices") or [])
+        focus = detect_invoice_focus(user_message) if user_message else "all"
+        filtered = filter_invoices_by_focus(all_items, focus)
+        sorted_items = sorted(
+            filtered,
+            key=lambda item: str(item.get("date") or ""),
+            reverse=True,
         )
+        summary = compute_invoice_summary(all_items)
+        limit = get_max_ui_cards()
+        visible = sorted_items[:limit]
+        view_mode = invoice_view_mode(focus)
+        return {
+            "type": "invoices",
+            "data": {
+                "invoices": visible,
+                "total": len(filtered),
+                "catalog_total": len(all_items),
+                "paid_total": summary["paid_total"],
+                "pending_total": summary["pending_total"],
+                "paid_count": summary["paid_count"],
+                "pending_count": summary["pending_count"],
+                "focus": focus,
+                "view_mode": view_mode,
+                "empty": len(filtered) == 0,
+            },
+        }
 
     if payload_type == "student_stats":
         return {"type": "student_stats", "data": raw}

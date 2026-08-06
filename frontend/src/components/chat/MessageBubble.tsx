@@ -24,7 +24,7 @@ interface MessageBubbleProps {
 function CopyIcon() {
   return (
     <svg
-      className="h-3.5 w-3.5 text-slate-400"
+      className="h-3.5 w-3.5 text-slate-500 dark:text-slate-400"
       fill="none"
       stroke="currentColor"
       viewBox="0 0 24 24"
@@ -76,7 +76,7 @@ function MessageActions({
       className={`mt-1 flex items-center gap-2 ${align === "right" ? "justify-end" : "justify-start pl-12"}`}
     >
       {timestamp && (
-        <p className={`text-[11px] ${align === "right" ? "text-sky-200/70" : "text-slate-500"}`}>
+        <p className={`text-[11px] ${align === "right" ? "text-sky-600 dark:text-sky-200/70" : "text-slate-500"}`}>
           {formatChatTimestamp(timestamp, now)}
         </p>
       )}
@@ -88,7 +88,7 @@ function MessageActions({
           <button
             type="button"
             onClick={() => void handleCopy()}
-            className="rounded p-1 opacity-60 transition hover:bg-white/5 hover:opacity-100"
+            className="rounded p-1 opacity-60 transition hover:bg-slate-200 hover:opacity-100 dark:hover:bg-white/5"
             aria-label="Copiar respuesta"
             title="Copiar respuesta"
           >
@@ -102,7 +102,7 @@ function MessageActions({
                 className={`rounded-full p-1.5 transition-all ${
                   feedback === "positive"
                     ? "bg-sky-500/20 scale-110"
-                    : "hover:bg-white/5 text-slate-400"
+                    : "hover:bg-slate-200 text-slate-500 dark:hover:bg-white/5 dark:text-slate-400"
                 }`}
                 aria-label="Buena respuesta"
                 title="Buena respuesta"
@@ -117,7 +117,7 @@ function MessageActions({
                 className={`rounded-full p-1.5 transition-all ${
                   feedback === "negative"
                     ? "bg-red-500/20 scale-110"
-                    : "hover:bg-white/5 text-slate-400"
+                    : "hover:bg-slate-200 text-slate-500 dark:hover:bg-white/5 dark:text-slate-400"
                 }`}
                 aria-label="Mala respuesta"
                 title="Mala respuesta"
@@ -161,10 +161,10 @@ export function MessageBubble({
     return (
       <div className="mb-4 animate-fade-in">
         <div className="flex items-start gap-3">
-          <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-sky-500/30 bg-slate-900 text-xs font-bold text-sky-300">
+          <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-sky-500/30 bg-slate-100 text-xs font-bold text-sky-600 dark:bg-slate-900 dark:text-sky-300">
             IA
           </div>
-          <div className="min-w-0 flex-1 rounded-2xl rounded-tl-md border border-white/10 bg-slate-900/80 px-4 py-3 text-sm text-slate-100">
+          <div className="min-w-0 flex-1 rounded-2xl rounded-tl-md border border-slate-200 bg-white px-4 py-3 text-sm text-slate-800 shadow-sm dark:border-white/10 dark:bg-slate-900/80 dark:text-slate-100">
             <MarkdownContent content={content} />
             <EduPayloadRenderer payload={payload} />
           </div>
