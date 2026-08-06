@@ -1,0 +1,28 @@
+{
+  "invoices": [
+    {
+      "id": "inv-101",
+      "folio": "F-IECA-2026-9901",
+      "concept": "Inscripción Especialización Robótica Yaskawa YRC1000",
+      "date": "2026-07-10",
+      "amount": 3500,
+      "status": "Pagado",
+      "rfc": "RAMC950312HGT",
+      "pdfUrl": "#",
+      "xmlUrl": "#",
+      "student_id": "user-01"
+    },
+    {
+      "id": "inv-102",
+      "folio": "F-IECA-2026-9954",
+      "concept": "Examen de Certificación Técnico en Metrología 3D",
+      "date": "2026-07-18",
+      "amount": 1800,
+      "status": "Pagado",
+      "rfc": "RAMC950312HGT",
+      "pdfUrl": "#",
+      "xmlUrl": "#",
+      "student_id": "user-01"
+    }
+  ]
+}

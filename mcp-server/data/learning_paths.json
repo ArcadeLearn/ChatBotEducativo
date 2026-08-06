@@ -1,0 +1,2195 @@
+{
+  "paths": [
+    {
+      "id": "ruta-mecatronica-kuka",
+      "title": "Especialista en Mecatrónica Industrial & Células Robóticas KUKA",
+      "subtitle": "Ruta Profesional de Integración de Células de Manufactura de Alta Precisión",
+      "category": "Mecatrónica",
+      "description": "Path técnico integral diseñado con IECA y KUKA Robotics para formar ingenieros capaces de programar, simular e integrar células de manufactura avanzadas en la industria automotriz y de autopartes de Guanajuato.",
+      "estimatedDurationMonths": 8,
+      "totalHours": 240,
+      "totalModules": 8,
+      "progressPercentage": 45,
+      "isActive": true,
+      "certifiedBy": "IECA & KUKA Robotics Academy",
+      "badge": "🏆 Certificación Industrial KUKA KRL",
+      "colorGradient": "from-amber-500 via-orange-500 to-rose-500",
+      "targetRoles": [
+        "Ingeniero de Automatización",
+        "Programador de Robótica",
+        "Integrador de Células CNC"
+      ],
+      "enrolledStudentsCount": 1420,
+      "nodes": [
+        {
+          "id": "node-kuka-1",
+          "title": "Fundamentos de Electricidad Industrial y Sensores",
+          "code": "MEC-101",
+          "type": "mandatory",
+          "status": "completed",
+          "hours": 25,
+          "estimatedDate": "10 Ene - 05 Feb 2026",
+          "description": "Interpretación de diagramas esquemáticos trifásicos, sensores inductivos, ópticos y controladores electromagnéticos.",
+          "topics": [
+            "Simbología NEMA e IEC",
+            "Cableado estructurado de tableros",
+            "Sensores NPN/PNP",
+            "Protecciones de motor"
+          ],
+          "instructor": "Ing. Carlos Mendoza (Sede Silao)",
+          "location": "Sede IECA Silao (Taller de Electromecánica)",
+          "prerequisites": [
+            "Ingreso a Campus IECA"
+          ],
+          "nextNodes": [
+            "node-kuka-2"
+          ],
+          "stepNumber": 1,
+          "level": "Principiante"
+        },
+        {
+          "id": "node-kuka-2",
+          "title": "Introducción a PLC Siemens S7-1200 & TIA Portal",
+          "code": "PLC-201",
+          "type": "mandatory",
+          "status": "completed",
+          "hours": 35,
+          "estimatedDate": "08 Feb - 12 Mar 2026",
+          "description": "Programación en lenguaje Ladder y Bloques de Función para automatismos en la plataforma TIA Portal v18.",
+          "topics": [
+            "Lógica combinacional en Ladder",
+            "Timers y Contadores IEC",
+            "Bloques FB/FC",
+            "Direccionamiento de I/O digitales"
+          ],
+          "instructor": "Dra. Beatriz Paredes (IECA Irapuato)",
+          "location": "Campus Virtual IECA + Lab Híbrido",
+          "prerequisites": [
+            "MEC-101"
+          ],
+          "nextNodes": [
+            "node-kuka-3"
+          ],
+          "stepNumber": 2,
+          "level": "Intermedio"
+        },
+        {
+          "id": "node-kuka-3",
+          "title": "Operación y Programación Básica de Robot KUKA KRL",
+          "code": "ROB-301",
+          "type": "mandatory",
+          "status": "in_progress",
+          "hours": 30,
+          "estimatedDate": "15 Mar - 20 Abr 2026 (En Curso)",
+          "description": "Manejo del SmartPAD KUKA, calibración del sistema de coordenadas TCP, rutinas PTP y LIN en código KRL.",
+          "topics": [
+            "Coordenadas Base y Tool",
+            "Movimientos PTP, LIN y CIRC",
+            "Programación en KUKA Robot Language (KRL)",
+            "Estructuras de seguridad y E-Stop"
+          ],
+          "instructor": "Ing. Roberto Garza (Certificado KUKA)",
+          "location": "Sede IECA Salamanca (Célula Robótica KUKA KR6)",
+          "prerequisites": [
+            "PLC-201"
+          ],
+          "nextNodes": [
+            "node-kuka-4a",
+            "node-kuka-4b"
+          ],
+          "stepNumber": 3,
+          "level": "Intermedio"
+        },
+        {
+          "id": "node-kuka-4a",
+          "title": "Ramificación Opcional A: Programación Avanzada de Robótica de Soldadura ArcTech",
+          "code": "ROB-401A",
+          "type": "optional_branch",
+          "branchGroup": "Especialidad Robótica",
+          "branchLabel": "Opción A: Soldadura MIG/MAG Robótica",
+          "status": "unlocked",
+          "hours": 30,
+          "estimatedDate": "25 Abr - 30 Mayo 2026",
+          "description": "Integración del paquete de software KUKA.ArcTech con antorcha Fronius para cordones de soldadura automotriz.",
+          "topics": [
+            "Parámetros de arco voltaico KUKA",
+            "Secuenciación de soldadura MIG",
+            "Control de deformación térmica",
+            "Inspección visual NDT"
+          ],
+          "instructor": "Ing. Javier Esquivel (IECA Celaya)",
+          "location": "Sede IECA Celaya (Laboratorio de Soldadura)",
+          "prerequisites": [
+            "ROB-301"
+          ],
+          "nextNodes": [
+            "node-kuka-5"
+          ],
+          "stepNumber": 4,
+          "level": "Avanzado"
+        },
+        {
+          "id": "node-kuka-4b",
+          "title": "Ramificación Opcional B: Visión Artificial & Picking 3D con Robots KUKA",
+          "code": "ROB-401B",
+          "type": "optional_branch",
+          "branchGroup": "Especialidad Robótica",
+          "branchLabel": "Opción B: Visión Artificial & Pick & Place",
+          "status": "unlocked",
+          "hours": 30,
+          "estimatedDate": "25 Abr - 30 Mayo 2026",
+          "description": "Configuración de cámaras Cognex e InspectNET conectadas a robots industriales para clasificación e inspección de calidad.",
+          "topics": [
+            "Cámaras Inteligentes Cognex In-Sight",
+            "Calibración Cámara-Robot",
+            "Algoritmos de detección de bordes",
+            "Clasificación de piezas a alta velocidad"
+          ],
+          "instructor": "Ing. Sofía Morales",
+          "location": "Campus Virtual IECA (Simulador KUKA.Sim 4.0)",
+          "prerequisites": [
+            "ROB-301"
+          ],
+          "nextNodes": [
+            "node-kuka-5"
+          ],
+          "stepNumber": 4,
+          "level": "Avanzado"
+        },
+        {
+          "id": "node-kuka-5",
+          "title": "Redes de Comunicación Industrial PROFINET & Safety Integrated",
+          "code": "COM-501",
+          "type": "mandatory",
+          "status": "locked",
+          "hours": 30,
+          "estimatedDate": "02 Jun - 10 Jul 2026",
+          "description": "Interconexión en red industrial entre PLC, robot, variadores de frecuencia G120 y cortinas de seguridad PROFIsafe.",
+          "topics": [
+            "Topología de Red Ring/Star",
+            "GSDML Files en TIA Portal",
+            "Zonas de trabajo seguras PROFIsafe",
+            "Diagnóstico de tráfico Wireshark Industrial"
+          ],
+          "instructor": "M.C. Fernando Rivas",
+          "location": "Sede IECA León",
+          "prerequisites": [
+            "ROB-401A o ROB-401B"
+          ],
+          "nextNodes": [
+            "node-kuka-6"
+          ],
+          "stepNumber": 5,
+          "level": "Avanzado"
+        },
+        {
+          "id": "node-kuka-6",
+          "title": "Gemelos Digitales & Simulación en KUKA.Sim 4.0",
+          "code": "SIM-601",
+          "type": "mandatory",
+          "status": "locked",
+          "hours": 35,
+          "estimatedDate": "15 Jul - 20 Ago 2026",
+          "description": "Diseño en 3D y puesta en marcha virtual (Virtual Commissioning) de células completas antes de su instalación física.",
+          "topics": [
+            "Importación de modelos CAD STEP/IGES",
+            "Kinematización de mecanismos custom",
+            "Cálculo de tiempo de ciclo exacto",
+            "Validación de colisiones 3D"
+          ],
+          "instructor": "Ing. Diana Alarcón (KUKA Specialist)",
+          "location": "Campus Virtual IECA",
+          "prerequisites": [
+            "COM-501"
+          ],
+          "nextNodes": [
+            "node-kuka-capstone"
+          ],
+          "stepNumber": 6,
+          "level": "Avanzado"
+        },
+        {
+          "id": "node-kuka-capstone",
+          "title": "Proyecto Integrador Capstone: Célula de Manufactura Flex-Cell 4.0",
+          "code": "CAP-701",
+          "type": "capstone",
+          "status": "locked",
+          "hours": 55,
+          "estimatedDate": "25 Ago - 15 Oct 2026",
+          "description": "Puesta en marcha real de una célula robótica automatizada completa evaluada por auditores de KUKA Robotics y el clúster automotriz CLAUGTO.",
+          "topics": [
+            "Integración de hardware y software",
+            "Documentación de ingeniería",
+            "Validación de tiempo de ciclo industrial",
+            "Evaluación por comité técnico"
+          ],
+          "instructor": "Comité Técnico IECA & KUKA Robotics",
+          "location": "Sede IECA Silao (Centro de Innovación)",
+          "prerequisites": [
+            "SIM-601"
+          ],
+          "nextNodes": [],
+          "stepNumber": 7,
+          "level": "Experto"
+        }
+      ]
+    },
+    {
+      "id": "ruta-iot-siemens",
+      "title": "Arquitectura IoT Industrial, PLC S7-1500 & Telemetría SCADA",
+      "subtitle": "Ruta Avanzada para Ingenieros de Digitalización Industrial e Industria 4.0",
+      "category": "IoT & Automatización",
+      "description": "Path especializado en conectar los sensores del piso de planta con la nube a través de redes industriales avanzadas, servidores OPC UA y plataformas SCADA Ignition.",
+      "estimatedDurationMonths": 7,
+      "totalHours": 210,
+      "totalModules": 7,
+      "progressPercentage": 57,
+      "isActive": true,
+      "certifiedBy": "IECA & Siemens Digital Industries",
+      "badge": "⚡ Certificación Siemens MindSphere / Edge",
+      "colorGradient": "from-sky-500 via-teal-400 to-indigo-600",
+      "targetRoles": [
+        "Arquitecto IoT Industrial",
+        "Ingeniero SCADA",
+        "Especialista en Telemetría OT/IT"
+      ],
+      "enrolledStudentsCount": 980,
+      "nodes": [
+        {
+          "id": "node-iot-1",
+          "title": "Redes Industriales Ethernet, IP & Cableado Estructurado",
+          "code": "NET-101",
+          "type": "mandatory",
+          "status": "completed",
+          "hours": 25,
+          "estimatedDate": "15 Ene - 10 Feb 2026",
+          "description": "Fundamentos de direccionamiento IPv4, VLANs industriales y switches administrables Scalance de Siemens.",
+          "topics": [
+            "Subnetting CIDR",
+            "Switches Scalance X200",
+            "Topologías MRP Redundantes",
+            "Diagnóstico de cables Cat6A industrial"
+          ],
+          "instructor": "Ing. Mario Zúñiga",
+          "location": "Campus Virtual IECA",
+          "prerequisites": [
+            "Ingreso a Campus IECA"
+          ],
+          "nextNodes": [
+            "node-iot-2"
+          ],
+          "stepNumber": 1,
+          "level": "Principiante"
+        },
+        {
+          "id": "node-iot-2",
+          "title": "Programación Avanzada PLC Siemens S7-1500 & Estructuras SCL",
+          "code": "PLC-302",
+          "type": "mandatory",
+          "status": "completed",
+          "hours": 35,
+          "estimatedDate": "15 Feb - 20 Mar 2026",
+          "description": "Uso intensivo del lenguaje SCL (Structured Control Language), arrays, estructuras UDT y arreglos de datos.",
+          "topics": [
+            "Tipos de datos complejos UDT",
+            "Programación SCL estructurada",
+            "Interrupciones cíclicas OB30",
+            "Gestión de recetas de producción"
+          ],
+          "instructor": "Ing. Beatriz Paredes",
+          "location": "Sede IECA Irapuato",
+          "prerequisites": [
+            "NET-101"
+          ],
+          "nextNodes": [
+            "node-iot-3"
+          ],
+          "stepNumber": 2,
+          "level": "Intermedio"
+        },
+        {
+          "id": "node-iot-3",
+          "title": "Servidores OPC UA & Protocolo MQTT para Telemetría OT/IT",
+          "code": "IOT-401",
+          "type": "mandatory",
+          "status": "in_progress",
+          "hours": 30,
+          "estimatedDate": "25 Mar - 30 Apr 2026 (En Curso)",
+          "description": "Configuración del servidor OPC UA integrado en el PLC S7-1500 y broker MQTT Mosquitto para transmisión de variables en tiempo real.",
+          "topics": [
+            "Servidor/Cliente OPC UA",
+            "Node-RED para transformación JSON",
+            "MQTT Brokers & TLS Security",
+            "Políticas de seguridad de certificados X.509"
+          ],
+          "instructor": "Dr. Alejandro Torres",
+          "location": "Campus Virtual IECA",
+          "prerequisites": [
+            "PLC-302"
+          ],
+          "nextNodes": [
+            "node-iot-4a",
+            "node-iot-4b"
+          ],
+          "stepNumber": 3,
+          "level": "Avanzado"
+        },
+        {
+          "id": "node-iot-4a",
+          "title": "Ramificación Opcional A: Desarrollo SCADA Web Avanzado con Inductive Automation Ignition",
+          "code": "SCA-501A",
+          "type": "optional_branch",
+          "branchGroup": "Especialidad Visualización",
+          "branchLabel": "Opción A: SCADA Ignition Perspective (Web Mobile)",
+          "status": "unlocked",
+          "hours": 35,
+          "estimatedDate": "05 Mayo - 12 Junio 2026",
+          "description": "Diseño de dashboards industriales responsivos en tecnología HTML5/CSS dentro de la suite Ignition 8.1.",
+          "topics": [
+            "Ignition Perspective Module",
+            "Diseño Responsive Flex & Grid",
+            "Vínculos UDT y Tags Históricos",
+            "Gestión de alarmas y notificaciones push"
+          ],
+          "instructor": "Ing. Rodrigo Cárdenas",
+          "location": "Campus Virtual IECA (Laboratorio Remoto Cloud)",
+          "prerequisites": [
+            "IOT-401"
+          ],
+          "nextNodes": [
+            "node-iot-5"
+          ],
+          "stepNumber": 4,
+          "level": "Avanzado"
+        },
+        {
+          "id": "node-iot-4b",
+          "title": "Ramificación Opcional B: Ciberseguridad Industrial OT (IEC 62443 & Firewall Scalance S)",
+          "code": "SEC-501B",
+          "type": "optional_branch",
+          "branchGroup": "Especialidad Visualización",
+          "branchLabel": "Opción B: Ciberseguridad OT & Firewalls de Planta",
+          "status": "unlocked",
+          "hours": 35,
+          "estimatedDate": "05 Mayo - 12 Junio 2026",
+          "description": "Implementación de arquitectura Defense in Depth, zonas y conductos según el estándar internacional IEC 62443.",
+          "topics": [
+            "Firewalls Scalance S615",
+            "Túneles VPN IPsec en planta",
+            "Segmentación DMZ Industrial",
+            "Detección de intrucciones OT con Snort"
+          ],
+          "instructor": "Ing. Gabriel Alva (Certificado CISA/OT)",
+          "location": "Sede IECA Silao",
+          "prerequisites": [
+            "IOT-401"
+          ],
+          "nextNodes": [
+            "node-iot-5"
+          ],
+          "stepNumber": 4,
+          "level": "Avanzado"
+        },
+        {
+          "id": "node-iot-5",
+          "title": "Plataformas Industrial Edge & Analítica Predictiva AWS/MindSphere",
+          "code": "CLD-601",
+          "type": "mandatory",
+          "status": "locked",
+          "hours": 30,
+          "estimatedDate": "20 Junio - 25 Julio 2026",
+          "description": "Despliegue de contenedores Docker en dispositivos Siemens Industrial Edge para procesamiento de IA en el borde.",
+          "topics": [
+            "Siemens Industrial Edge Management",
+            "Contenedores Docker en ARM/x86",
+            "Conectores AWS IoT Core",
+            "Dashboard de OEE en tiempo real"
+          ],
+          "instructor": "M.I. Valeria Méndez",
+          "location": "Campus Virtual IECA",
+          "prerequisites": [
+            "SCA-501A o SEC-501B"
+          ],
+          "nextNodes": [
+            "node-iot-capstone"
+          ],
+          "stepNumber": 5,
+          "level": "Avanzado"
+        },
+        {
+          "id": "node-iot-capstone",
+          "title": "Proyecto Integrador Capstone: Sistema de Telemetría & OEE Planta Digital",
+          "code": "CAP-702",
+          "type": "capstone",
+          "status": "locked",
+          "hours": 50,
+          "estimatedDate": "01 Ago - 20 Sep 2026",
+          "description": "Implementación de la telemetría en tiempo real para una línea de producción de prueba con reporte de KPI OEE.",
+          "topics": [
+            "Arquitectura de extremo a extremo",
+            "Integración con Base de Datos SQL/TimescaleDB",
+            "Pruebas de latencia y ciberseguridad",
+            "Defensa de proyecto ante mentores"
+          ],
+          "instructor": "Comité de Digitalización IECA & Siemens",
+          "location": "Sede IECA Silao (Centro de Innovación)",
+          "prerequisites": [
+            "CLD-601"
+          ],
+          "nextNodes": [],
+          "stepNumber": 6,
+          "level": "Experto"
+        }
+      ]
+    },
+    {
+      "id": "ruta-manufactura-3d",
+      "title": "Especialista en Manufactura Aditiva 3D & Ingeniería Inversa",
+      "subtitle": "Ruta Profesional para la Creación de Prototipos Rápidos y Partes Funcionales Industriales",
+      "category": "Manufactura 3D",
+      "description": "Aprende a transformar escaneos 3D de alta precisión en piezas mecánicas optimizadas para impresión en polímeros de alto rendimiento y resinas fotosensibles.",
+      "estimatedDurationMonths": 6,
+      "totalHours": 180,
+      "totalModules": 6,
+      "progressPercentage": 0,
+      "isActive": false,
+      "certifiedBy": "IECA & Markforged / Formlabs",
+      "badge": "🖨️ Certificado en Impresión 3D Industrial",
+      "colorGradient": "from-purple-500 via-indigo-500 to-sky-500",
+      "targetRoles": [
+        "Ingeniero de Prototipado",
+        "Especialista en Escaneo 3D",
+        "Diseñador CAD/CAM"
+      ],
+      "enrolledStudentsCount": 750,
+      "nodes": [
+        {
+          "id": "node-m3d-1",
+          "title": "Diseño Mecánico Paramétrico Avanzado en SolidWorks / Fusion 360",
+          "code": "CAD-101",
+          "type": "mandatory",
+          "status": "unlocked",
+          "hours": 30,
+          "estimatedDate": "Módulo de Inicio",
+          "description": "Modelado sólido 3D, ensamblajes complejos, tolerancias dimensionales y exportación de archivos STL/STEP.",
+          "topics": [
+            "Bocetos paramétricos",
+            "Operaciones de extrusión y revolución",
+            "Restricciones dimensionales",
+            "Exportación STL limpia"
+          ],
+          "instructor": "Ing. Mateo Trejo",
+          "location": "Campus Virtual IECA",
+          "prerequisites": [],
+          "nextNodes": [
+            "node-m3d-2"
+          ],
+          "stepNumber": 1,
+          "level": "Principiante"
+        },
+        {
+          "id": "node-m3d-2",
+          "title": "Tecnologías de Impresión 3D: FDM, SLA, SLS y Fibra de Carbono",
+          "code": "3DP-201",
+          "type": "mandatory",
+          "status": "locked",
+          "hours": 30,
+          "estimatedDate": "Mes 2",
+          "description": "Calibración de impresoras FDM industriales, resinas fotosensibles SLA y materiales reforzados con fibra continua Markforged.",
+          "topics": [
+            "Configuración de Slicers (Cura / Eiger)",
+            "Estructuras de soporte óptimas",
+            "Propiedades de PLA, ABS, PETG y Nylon-CF",
+            "Post-procesado térmico"
+          ],
+          "instructor": "Ing. Karen Galicia",
+          "location": "Sede IECA Silao (Lab Impresión 3D)",
+          "prerequisites": [
+            "CAD-101"
+          ],
+          "nextNodes": [
+            "node-m3d-3a",
+            "node-m3d-3b"
+          ],
+          "stepNumber": 2,
+          "level": "Intermedio"
+        },
+        {
+          "id": "node-m3d-3a",
+          "title": "Ramificación Opcional A: Escaneo 3D Láser & Fotogrametría Industrial",
+          "code": "REV-301A",
+          "type": "optional_branch",
+          "branchGroup": "Especialización Aditiva",
+          "branchLabel": "Opción A: Escaneo Láser & Inspección Metrológica",
+          "status": "locked",
+          "hours": 30,
+          "estimatedDate": "Mes 3",
+          "description": "Uso de escáneres de luz azul EinScan y PolyWorks para digitalización de herramentales automotrices.",
+          "topics": [
+            "Nubes de puntos 3D",
+            "Mallas poligonalizadas OBJ",
+            "Alineación por Best-Fit",
+            "Reportes de desviación dimensional GD&T"
+          ],
+          "instructor": "Ing. David Orozco",
+          "location": "Sede IECA León",
+          "prerequisites": [
+            "3DP-201"
+          ],
+          "nextNodes": [
+            "node-m3d-4"
+          ],
+          "stepNumber": 3,
+          "level": "Avanzado"
+        },
+        {
+          "id": "node-m3d-3b",
+          "title": "Ramificación Opcional B: Optimización Topológica & Generative Design",
+          "code": "OPT-301B",
+          "type": "optional_branch",
+          "branchGroup": "Especialización Aditiva",
+          "branchLabel": "Opción B: Diseño Generativo & Reducción de Peso",
+          "status": "locked",
+          "hours": 30,
+          "estimatedDate": "Mes 3",
+          "description": "Reducción de peso en componentes metálicos y plásticos mediante algoritmos de inteligencia artificial en ANSYS y Fusion 360.",
+          "topics": [
+            "Algoritmos de optimización de masa",
+            "Cálculo por Elementos Finitos (FEA)",
+            "Estructuras reticulares Lattice",
+            "Validación de esfuerzos von Mises"
+          ],
+          "instructor": "Dra. María Elena Garza",
+          "location": "Campus Virtual IECA",
+          "prerequisites": [
+            "3DP-201"
+          ],
+          "nextNodes": [
+            "node-m3d-4"
+          ],
+          "stepNumber": 3,
+          "level": "Avanzado"
+        },
+        {
+          "id": "node-m3d-4",
+          "title": "Impresión 3D Metal DMLS & Sinterizado de Polvo",
+          "code": "MET-401",
+          "type": "mandatory",
+          "status": "locked",
+          "hours": 30,
+          "estimatedDate": "Mes 4-5",
+          "description": "Principios de sinterizado directo de metal en polvo (DMLS) con aleaciones de Aluminio y Acero Inoxidable 316L.",
+          "topics": [
+            "Sinterizado láser en lecho de polvo",
+            "Seguridad en manejo de polvos metálicos",
+            "Tratamiento térmico de alivio de tensiones",
+            "Mecanizado secundario CNC"
+          ],
+          "instructor": "Dr. Héctor Saldaña",
+          "location": "Sede IECA Salamanca",
+          "prerequisites": [
+            "REV-301A o OPT-301B"
+          ],
+          "nextNodes": [
+            "node-m3d-capstone"
+          ],
+          "stepNumber": 4,
+          "level": "Avanzado"
+        },
+        {
+          "id": "node-m3d-capstone",
+          "title": "Proyecto Capstone: Rediseño e Impresión Aditiva de Componente Aeronáutico",
+          "code": "CAP-703",
+          "type": "capstone",
+          "status": "locked",
+          "hours": 30,
+          "estimatedDate": "Mes 6",
+          "description": "Fabricación completa de una refacción industrial descontinuada mediante escaneo 3D, optimización y fabricación aditiva.",
+          "topics": [
+            "Ingeniería inversa de extremo a extremo",
+            "Pruebas de resistencia mecánica",
+            "Cálculo de ahorro de costo vs manufactura tradicional",
+            "Presentación final"
+          ],
+          "instructor": "Comité Técnico de Manufactura IECA",
+          "location": "Sede IECA Silao",
+          "prerequisites": [
+            "MET-401"
+          ],
+          "nextNodes": [],
+          "stepNumber": 5,
+          "level": "Experto"
+        }
+      ]
+    },
+    {
+      "id": "ruta-ia-industria",
+      "title": "Ingeniero de Inteligencia Artificial & Mantenimiento Predictivo 4.0",
+      "subtitle": "Ruta Integral de Machine Learning, Visión por Computadora y Deep Learning Industrial",
+      "category": "IA & Software",
+      "description": "Path especializado en construir modelos de Inteligencia Artificial con Python, TensorFlow y OpenCV aplicados al análisis de datos de sensores y control de calidad automotriz.",
+      "estimatedDurationMonths": 9,
+      "totalHours": 270,
+      "totalModules": 9,
+      "progressPercentage": 0,
+      "isActive": false,
+      "certifiedBy": "IECA & NVIDIA Deep Learning Institute",
+      "badge": "🧠 Certificado NVIDIA DLI & AI Engineer",
+      "colorGradient": "from-emerald-500 via-teal-400 to-cyan-500",
+      "targetRoles": [
+        "Ingeniero de IA Industrial",
+        "Científico de Datos de Manufactura",
+        "Desarrollador de Computación en el Borde (Edge AI)"
+      ],
+      "enrolledStudentsCount": 1890,
+      "nodes": [
+        {
+          "id": "node-ia-1",
+          "title": "Python para Ciencia de Datos & Análisis Industrial (NumPy, Pandas)",
+          "code": "DAT-101",
+          "type": "mandatory",
+          "status": "unlocked",
+          "hours": 30,
+          "estimatedDate": "Módulo Inicial",
+          "description": "Programación en Python estructurado, limpieza de datos industriales con Pandas y visualización con Matplotlib/Seaborn.",
+          "topics": [
+            "Estructuras DataFrames",
+            "Tratamiento de valores nulos",
+            "Visualización de series de tiempo",
+            "Estadística descriptiva industrial"
+          ],
+          "instructor": "Lic. Andrés Palacios",
+          "location": "Campus Virtual IECA",
+          "prerequisites": [],
+          "nextNodes": [
+            "node-ia-2"
+          ],
+          "stepNumber": 1,
+          "level": "Principiante"
+        },
+        {
+          "id": "node-ia-2",
+          "title": "Machine Learning Supervisado: Regresión & Clasificación (Scikit-Learn)",
+          "code": "ML-201",
+          "type": "mandatory",
+          "status": "locked",
+          "hours": 30,
+          "estimatedDate": "Mes 2",
+          "description": "Modelos de regresión lineal, árboles de decisión, Random Forest y XGBoost para estimación de vida útil de maquinaria.",
+          "topics": [
+            "Regresión y Clasificación",
+            "Bosques Aleatorios (Random Forest)",
+            "Métricas de evaluación Precision/Recall/F1",
+            "Cross-Validation"
+          ],
+          "instructor": "Dr. Jaime Villalobos",
+          "location": "Campus Virtual IECA",
+          "prerequisites": [
+            "DAT-101"
+          ],
+          "nextNodes": [
+            "node-ia-3"
+          ],
+          "stepNumber": 2,
+          "level": "Intermedio"
+        },
+        {
+          "id": "node-ia-3",
+          "title": "Visión por Computadora con OpenCV & Detección de Defectos",
+          "code": "VIS-301",
+          "type": "mandatory",
+          "status": "locked",
+          "hours": 30,
+          "estimatedDate": "Mes 3",
+          "description": "Procesamiento digital de imágenes industriales, filtros de contraste, contornos y detección automática de fisuras en metales.",
+          "topics": [
+            "Filtros Gaussianos y Sobel",
+            "Segmentación por umbralización",
+            "Extracción de características (Features)",
+            "Detección de grietas en soldadura"
+          ],
+          "instructor": "Ing. Sofía Morales",
+          "location": "Campus Virtual IECA",
+          "prerequisites": [
+            "ML-201"
+          ],
+          "nextNodes": [
+            "node-ia-4a",
+            "node-ia-4b"
+          ],
+          "stepNumber": 3,
+          "level": "Intermedio"
+        },
+        {
+          "id": "node-ia-4a",
+          "title": "Ramificación Opcional A: Redes Neuronales Convolucionales (CNN) & YOLOv8 para Control de Calidad",
+          "code": "DL-401A",
+          "type": "optional_branch",
+          "branchGroup": "Especialidad Deep Learning",
+          "branchLabel": "Opción A: Deep Learning Visión (YOLOv8 & PyTorch)",
+          "status": "locked",
+          "hours": 35,
+          "estimatedDate": "Mes 4-5",
+          "description": "Entrenamiento de redes profundas YOLOv8 para inspección en tiempo real de ensambles en bandas transportadoras a 60 FPS.",
+          "topics": [
+            "Arquitecturas CNN (ResNet, EfficientNet)",
+            "Modelos YOLOv8 de detección de objetos",
+            "Data Augmentation para imágenes térmicas",
+            "Despliegue en TensorRT"
+          ],
+          "instructor": "Dr. Alejandro Torres",
+          "location": "Campus Virtual IECA + GPU Cluster",
+          "prerequisites": [
+            "VIS-301"
+          ],
+          "nextNodes": [
+            "node-ia-5"
+          ],
+          "stepNumber": 4,
+          "level": "Avanzado"
+        },
+        {
+          "id": "node-ia-4b",
+          "title": "Ramificación Opcional B: Análisis de Series de Tiempo (LSTM/Transformers) para Mantenimiento Predictivo",
+          "code": "TS-401B",
+          "type": "optional_branch",
+          "branchGroup": "Especialidad Deep Learning",
+          "branchLabel": "Opción B: Series de Tiempo & Pronóstico RUL (Life Time)",
+          "status": "locked",
+          "hours": 35,
+          "estimatedDate": "Mes 4-5",
+          "description": "Predicción del tiempo restante de vida útil (RUL) de rodamientos y turbinas utilizando redes recurrentes LSTM y Transformers.",
+          "topics": [
+            "Modelos LSTM de memoria a largo plazo",
+            "Análisis de vibraciones en dominio de frecuencia FFT",
+            "Algoritmos de detección de anomalías Isolation Forest",
+            "Cálculo de RUL (Remaining Useful Life)"
+          ],
+          "instructor": "M.C. Esteban Larios",
+          "location": "Campus Virtual IECA",
+          "prerequisites": [
+            "VIS-301"
+          ],
+          "nextNodes": [
+            "node-ia-5"
+          ],
+          "stepNumber": 4,
+          "level": "Avanzado"
+        },
+        {
+          "id": "node-ia-5",
+          "title": "Despliegue Edge AI en NVIDIA Jetson Orin & Microcontroladores",
+          "code": "EDG-501",
+          "type": "mandatory",
+          "status": "locked",
+          "hours": 30,
+          "estimatedDate": "Mes 6-7",
+          "description": "Optimización y cuantización de modelos en precisión FP16/INT8 para su ejecución en embebidos NVIDIA Jetson Orin Nano.",
+          "topics": [
+            "NVIDIA JetPack SDK",
+            "Cuantización INT8 en TensorRT",
+            "Conexión con cámaras de alta velocidad GigE",
+            "Optimización de consumo energético en embebidos"
+          ],
+          "instructor": "Ing. Gabriel Alva",
+          "location": "Sede IECA Silao (Lab Robótica y Embeddings)",
+          "prerequisites": [
+            "DL-401A o TS-401B"
+          ],
+          "nextNodes": [
+            "node-ia-capstone"
+          ],
+          "stepNumber": 5,
+          "level": "Avanzado"
+        },
+        {
+          "id": "node-ia-capstone",
+          "title": "Proyecto Capstone: Sistema Autónomo de Inspección & Predicción en Planta",
+          "code": "CAP-704",
+          "type": "capstone",
+          "status": "locked",
+          "hours": 55,
+          "estimatedDate": "Mes 8-9",
+          "description": "Desarrollo integral de un prototipo de inspección visual e inferencia en vivo instalado en una banda de prueba real.",
+          "topics": [
+            "Pipelines MLOps",
+            "Monitoreo de drift del modelo",
+            "Integración con alertas WhatsApp/Telegram",
+            "Presentación ejecutiva a directores de planta"
+          ],
+          "instructor": "Comité IA IECA & Mentores NVIDIA",
+          "location": "Sede IECA Silao",
+          "prerequisites": [
+            "EDG-501"
+          ],
+          "nextNodes": [],
+          "stepNumber": 6,
+          "level": "Experto"
+        }
+      ]
+    },
+    {
+      "id": "ruta-festo-pneumatics",
+      "title": "Experto en Automatización Neumática, Electroneumática & PLC Festo",
+      "subtitle": "Ruta Técnica de Control Fluidico para Máquinas Embaladoras y Líneas Continuas",
+      "category": "Mecatrónica",
+      "description": "Aprende el diseño de circuitos de accionamiento neumático, electroválvulas proporcionales, manipulación por vacío y control con PLC Festo CPX.",
+      "estimatedDurationMonths": 5,
+      "totalHours": 150,
+      "totalModules": 5,
+      "progressPercentage": 0,
+      "isActive": false,
+      "certifiedBy": "IECA & Festo Didactic",
+      "badge": "💨 Certificado Oficial Festo Didactic",
+      "colorGradient": "from-sky-400 via-blue-500 to-indigo-600",
+      "targetRoles": [
+        "Técnico Mantenista Neumático",
+        "Integrador de Fluidos",
+        "Diseñador de Automatismos"
+      ],
+      "enrolledStudentsCount": 620,
+      "nodes": [
+        {
+          "id": "node-fst-1",
+          "title": "Fundamentos de Neumática Industrial & Simbología ISO 1219",
+          "code": "PNE-101",
+          "type": "mandatory",
+          "status": "unlocked",
+          "hours": 25,
+          "estimatedDate": "Módulo Inicial",
+          "description": "Generación, preparación y distribución de aire comprimido. Cilindros de simple y doble efecto y válvulas distribuidoras.",
+          "topics": [
+            "Unidades FRL de preparación de aire",
+            "Válvulas 3/2, 5/2 y 5/3 de comando",
+            "Cálculo de fuerza y consumo de aire",
+            "Dimensionamiento de tuberías"
+          ],
+          "instructor": "Ing. Oscar Domínguez",
+          "location": "Sede IECA Irapuato (Lab Festo)",
+          "prerequisites": [],
+          "nextNodes": [
+            "node-fst-2"
+          ],
+          "stepNumber": 1,
+          "level": "Principiante"
+        },
+        {
+          "id": "node-fst-2",
+          "title": "Electroneumática y Lógica de Relés Secuenciales en FluidSIM",
+          "code": "ELP-201",
+          "type": "mandatory",
+          "status": "locked",
+          "hours": 30,
+          "estimatedDate": "Mes 2",
+          "description": "Control electroneumático mediante sensores de final de carrera, relés y diseño de secuencias complejas sin colisión en FluidSIM.",
+          "topics": [
+            "Solenoide de válvulas biestables/monoestables",
+            "Método Paso a Paso y Cascada",
+            "Sensores de proximidad magnéticos",
+            "Esquemas electroneumáticos en FluidSIM"
+          ],
+          "instructor": "Ing. Oscar Domínguez",
+          "location": "Sede IECA Irapuato",
+          "prerequisites": [
+            "PNE-101"
+          ],
+          "nextNodes": [
+            "node-fst-3a",
+            "node-fst-3b"
+          ],
+          "stepNumber": 2,
+          "level": "Intermedio"
+        },
+        {
+          "id": "node-fst-3a",
+          "title": "Ramificación Opcional A: Tecnología de Vacío & Generadores Eyectores Venturi",
+          "code": "VAC-301A",
+          "type": "optional_branch",
+          "branchGroup": "Especialidad Festo",
+          "branchLabel": "Opción A: Manipulación por Vacío & Ventosas",
+          "status": "locked",
+          "hours": 25,
+          "estimatedDate": "Mes 3",
+          "description": "Diseño de sistemas de sujeción para vidrio y láminas automotrices mediante bombas de vacío y ventosas inteligentes con vacuóstatos.",
+          "topics": [
+            "Principios del efecto Venturi",
+            "Selección de ventosas según rugosidad",
+            "Ahorro de aire comprimido con vacuóstatos",
+            "Pinzas de agarre blando Soft-Gripper"
+          ],
+          "instructor": "Ing. Ricardo Tamayo",
+          "location": "Sede IECA Celaya",
+          "prerequisites": [
+            "ELP-201"
+          ],
+          "nextNodes": [
+            "node-fst-4"
+          ],
+          "stepNumber": 3,
+          "level": "Intermedio"
+        },
+        {
+          "id": "node-fst-3b",
+          "title": "Ramificación Opcional B: Válvulas Proporcionales & Control Piezocerámico",
+          "code": "PRO-301B",
+          "type": "optional_branch",
+          "branchGroup": "Especialidad Festo",
+          "branchLabel": "Opción B: Neumática Proporcional & Control de Presión",
+          "status": "locked",
+          "hours": 25,
+          "estimatedDate": "Mes 3",
+          "description": "Regulación de presión y caudal proporcional en tiempo real para procesos de dosificación y prensas neumáticas de alta precisión.",
+          "topics": [
+            "Válvulas reguladoras proporcionales VPPM",
+            "Bucles de control PID neumático",
+            "Interfaces analógicas 0-10V y 4-20mA",
+            "Calibración de fuerza dinámica"
+          ],
+          "instructor": "M.C. Fernando Rivas",
+          "location": "Sede IECA Silao",
+          "prerequisites": [
+            "ELP-201"
+          ],
+          "nextNodes": [
+            "node-fst-4"
+          ],
+          "stepNumber": 3,
+          "level": "Avanzado"
+        },
+        {
+          "id": "node-fst-4",
+          "title": "Programación de Controladores Festo CPX-CEC & Redes IO-Link",
+          "code": "FES-401",
+          "type": "mandatory",
+          "status": "locked",
+          "hours": 35,
+          "estimatedDate": "Mes 4",
+          "description": "Integración de terminales de válvulas CPX con protocolo IO-Link en CODESYS v3.5 y comunicación industrial.",
+          "topics": [
+            "Programación CODESYS v3.5",
+            "Configuración de maestros IO-Link",
+            "Diagnóstico de cortocircuito por canal",
+            "Mapeo de señales con PLC principal"
+          ],
+          "instructor": "Ing. Claudia Montero",
+          "location": "Campus Virtual IECA + Lab Festo",
+          "prerequisites": [
+            "VAC-301A o PRO-301B"
+          ],
+          "nextNodes": [
+            "node-fst-capstone"
+          ],
+          "stepNumber": 4,
+          "level": "Avanzado"
+        },
+        {
+          "id": "node-fst-capstone",
+          "title": "Proyecto Capstone: Ensambladora Autónoma con Estación de Empaque Festo",
+          "code": "CAP-705",
+          "type": "capstone",
+          "status": "locked",
+          "hours": 35,
+          "estimatedDate": "Mes 5",
+          "description": "Construcción y prueba de una máquina empaquetadora neumática funcional con ciclo automático de carga, sellado y rechazo.",
+          "topics": [
+            "Montaje mecánico de actuadores",
+            "Programación de ciclo automático",
+            "Auditoría de eficiencia energética de aire",
+            "Demostración práctica"
+          ],
+          "instructor": "Comité Festo Didactic & IECA",
+          "location": "Sede IECA Irapuato",
+          "prerequisites": [
+            "FES-401"
+          ],
+          "nextNodes": [],
+          "stepNumber": 5,
+          "level": "Experto"
+        }
+      ]
+    },
+    {
+      "id": "ruta-mantenimiento-predictivo",
+      "title": "Ingeniero de Mantenimiento Predictivo & Análisis de Vibraciones CAT II",
+      "subtitle": "Ruta Especializada en Diagnóstico Mecánico, Termografía y Tribología Industrial",
+      "category": "Mantenimiento",
+      "description": "Formación avanzada bajo estándares ISO 18436 para detectar fallas prematuras en rodamientos, desalineaciones de ejes y desbalance en maquinaria rotativa.",
+      "estimatedDurationMonths": 7,
+      "totalHours": 210,
+      "totalModules": 7,
+      "progressPercentage": 0,
+      "isActive": false,
+      "certifiedBy": "IECA & Vibration Institute / Fluke",
+      "badge": "🔍 Certificación ISO 18436 Analista de Vibraciones",
+      "colorGradient": "from-amber-500 via-rose-500 to-red-600",
+      "targetRoles": [
+        "Ingeniero de Confiabilidad",
+        "Analista de Vibraciones",
+        "Supervisión de Mantenimiento"
+      ],
+      "enrolledStudentsCount": 540,
+      "nodes": [
+        {
+          "id": "node-mnt-1",
+          "title": "Fundamentos de Mantenimiento RCM & Tribología de Lubricantes",
+          "code": "RCM-101",
+          "type": "mandatory",
+          "status": "unlocked",
+          "hours": 25,
+          "estimatedDate": "Módulo Inicial",
+          "description": "Principios de Mantenimiento Basado en Confiabilidad (RCM), muestreo de aceite, viscosidad y conteo de partículas ISO 4406.",
+          "topics": [
+            "Metodología RCM (SAE JA1011)",
+            "Análisis espectrométrico de metales de desgaste",
+            "Viscosidad ASTM D445",
+            "Muestreo limpio de lubricantes"
+          ],
+          "instructor": "Ing. Héctor Saldaña",
+          "location": "Campus Virtual IECA",
+          "prerequisites": [],
+          "nextNodes": [
+            "node-mnt-2"
+          ],
+          "stepNumber": 1,
+          "level": "Principiante"
+        },
+        {
+          "id": "node-mnt-2",
+          "title": "Análisis de Vibraciones Nivel I: Colectores FFT & Medición de Amplitud",
+          "code": "VIB-201",
+          "type": "mandatory",
+          "status": "locked",
+          "hours": 30,
+          "estimatedDate": "Mes 2",
+          "description": "Uso de colectores de datos SKF / Emerson CSI para captura de espectros FFT en aceleración, velocidad y desplazamiento.",
+          "topics": [
+            "Sensores acelerómetros piezoeléctricos",
+            "Transformada Rápida de Fourier (FFT)",
+            "Frecuencias de falla de rodamientos BPFO/BPFI",
+            "Dominio de tiempo y envolvente demodulada"
+          ],
+          "instructor": "Ing. Mauricio Anaya (Certificado CAT III)",
+          "location": "Sede IECA Salamanca (Lab Mantenimiento)",
+          "prerequisites": [
+            "RCM-101"
+          ],
+          "nextNodes": [
+            "node-mnt-3a",
+            "node-mnt-3b"
+          ],
+          "stepNumber": 2,
+          "level": "Intermedio"
+        },
+        {
+          "id": "node-mnt-3a",
+          "title": "Ramificación Opcional A: Termografía Infrarroja Nivel I (Cámara Fluke / FLIR)",
+          "code": "TER-301A",
+          "type": "optional_branch",
+          "branchGroup": "Especialidad Diagnóstico",
+          "branchLabel": "Opción A: Termografía Infrarroja Eléctrica & Mecánica",
+          "status": "locked",
+          "hours": 30,
+          "estimatedDate": "Mes 3",
+          "description": "Detección de puntos calientes en subestaciones eléctricas, tableros de control y sobrecalentamiento de chumaceras.",
+          "topics": [
+            "Principios de emisividad y reflexividad",
+            "Calibración de paleta de colores térmica",
+            "Diagnóstico de falso contacto en tableros",
+            "Reportes según norma ISO 18436-7"
+          ],
+          "instructor": "Ing. Patricia Luna",
+          "location": "Sede IECA Silao",
+          "prerequisites": [
+            "VIB-201"
+          ],
+          "nextNodes": [
+            "node-mnt-4"
+          ],
+          "stepNumber": 3,
+          "level": "Intermedio"
+        },
+        {
+          "id": "node-mnt-3b",
+          "title": "Ramificación Opcional B: Alineación Láser de Ejes & Balanceo Dinámico",
+          "code": "ALI-301B",
+          "type": "optional_branch",
+          "branchGroup": "Especialidad Diagnóstico",
+          "branchLabel": "Opción B: Alineación Láser de Ejes & Balanceo de Rotor",
+          "status": "locked",
+          "hours": 30,
+          "estimatedDate": "Mes 3",
+          "description": "Corrección de pata suave y alineación de precisión de acoplamientos mediante equipos láser Easy-Laser / Prufbtechnik.",
+          "topics": [
+            "Medición de pata suave (Soft foot)",
+            "Alineación láser 9-12-3",
+            "Balanceo de rotores en 1 y 2 planos",
+            "Tolerancias de alineación según RPM"
+          ],
+          "instructor": "Ing. Mauricio Anaya",
+          "location": "Sede IECA Salamanca",
+          "prerequisites": [
+            "VIB-201"
+          ],
+          "nextNodes": [
+            "node-mnt-4"
+          ],
+          "stepNumber": 3,
+          "level": "Avanzado"
+        },
+        {
+          "id": "node-mnt-4",
+          "title": "Ultrasonido Pasivo Industrial & Detección de Fugas de Aire y Corona",
+          "code": "ULT-401",
+          "type": "mandatory",
+          "status": "locked",
+          "hours": 30,
+          "estimatedDate": "Mes 4-5",
+          "description": "Aplicación de detectores de ultrasonido de estructura y aerotransportado para auditoría de aire comprimido y trampas de vapor.",
+          "topics": [
+            "Frecuencias ultrasónicas de 40 kHz",
+            "Lubricación guiada por ultrasonido en vivo",
+            "Inspección de efecto corona en alta tensión",
+            "Cálculo del costo de fugas de aire"
+          ],
+          "instructor": "Ing. Jorge Negrete",
+          "location": "Sede IECA Silao",
+          "prerequisites": [
+            "TER-301A o ALI-301B"
+          ],
+          "nextNodes": [
+            "node-mnt-capstone"
+          ],
+          "stepNumber": 4,
+          "level": "Avanzado"
+        },
+        {
+          "id": "node-mnt-capstone",
+          "title": "Proyecto Capstone: Auditoría de Confiabilidad & Diagnóstico Integral de Planta",
+          "code": "CAP-706",
+          "type": "capstone",
+          "status": "locked",
+          "hours": 65,
+          "estimatedDate": "Mes 6-7",
+          "description": "Inspección práctica en un tren de transmisión real con dictamen de falla y recomendación de acción correctiva.",
+          "topics": [
+            "Integración de vibraciones + termografía + lubricantes",
+            "Generación de reporte técnico ejecutivo",
+            "Defensa oral de diagnóstico frente a jueces ISO"
+          ],
+          "instructor": "Comité de Confiabilidad IECA & Mentores CAT III",
+          "location": "Sede IECA Salamanca",
+          "prerequisites": [
+            "ULT-401"
+          ],
+          "nextNodes": [],
+          "stepNumber": 5,
+          "level": "Experto"
+        }
+      ]
+    },
+    {
+      "id": "ruta-cnc-mastercam",
+      "title": "Master en Mecanizado CNC de Alta Precisión & CAD/CAM Mastercam",
+      "subtitle": "Ruta Completa de Programación Manual Código G/M y Maquinado de 3 y 5 Ejes",
+      "category": "CNC & CAD",
+      "description": "Conviértete en un experto del maquinado industrial en centros de maquinado Haas y tornos CNC utilizando programación manual G-Code y estrategias avanzadas Mastercam 2026.",
+      "estimatedDurationMonths": 8,
+      "totalHours": 240,
+      "totalModules": 8,
+      "progressPercentage": 0,
+      "isActive": false,
+      "certifiedBy": "IECA & Mastercam / HAAS Automation",
+      "badge": "⚙️ Certificado Mastercam Professional Programmer",
+      "colorGradient": "from-slate-700 via-amber-600 to-yellow-500",
+      "targetRoles": [
+        "Programador CNC",
+        "Maquinista de Moldes y Troqueles",
+        "Superviser de Taller Mecánico"
+      ],
+      "enrolledStudentsCount": 1100,
+      "nodes": [
+        {
+          "id": "node-cnc-1",
+          "title": "Lectura de Planos de Ingeniería & Tolerancias Geométricas GD&T",
+          "code": "MET-101",
+          "type": "mandatory",
+          "status": "unlocked",
+          "hours": 25,
+          "estimatedDate": "Módulo Inicial",
+          "description": "Interpretación de simbología GD&T según norma ASME Y14.5, medición con micrómetro y calibrador vernier de alta precisión.",
+          "topics": [
+            "Datums y marco de referencia de control",
+            "Tolerancias de posición, concentricidad y planitud",
+            "Calibración de micrómetros de exteriores",
+            "Bloques patrón de precisión"
+          ],
+          "instructor": "Ing. Tomás Becerra",
+          "location": "Campus Virtual IECA",
+          "prerequisites": [],
+          "nextNodes": [
+            "node-cnc-2"
+          ],
+          "stepNumber": 1,
+          "level": "Principiante"
+        },
+        {
+          "id": "node-cnc-2",
+          "title": "Programación Manual CNC Código G/M en Controles Haas / Fanuc",
+          "code": "GCD-201",
+          "type": "mandatory",
+          "status": "locked",
+          "hours": 35,
+          "estimatedDate": "Mes 2",
+          "description": "Estructuración de programas ISO en código G00, G01, G02, G03, ciclos enlatados G81/G83 y compensación de herramienta G41/G42.",
+          "topics": [
+            "Cero pieza G54-G59",
+            "Offset de herramientas G43 H-code",
+            "Ciclos enlatados de taladrado y roscado",
+            "Subprogramas M98/M99"
+          ],
+          "instructor": "Ing. Gabriel Alcocer (Sede Silao)",
+          "location": "Sede IECA Silao (Taller de Maquinado CNC Haas)",
+          "prerequisites": [
+            "MET-101"
+          ],
+          "nextNodes": [
+            "node-cnc-3a",
+            "node-cnc-3b"
+          ],
+          "stepNumber": 2,
+          "level": "Intermedio"
+        },
+        {
+          "id": "node-cnc-3a",
+          "title": "Ramificación Opcional A: Mastercam 2D/3D Fresado & Estrategias Dynamic Motion",
+          "code": "CAM-301A",
+          "type": "optional_branch",
+          "branchGroup": "Especialidad CAM",
+          "branchLabel": "Opción A: Mastercam Fresado 3D & Desbaste de Alta Velocidad",
+          "status": "locked",
+          "hours": 35,
+          "estimatedDate": "Mes 3-4",
+          "description": "Uso de Mastercam Mill 3D con trayectorias Dynamic Motion para prolongar la vida útil de cortadores de carburo y reducir tiempos de ciclo.",
+          "topics": [
+            "Importación de modelos CAD STEP",
+            "Desbaste de alta velocidad OptiRough",
+            "Acabados de superficie 3D Scallop y Equal Scallop",
+            "Post-procesadores para Haas/Fanuc"
+          ],
+          "instructor": "Ing. Gabriel Alcocer",
+          "location": "Campus Virtual IECA + Taller CNC",
+          "prerequisites": [
+            "GCD-201"
+          ],
+          "nextNodes": [
+            "node-cnc-4"
+          ],
+          "stepNumber": 3,
+          "level": "Avanzado"
+        },
+        {
+          "id": "node-cnc-3b",
+          "title": "Ramificación Opcional B: Mastercam Torneado CNC & Herramientas Vivas (C/Y Axis)",
+          "code": "CAM-301B",
+          "type": "optional_branch",
+          "branchGroup": "Especialidad CAM",
+          "branchLabel": "Opción B: Torneado CNC Avanzado & Eje Y",
+          "status": "locked",
+          "hours": 35,
+          "estimatedDate": "Mes 3-4",
+          "description": "Programación de tornos con torreta motorizada, fresado transversal en eje Y y operaciones de sub-husillo.",
+          "topics": [
+            "Operaciones de careado, cilindrado y ranurado",
+            "Programación de eje C y herramienta viva",
+            "Transferencia de pieza a sub-husillo",
+            "Cálculo de fuerzas de trinchado"
+          ],
+          "instructor": "Ing. Rodolfo Macías",
+          "location": "Sede IECA Silao",
+          "prerequisites": [
+            "GCD-201"
+          ],
+          "nextNodes": [
+            "node-cnc-4"
+          ],
+          "stepNumber": 3,
+          "level": "Avanzado"
+        },
+        {
+          "id": "node-cnc-4",
+          "title": "Mecanizado Multi-Ejes 5 Ejes Simultáneos & Verificación VERICUT",
+          "code": "CNC-501",
+          "type": "mandatory",
+          "status": "locked",
+          "hours": 45,
+          "estimatedDate": "Mes 5-6",
+          "description": "Puesta a punto de centros de maquinado de 5 ejes mesa basculante (Trunnion) y simulación anti-colisiones en VERICUT 9.4.",
+          "topics": [
+            "Transformación de plano de trabajo DWO/TCPC",
+            "Trayectorias 5 Ejes Swarf y Multiaxis",
+            "Simulación virtual VERICUT contra colisiones de cabezal",
+            "Ajuste de avances dinámicos"
+          ],
+          "instructor": "Ing. Gabriel Alcocer",
+          "location": "Sede IECA Silao (Centro CNC 5 Ejes)",
+          "prerequisites": [
+            "CAM-301A o CAM-301B"
+          ],
+          "nextNodes": [
+            "node-cnc-capstone"
+          ],
+          "stepNumber": 4,
+          "level": "Avanzado"
+        },
+        {
+          "id": "node-cnc-capstone",
+          "title": "Proyecto Capstone: Fabricación de Molde de Inyección de Plástico Complejo",
+          "code": "CAP-707",
+          "type": "capstone",
+          "status": "locked",
+          "hours": 65,
+          "estimatedDate": "Mes 7-8",
+          "description": "Diseño y maquinado completo del corazón y cavidad de un molde de inyección automotriz en acero P20 endurecido.",
+          "topics": [
+            "Selección de insertos de carburo",
+            "Ejecución de maquinado continuo de 12 horas",
+            "Verificación CMM de tolerancias en aleación duradera",
+            "Prueba de inyección de plástico"
+          ],
+          "instructor": "Comité de Mecanizado IECA & Haas",
+          "location": "Sede IECA Silao",
+          "prerequisites": [
+            "CNC-501"
+          ],
+          "nextNodes": [],
+          "stepNumber": 5,
+          "level": "Experto"
+        }
+      ]
+    },
+    {
+      "id": "ruta-lean-sixsigma",
+      "title": "Gestión de Operaciones Industriales, Lean Manufacturing & Six Sigma Green Belt",
+      "subtitle": "Ruta Estratégica de Optimización de Procesos, Eliminación de Desperdicios y Métodos DMAIC",
+      "category": "Mantenimiento",
+      "description": "Ruta directiva y operativa enfocada en metodologías Toyota Production System, mapeo de flujo de valor (VSM), Kaizen y control estadístico Minitab.",
+      "estimatedDurationMonths": 6,
+      "totalHours": 180,
+      "totalModules": 6,
+      "progressPercentage": 0,
+      "isActive": false,
+      "certifiedBy": "IECA & Lean Six Sigma Institute (LSSI)",
+      "badge": "📊 Certificación Six Sigma Green Belt (CSSGB)",
+      "colorGradient": "from-emerald-600 via-teal-500 to-sky-600",
+      "targetRoles": [
+        "Ingeniero de Procesos",
+        "Líder de Mejora Continua",
+        "Supervisión de Producción"
+      ],
+      "enrolledStudentsCount": 1650,
+      "nodes": [
+        {
+          "id": "node-lean-1",
+          "title": "Fundamentos de Lean Manufacturing & Sistema 5S + Seguridad (EHS)",
+          "code": "LEA-101",
+          "type": "mandatory",
+          "status": "unlocked",
+          "hours": 25,
+          "estimatedDate": "Módulo Inicial",
+          "description": "Identificación de los 8 desperdicios (Muda), implementación de 5S auditorías de cumplimiento y ergonomics industrial.",
+          "topics": [
+            "Los 8 Desperdicios Industriales",
+            "Metodología 5S en piso de trabajo",
+            "Visual Management & Tarjetas Kanban",
+            "Seguridad industrial EHS básica"
+          ],
+          "instructor": "M.A. Roberto Soria",
+          "location": "Campus Virtual IECA",
+          "prerequisites": [],
+          "nextNodes": [
+            "node-lean-2"
+          ],
+          "stepNumber": 1,
+          "level": "Principiante"
+        },
+        {
+          "id": "node-lean-2",
+          "title": "Value Stream Mapping (VSM) & Balanceo de Líneas de Producción",
+          "code": "VSM-201",
+          "type": "mandatory",
+          "status": "locked",
+          "hours": 30,
+          "estimatedDate": "Mes 2",
+          "description": "Mapeo del estado actual y futuro del flujo de valor, cálculo de Takt Time, Cycle Time y tiempo de entrega (Lead Time).",
+          "topics": [
+            "Diagramas de flujo de información y material",
+            "Cálculo exacto de Takt Time",
+            "Yamazumi chart para balanceo de operadores",
+            "Métricas de inventario WIP"
+          ],
+          "instructor": "Ing. Lorena Villaseñor",
+          "location": "Sede IECA Celaya",
+          "prerequisites": [
+            "LEA-101"
+          ],
+          "nextNodes": [
+            "node-lean-3a",
+            "node-lean-3b"
+          ],
+          "stepNumber": 2,
+          "level": "Intermedio"
+        },
+        {
+          "id": "node-lean-3a",
+          "title": "Ramificación Opcional A: SMED (Cambio Rápido de Herramental en < 10 min)",
+          "code": "SME-301A",
+          "type": "optional_branch",
+          "branchGroup": "Especialidad Optimización",
+          "branchLabel": "Opción A: SMED & Reducción de Setup de Troqueles",
+          "status": "locked",
+          "hours": 30,
+          "estimatedDate": "Mes 3",
+          "description": "Conversión de operaciones internas a externas para reducir el tiempo de cambio de formato de troquelado a menos de 10 minutos.",
+          "topics": [
+            "Análisis en video de operaciones de setup",
+            "Separación de tareas internas y externas",
+            "Estandarización de pernos rápidos",
+            "Cálculo de disponibilidad OEE"
+          ],
+          "instructor": "Ing. Lorena Villaseñor",
+          "location": "Sede IECA Celaya",
+          "prerequisites": [
+            "VSM-201"
+          ],
+          "nextNodes": [
+            "node-lean-4"
+          ],
+          "stepNumber": 3,
+          "level": "Intermedio"
+        },
+        {
+          "id": "node-lean-3b",
+          "title": "Ramificación Opcional B: Poka-Yoke & Diseño de Dispositivos A Prueba de Errores",
+          "code": "POK-301B",
+          "type": "optional_branch",
+          "branchGroup": "Especialidad Optimización",
+          "branchLabel": "Opción B: Poka-Yoke & Dispositivos Anti-Error",
+          "status": "locked",
+          "hours": 30,
+          "estimatedDate": "Mes 3",
+          "description": "Diseño de mecanismos físicos y sensores ópticos para imposibilitar la producción de piezas defectuosas en el ensamble.",
+          "topics": [
+            "Mecanismos de detección física",
+            "Sensores fotoeléctricos de presencia",
+            "Matriz AMEF de proceso (PFMEA)",
+            "Pruebas de evasión de fallas"
+          ],
+          "instructor": "Ing. Marco Antonio Cruz",
+          "location": "Sede IECA Silao",
+          "prerequisites": [
+            "VSM-201"
+          ],
+          "nextNodes": [
+            "node-lean-4"
+          ],
+          "stepNumber": 3,
+          "level": "Avanzado"
+        },
+        {
+          "id": "node-lean-4",
+          "title": "Seis Sigma Green Belt: Metodología DMAIC & Análisis Estadístico en Minitab",
+          "code": "SSG-401",
+          "type": "mandatory",
+          "status": "locked",
+          "hours": 35,
+          "estimatedDate": "Mes 4-5",
+          "description": "Fases Define, Measure, Analyze, Improve, Control. Pruebas de hipótesis, ANOVA, regresión y gráficos de control SPC en Minitab.",
+          "topics": [
+            "Fase Definir & Charter de Proyecto",
+            "Estudio R&R de Gage (Repetibilidad y Reproducibilidad)",
+            "Pruebas de hipótesis t de Student y ANOVA",
+            "Capacidad de proceso Cp y Cpk"
+          ],
+          "instructor": "Master Black Belt Fernando Macías",
+          "location": "Campus Virtual IECA",
+          "prerequisites": [
+            "SME-301A o POK-301B"
+          ],
+          "nextNodes": [
+            "node-lean-capstone"
+          ],
+          "stepNumber": 4,
+          "level": "Avanzado"
+        },
+        {
+          "id": "node-lean-capstone",
+          "title": "Proyecto Capstone: Reducción de Defectos Kaizen con Retorno Financiero Real",
+          "code": "CAP-708",
+          "type": "capstone",
+          "status": "locked",
+          "hours": 30,
+          "estimatedDate": "Mes 6",
+          "description": "Ejecución de un evento Kaizen de 5 días para reducir la tasa de rechazo o desperdicio en una línea real de la industria.",
+          "topics": [
+            "Definición de ahorro financiero en USD",
+            "Implementación de cambios en planta",
+            "Auditoría de sostenibilidad a 60 días",
+            "Certificación Six Sigma Green Belt"
+          ],
+          "instructor": "Comité Lean Six Sigma LSSI & IECA",
+          "location": "Sede IECA Silao / Planta de Estudio",
+          "prerequisites": [
+            "SSG-401"
+          ],
+          "nextNodes": [],
+          "stepNumber": 5,
+          "level": "Experto"
+        }
+      ]
+    },
+    {
+      "id": "ruta-web-fullstack",
+      "title": "Desarrollador Web Fullstack Moderno & Arquitectura Cloud",
+      "subtitle": "Ruta Completa de HTML5, CSS3, JavaScript ES6+, Node.js, React/Next.js y AWS",
+      "category": "Desarrollo Web",
+      "description": "Aprende a construir aplicaciones web completas desde la maquetación responsiva frontend hasta servidores Node.js backend, bases de datos PostgreSQL y despliegue en la nube de Amazon Web Services.",
+      "estimatedDurationMonths": 7,
+      "totalHours": 210,
+      "totalModules": 7,
+      "progressPercentage": 0,
+      "isActive": false,
+      "certifiedBy": "IECA & Meta / AWS Training Partner",
+      "badge": "🌐 Certificación Web Fullstack Developer",
+      "colorGradient": "from-sky-500 via-indigo-500 to-purple-600",
+      "targetRoles": [
+        "Desarrollador Web Fullstack",
+        "Ingeniero Frontend React",
+        "Desarrollador Backend Node.js"
+      ],
+      "enrolledStudentsCount": 2340,
+      "nodes": [
+        {
+          "id": "node-web-1",
+          "title": "HTML5 Semántico, CSS3 Flexbox/Grid & TailwindCSS",
+          "code": "WEB-101",
+          "type": "mandatory",
+          "status": "unlocked",
+          "hours": 25,
+          "estimatedDate": "Módulo Inicial",
+          "description": "Estructuración semántica web, layouts responsivos con Flexbox/Grid y maquetación ágil basada en utilidades TailwindCSS.",
+          "topics": [
+            "Semántica HTML5 & Accesibilidad ARIA",
+            "Layouts Responsivos Flexbox y CSS Grid",
+            "Variables CSS y Design System con Tailwind",
+            "Media Queries y Mobile-First"
+          ],
+          "instructor": "Ing. Fernando Tapia",
+          "location": "Campus Virtual IECA",
+          "prerequisites": [],
+          "nextNodes": [
+            "node-web-2"
+          ],
+          "stepNumber": 1,
+          "level": "Principiante"
+        },
+        {
+          "id": "node-web-2",
+          "title": "JavaScript Moderno (ES6+), Asincronismo & Manipulación DOM",
+          "code": "JS-201",
+          "type": "mandatory",
+          "status": "locked",
+          "hours": 30,
+          "estimatedDate": "Mes 2",
+          "description": "Fundamentos profundos de JS: Promesas, Async/Await, Fetch API, Closures, Módulos ES6 y eventos del navegador.",
+          "topics": [
+            "Event Loop & Call Stack",
+            "Promesas y Async/Await",
+            "Fetch API y consumo de REST APIs",
+            "Módulos ES6 y Programación Funcional"
+          ],
+          "instructor": "Lic. Claudia Morales",
+          "location": "Campus Virtual IECA",
+          "prerequisites": [
+            "WEB-101"
+          ],
+          "nextNodes": [
+            "node-web-3"
+          ],
+          "stepNumber": 2,
+          "level": "Intermedio"
+        },
+        {
+          "id": "node-web-3",
+          "title": "Desarrollo Backend con Node.js, Express & PostgreSQL",
+          "code": "BE-301",
+          "type": "mandatory",
+          "status": "locked",
+          "hours": 35,
+          "estimatedDate": "Mes 3",
+          "description": "Construcción de servidores RESTful seguros con Express, autenticación JWT, ORM Prisma y PostgreSQL.",
+          "topics": [
+            "Arquitectura MVC en Node.js",
+            "Bases de Datos Relacionales PostgreSQL",
+            "ORM Prisma / Sequelize",
+            "Autenticación con JWT & Hashing de Passwords"
+          ],
+          "instructor": "Ing. Miguel Ángel Ruiz",
+          "location": "Campus Virtual IECA",
+          "prerequisites": [
+            "JS-201"
+          ],
+          "nextNodes": [
+            "node-web-4a",
+            "node-web-4b"
+          ],
+          "stepNumber": 3,
+          "level": "Intermedio"
+        },
+        {
+          "id": "node-web-4a",
+          "title": "Ramificación Opcional A: Frontend React.js, Next.js App Router & TypeScript",
+          "code": "WEB-401A",
+          "type": "optional_branch",
+          "branchGroup": "Especialidad Web",
+          "branchLabel": "Opción A: Frontend Avanzado Next.js & Server Components",
+          "status": "locked",
+          "hours": 35,
+          "estimatedDate": "Mes 4-5",
+          "description": "Desarrollo de interfaces dinámicas con React 19, Server Components de Next.js y tipado estricto en TypeScript.",
+          "topics": [
+            "Hooks de React (useState, useEffect, useMemo)",
+            "Next.js App Router & Server Actions",
+            "Tipado estricto con TypeScript",
+            "Gestión de Estado Global (Zustand / Redux)"
+          ],
+          "instructor": "Ing. Fernando Tapia",
+          "location": "Campus Virtual IECA",
+          "prerequisites": [
+            "BE-301"
+          ],
+          "nextNodes": [
+            "node-web-5"
+          ],
+          "stepNumber": 4,
+          "level": "Avanzado"
+        },
+        {
+          "id": "node-web-4b",
+          "title": "Ramificación Opcional B: Microservicios Backend, GraphQL & Docker",
+          "code": "WEB-401B",
+          "type": "optional_branch",
+          "branchGroup": "Especialidad Web",
+          "branchLabel": "Opción B: Arquitectura Backend Microservicios & Docker",
+          "status": "locked",
+          "hours": 35,
+          "estimatedDate": "Mes 4-5",
+          "description": "Diseño de arquitecturas desacopladas mediante GraphQL Apollo Server, contenedores Docker y colas de mensajes RabbitMQ.",
+          "topics": [
+            "Esquemas GraphQL & Resolvers",
+            "Contenedores Docker & Docker Compose",
+            "Comunicación asíncrona con RabbitMQ/Redis",
+            "Monitoreo con Prometheus y Grafana"
+          ],
+          "instructor": "M.C. Daniel Rosales",
+          "location": "Campus Virtual IECA",
+          "prerequisites": [
+            "BE-301"
+          ],
+          "nextNodes": [
+            "node-web-5"
+          ],
+          "stepNumber": 4,
+          "level": "Avanzado"
+        },
+        {
+          "id": "node-web-5",
+          "title": "Despliegue Cloud AWS (EC2, S3, RDS) & Integración Continua CI/CD",
+          "code": "CLD-501",
+          "type": "mandatory",
+          "status": "locked",
+          "hours": 25,
+          "estimatedDate": "Mes 6",
+          "description": "Puesta en producción de aplicaciones en Amazon EC2, almacenamiento S3, base de datos RDS y automatización con GitHub Actions.",
+          "topics": [
+            "Instancias Amazon EC2 & Nginx Reverse Proxy",
+            "Almacenamiento S3 & CDN CloudFront",
+            "GitHub Actions Pipelines CI/CD",
+            "Certificados SSL/TLS gratuitos Certbot"
+          ],
+          "instructor": "Ing. Rodrigo Cárdenas",
+          "location": "Campus Virtual IECA",
+          "prerequisites": [
+            "WEB-401A o WEB-401B"
+          ],
+          "nextNodes": [
+            "node-web-capstone"
+          ],
+          "stepNumber": 5,
+          "level": "Avanzado"
+        },
+        {
+          "id": "node-web-capstone",
+          "title": "Proyecto Capstone: Sistema SaaS Enterprise con Pagos Stripe & Auth",
+          "code": "CAP-709",
+          "type": "capstone",
+          "status": "locked",
+          "hours": 25,
+          "estimatedDate": "Mes 7",
+          "description": "Desarrollo y despliegue real de una plataforma SaaS completa con pasarela de pagos Stripe, panel administrativo y analíticas.",
+          "topics": [
+            "Integración de pasarela Stripe Webhooks",
+            "Arquitectura SaaS Multi-tenant",
+            "Pruebas E2E con Playwright",
+            "Presentación del prototipo funcional"
+          ],
+          "instructor": "Comité de Desarrollo Web IECA & AWS",
+          "location": "Campus Virtual IECA",
+          "prerequisites": [
+            "CLD-501"
+          ],
+          "nextNodes": [],
+          "stepNumber": 6,
+          "level": "Experto"
+        }
+      ]
+    },
+    {
+      "id": "ruta-ia-generativa",
+      "title": "Especialista en IA Generativa, Modelos LLM & Agentes Autónomos",
+      "subtitle": "Ruta Avanzada de Prompt Engineering, Fine-Tuning de LLMs, LangChain & RAG",
+      "category": "IA & Software",
+      "description": "Aprende a integrar modelos de lenguaje avanzados (GPT-4o, Llama 3, Claude 3.5), crear sistemas RAG con bases de datos vectoriales y desarrollar agentes autónomos multimodales.",
+      "estimatedDurationMonths": 6,
+      "totalHours": 190,
+      "totalModules": 6,
+      "progressPercentage": 0,
+      "isActive": false,
+      "certifiedBy": "IECA & OpenAI / Anthropic Academy",
+      "badge": "🤖 Certificado Generative AI & Agentic Developer",
+      "colorGradient": "from-emerald-400 via-teal-500 to-cyan-500",
+      "targetRoles": [
+        "Ingeniero de IA Generativa",
+        "Desarrollador de Agentes LLM",
+        "Arquitecto de Soluciones RAG"
+      ],
+      "enrolledStudentsCount": 2890,
+      "nodes": [
+        {
+          "id": "node-genai-1",
+          "title": "Fundamentos de IA Generativa & Arquitectura Transformer",
+          "code": "GEN-101",
+          "type": "mandatory",
+          "status": "unlocked",
+          "hours": 25,
+          "estimatedDate": "Módulo Inicial",
+          "description": "Comprensión profunda de la arquitectura Transformer, Self-Attention, Tokenización y funcionamiento de grandes modelos de lenguaje (LLMs).",
+          "topics": [
+            "Mecanismo de Atención Self-Attention",
+            "Tokenización Byte-Pair Encoding (BPE)",
+            "Modelos Autoregresivos GPT",
+            "Embeddings vectoriales de texto"
+          ],
+          "instructor": "Dr. Alejandro Torres",
+          "location": "Campus Virtual IECA",
+          "prerequisites": [],
+          "nextNodes": [
+            "node-genai-2"
+          ],
+          "stepNumber": 1,
+          "level": "Principiante"
+        },
+        {
+          "id": "node-genai-2",
+          "title": "Prompt Engineering Avanzado, Few-Shot & Structuring JSON",
+          "code": "PRM-201",
+          "type": "mandatory",
+          "status": "locked",
+          "hours": 30,
+          "estimatedDate": "Mes 2",
+          "description": "Técnicas de ingeniería de instrucciones: Chain-of-Thought, ReAct, salidas estructuradas JSON y control de alucinaciones en modelos.",
+          "topics": [
+            "Patrones de Prompting Few-Shot & Zero-Shot",
+            "Chain-of-Thought (CoT) & Tree of Thoughts",
+            "Generación de JSON estructurado garantizado",
+            "Estrategias anti-alucinación y evaluación de temperatura"
+          ],
+          "instructor": "Mtra. Sofía Mendoza",
+          "location": "Campus Virtual IECA",
+          "prerequisites": [
+            "GEN-101"
+          ],
+          "nextNodes": [
+            "node-genai-3"
+          ],
+          "stepNumber": 2,
+          "level": "Intermedio"
+        },
+        {
+          "id": "node-genai-3",
+          "title": "Retrieval-Augmented Generation (RAG) & Vector DBs (Pinecone, ChromaDB)",
+          "code": "RAG-301",
+          "type": "mandatory",
+          "status": "locked",
+          "hours": 35,
+          "estimatedDate": "Mes 3",
+          "description": "Implementación de sistemas RAG conectando documentos PDF, manuales de ingeniería y bases de conocimiento con LLMs mediante búsqueda por similitud de cosenos.",
+          "topics": [
+            "Estrategias de Chunking (Recursive, Semantic)",
+            "Bases de Datos Vectoriales Pinecone / ChromaDB / Qdrant",
+            "Búsqueda por similitud de cosenos HNSW",
+            "Re-Ranking con modelos Cohere"
+          ],
+          "instructor": "Dr. Alejandro Torres",
+          "location": "Campus Virtual IECA",
+          "prerequisites": [
+            "PRM-201"
+          ],
+          "nextNodes": [
+            "node-genai-4a",
+            "node-genai-4b"
+          ],
+          "stepNumber": 3,
+          "level": "Intermedio"
+        },
+        {
+          "id": "node-genai-4a",
+          "title": "Ramificación Opcional A: Orquestación de Agentes Autónomos con LangChain & AutoGen",
+          "code": "AI-401A",
+          "type": "optional_branch",
+          "branchGroup": "Especialidad IA Generativa",
+          "branchLabel": "Opción A: Agentes Autónomos Multi-Agente (LangChain / CrewAI)",
+          "status": "locked",
+          "hours": 35,
+          "estimatedDate": "Mes 4",
+          "description": "Diseño de agentes inteligentes autónomos equipados con herramientas de ejecución de código, búsquedas web y razonamiento colaborativo.",
+          "topics": [
+            "Framework LangChain & LangGraph",
+            "CrewAI & Microsoft AutoGen para sistemas multi-agente",
+            "Tools & Function Calling",
+            "Gestión de memoria de corto y largo plazo"
+          ],
+          "instructor": "Ing. Gabriel Alva",
+          "location": "Campus Virtual IECA",
+          "prerequisites": [
+            "RAG-301"
+          ],
+          "nextNodes": [
+            "node-genai-5"
+          ],
+          "stepNumber": 4,
+          "level": "Avanzado"
+        },
+        {
+          "id": "node-genai-4b",
+          "title": "Ramificación Opcional B: Fine-Tuning de Modelos de Lenguaje Abiertos (Llama 3 / Mistral)",
+          "code": "AI-401B",
+          "type": "optional_branch",
+          "branchGroup": "Especialidad IA Generativa",
+          "branchLabel": "Opción B: Fine-Tuning de LLMs con LoRA & HuggingFace",
+          "status": "locked",
+          "hours": 35,
+          "estimatedDate": "Mes 4",
+          "description": "Entrenamiento adaptativo de modelos de código abierto (Llama 3 8B/70B, Mistral) usando LoRA, QLoRA y Hugging Face Transformers.",
+          "topics": [
+            "Técnicas de cuantización PEFT & LoRA / QLoRA",
+            "Preparación de Datasets de Instrucciones SFT",
+            "Evaluación de perplejidad y BENCHMARKS LLM",
+            "Despliegue local con vLLM & Ollama"
+          ],
+          "instructor": "Dr. Jaime Villalobos",
+          "location": "Campus Virtual IECA + GPU Cluster",
+          "prerequisites": [
+            "RAG-301"
+          ],
+          "nextNodes": [
+            "node-genai-5"
+          ],
+          "stepNumber": 4,
+          "level": "Avanzado"
+        },
+        {
+          "id": "node-genai-5",
+          "title": "Ciberseguridad AI, Red Teaming & Guardrails (NeMo Guardrails)",
+          "code": "SEC-502",
+          "type": "mandatory",
+          "status": "locked",
+          "hours": 30,
+          "estimatedDate": "Mes 5",
+          "description": "Protección contra inyección de prompts, exfiltración de datos confidenciales y validación de respuestas con NVIDIA NeMo Guardrails.",
+          "topics": [
+            "Ataques de Prompt Injection & Jailbreaking",
+            "NVIDIA NeMo Guardrails",
+            "Filtros de contenido y moderación",
+            "Cumplimiento de privacidad de datos industrias"
+          ],
+          "instructor": "Ing. Gabriel Alva",
+          "location": "Campus Virtual IECA",
+          "prerequisites": [
+            "AI-401A o AI-401B"
+          ],
+          "nextNodes": [
+            "node-genai-capstone"
+          ],
+          "stepNumber": 5,
+          "level": "Avanzado"
+        },
+        {
+          "id": "node-genai-capstone",
+          "title": "Proyecto Capstone: Copiloto Inteligente Empresarial con Agentes RAG & Voz",
+          "code": "CAP-710",
+          "type": "capstone",
+          "status": "locked",
+          "hours": 35,
+          "estimatedDate": "Mes 6",
+          "description": "Construcción y despliegue de un asistente agéntico multimodal de voz y texto con acceso seguro a bases de conocimientos técnicas.",
+          "topics": [
+            "Integración Whisper Speech-to-Text",
+            "Pipeline Agéntico en producción",
+            "Monitoreo de latencia y costos token por consulta",
+            "Demostración en vivo ante comité IA"
+          ],
+          "instructor": "Comité de IA Generativa IECA & OpenAI",
+          "location": "Campus Virtual IECA",
+          "prerequisites": [
+            "SEC-502"
+          ],
+          "nextNodes": [],
+          "stepNumber": 6,
+          "level": "Experto"
+        }
+      ]
+    },
+    {
+      "id": "ruta-videojuegos-3d",
+      "title": "Desarrollador de Videojuegos 3D, Unreal Engine 5 & Unity",
+      "subtitle": "Ruta Profesional de Programación C++/C#, Visual Scripting Blueprints & Gráficos 3D",
+      "category": "Videojuegos",
+      "description": "Formación completa para crear experiencias interactivas y videojuegos 3D de alta fidelidad visual en Unreal Engine 5 y Unity, desde mecánicas gameplay hasta gráficos Lumen/Nanite y multijugador.",
+      "estimatedDurationMonths": 8,
+      "totalHours": 240,
+      "totalModules": 8,
+      "progressPercentage": 0,
+      "isActive": false,
+      "certifiedBy": "IECA & Epic Games / Unity Authorized",
+      "badge": "🎮 Certificado Unreal Engine 5 Game Developer",
+      "colorGradient": "from-purple-600 via-rose-500 to-amber-500",
+      "targetRoles": [
+        "Programador de Videojuegos",
+        "Gameplay Developer Unreal Engine",
+        "Desarrollador Unity 3D"
+      ],
+      "enrolledStudentsCount": 1950,
+      "nodes": [
+        {
+          "id": "node-game-1",
+          "title": "Fundamentos de Game Design, Matemáticas 3D & Física de Videojuegos",
+          "code": "GAM-101",
+          "type": "mandatory",
+          "status": "unlocked",
+          "hours": 25,
+          "estimatedDate": "Módulo Inicial",
+          "description": "Principios de diseño de niveles, física de cuerpos rígidos, vectores 3D, cuaterniones y bucle principal del juego (Game Loop).",
+          "topics": [
+            "Álgebra Lineal & Vectores en 3D",
+            "Colisiones Raycasting y Cuerpos Rígidos",
+            "Documento de Diseño de Juego (GDD)",
+            "Principios de Jugabilidad & Feedback"
+          ],
+          "instructor": "Lic. Mateo Trejo",
+          "location": "Campus Virtual IECA",
+          "prerequisites": [],
+          "nextNodes": [
+            "node-game-2"
+          ],
+          "stepNumber": 1,
+          "level": "Principiante"
+        },
+        {
+          "id": "node-game-2",
+          "title": "Programación C# & Desarrollo 2D/3D en Unity Engine",
+          "code": "UNI-201",
+          "type": "mandatory",
+          "status": "locked",
+          "hours": 35,
+          "estimatedDate": "Mes 2",
+          "description": "Programación orientada a objetos en C#, arquitectura de componentes MonoBehavior, Prefabs y físicas 3D en Unity.",
+          "topics": [
+            "Sistemas de Componentes de Unity",
+            "Programación de Controladores de Jugador",
+            "Sistemas de Partículas & Shaders Básicos",
+            "UI Toolkit & Menús Interactivos"
+          ],
+          "instructor": "Ing. Valeria Méndez",
+          "location": "Campus Virtual IECA",
+          "prerequisites": [
+            "GAM-101"
+          ],
+          "nextNodes": [
+            "node-game-3"
+          ],
+          "stepNumber": 2,
+          "level": "Intermedio"
+        },
+        {
+          "id": "node-game-3",
+          "title": "Introducción a Unreal Engine 5, Sistema Nanite, Lumen & Blueprints",
+          "code": "UE5-301",
+          "type": "mandatory",
+          "status": "locked",
+          "hours": 35,
+          "estimatedDate": "Mes 3",
+          "description": "Creación de escenarios hiperrealistas en Unreal Engine 5 con geometría Nanite, iluminación global en tiempo real Lumen y lógica Blueprints.",
+          "topics": [
+            "Navegación del Editor UE5",
+            "Sistema de Geometría Nanite",
+            "Iluminación Dinámica Lumen",
+            "Programación Visual con Blueprints"
+          ],
+          "instructor": "Ing. Mateo Trejo (Unreal Certified)",
+          "location": "Campus Virtual IECA",
+          "prerequisites": [
+            "UNI-201"
+          ],
+          "nextNodes": [
+            "node-game-4a",
+            "node-game-4b"
+          ],
+          "stepNumber": 3,
+          "level": "Intermedio"
+        },
+        {
+          "id": "node-game-4a",
+          "title": "Ramificación Opcional A: Programación C++ Avanzada para Gameplay en Unreal Engine 5",
+          "code": "GAM-401A",
+          "type": "optional_branch",
+          "branchGroup": "Especialidad Videojuegos",
+          "branchLabel": "Opción A: Programación C++ de Gameplay & AI Behavior Trees",
+          "status": "locked",
+          "hours": 35,
+          "estimatedDate": "Mes 4-5",
+          "description": "Implementación de clases C++ nativas en UE5, macros de reflexión UPROPERTY/UFUNCTION y árboles de comportamiento de inteligencia artificial para enemigos.",
+          "topics": [
+            "Clases C++ UObject, AActor y ACharacter",
+            "Behavior Trees & Blackboard para IA de Enemigos",
+            "Gameplay Ability System (GAS)",
+            "Optimización de memoria en C++"
+          ],
+          "instructor": "Ing. Mateo Trejo",
+          "location": "Campus Virtual IECA",
+          "prerequisites": [
+            "UE5-301"
+          ],
+          "nextNodes": [
+            "node-game-5"
+          ],
+          "stepNumber": 4,
+          "level": "Avanzado"
+        },
+        {
+          "id": "node-game-4b",
+          "title": "Ramificación Opcional B: Arte 3D para Videojuegos, Texturizado PBR & Rigging en Blender",
+          "code": "GAM-401B",
+          "type": "optional_branch",
+          "branchGroup": "Especialidad Videojuegos",
+          "branchLabel": "Opción B: Arte 3D, Modelado Low-Poly & Animación Rigging",
+          "status": "locked",
+          "hours": 35,
+          "estimatedDate": "Mes 4-5",
+          "description": "Modelado 3D optimizado para videojuegos en Blender, desempaque de mapas UV, texturizado PBR en Substance Painter y esqueletos de animación.",
+          "topics": [
+            "Modelado Low-Poly y High-Poly Bake",
+            "Desempaque de UVs y Texturizado PBR",
+            "Rigging y Esqueletos de Personaje",
+            "Animación e Importación FBX/GLTF a UE5"
+          ],
+          "instructor": "Lic. Karen Galicia",
+          "location": "Campus Virtual IECA",
+          "prerequisites": [
+            "UE5-301"
+          ],
+          "nextNodes": [
+            "node-game-5"
+          ],
+          "stepNumber": 4,
+          "level": "Avanzado"
+        },
+        {
+          "id": "node-game-5",
+          "title": "Multiplayer Networking & Servidores Dedicados en Unreal / Unity",
+          "code": "MP-501",
+          "type": "mandatory",
+          "status": "locked",
+          "hours": 30,
+          "estimatedDate": "Mes 6",
+          "description": "Arquitectura cliente-servidor para juegos multijugador en línea, replicación de variables en red y predicción de movimiento.",
+          "topics": [
+            "Replicación de Variables & RPCs (Remote Procedure Calls)",
+            "Emparejamiento de Jugadores (Matchmaking)",
+            "Prevención de Trampas (Anti-Cheat)",
+            "Servidores Dedicados en la Nube"
+          ],
+          "instructor": "Ing. Rodrigo Cárdenas",
+          "location": "Campus Virtual IECA",
+          "prerequisites": [
+            "GAM-401A o GAM-401B"
+          ],
+          "nextNodes": [
+            "node-game-6"
+          ],
+          "stepNumber": 5,
+          "level": "Avanzado"
+        },
+        {
+          "id": "node-game-6",
+          "title": "Optimización de Performance 60 FPS, Shaders & Profiling de Renderizado",
+          "code": "OPT-601",
+          "type": "mandatory",
+          "status": "locked",
+          "hours": 30,
+          "estimatedDate": "Mes 7",
+          "description": "Herramientas de diagnóstico de renderizado Unreal Insights, reducción de Draw Calls, LODs automáticos y shaders HLSL/PBR.",
+          "topics": [
+            "Unreal Insights & Profiling de CPU/GPU",
+            "Reducción de Draw Calls & Batching",
+            "Materiales HLSL & Shader Graph",
+            "Optimizaciones de Memoria VRAM"
+          ],
+          "instructor": "Ing. Mateo Trejo",
+          "location": "Campus Virtual IECA",
+          "prerequisites": [
+            "MP-501"
+          ],
+          "nextNodes": [
+            "node-game-capstone"
+          ],
+          "stepNumber": 6,
+          "level": "Avanzado"
+        },
+        {
+          "id": "node-game-capstone",
+          "title": "Proyecto Capstone: Vertical Slice de Videojuego 3D Publicado en Steam / Epic Store",
+          "code": "CAP-711",
+          "type": "capstone",
+          "status": "locked",
+          "hours": 50,
+          "estimatedDate": "Mes 8",
+          "description": "Desarrollo de un demo jugable (Vertical Slice) completo de 15 minutos con mecánicas de combate, cinemáticas, audio 3D y pulido profesional.",
+          "topics": [
+            "Empaquetado y Build ejecutable de juego",
+            "Integración de Audio 3D FMOD/Wwise",
+            "Publicación de demo en plataforma",
+            "Demostración ante estudio de desarrollo"
+          ],
+          "instructor": "Comité de Videojuegos IECA & Mentores Epic Games",
+          "location": "Campus Virtual IECA",
+          "prerequisites": [
+            "OPT-601"
+          ],
+          "nextNodes": [],
+          "stepNumber": 7,
+          "level": "Experto"
+        }
+      ]
+    }
+  ]
+}

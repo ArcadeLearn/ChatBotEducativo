@@ -1,0 +1,310 @@
+{
+  "planteles": [
+    {
+      "id": "plan-01",
+      "municipio": "Irapuato",
+      "nombre": "Oficinas Centrales / Dir. General",
+      "direccion": "Edificio Centro de Gobierno, Av. Siglo XXI No. 412, Predio Los Sauces, 6° Piso, C.P. 36547",
+      "telefono": "462 607 4535",
+      "email": "salomon.ceballos@guanajuato.gob.mx",
+      "lat": 20.6483,
+      "lng": -101.3289,
+      "especialidades": [
+        "Gestión Institucional",
+        "Vinculación Empresarial",
+        "Certificaciones Oficiales"
+      ],
+      "equipamiento": "Centro Administrativo y Dirección General IECA",
+      "horario": "Lunes a Viernes 08:30 - 16:30 hrs"
+    },
+    {
+      "id": "plan-02",
+      "municipio": "Irapuato",
+      "nombre": "Plantel Irapuato",
+      "direccion": "Blvd. Arandas No. 1855, Fracc. Jardines de San Antonio, C.P. 36690",
+      "telefono": "462 606 9250",
+      "email": "ieclairapuato@guanajuato.gob.mx",
+      "lat": 20.6972,
+      "lng": -101.3781,
+      "especialidades": [
+        "Metrología 3D",
+        "Mantenimiento Agroindustrial",
+        "Máquinas y Herramientas CNC"
+      ],
+      "equipamiento": "CMM Zeiss, Tornos CNC, Laboratorio de Análisis Químico",
+      "horario": "Lunes a Sábado 08:00 - 18:00 hrs"
+    },
+    {
+      "id": "plan-03",
+      "municipio": "Silao",
+      "nombre": "Plantel Silao & CEDECI (Diseño Electrónico)",
+      "direccion": "Km 2 Carretera Silao-Guanajuato, Camino a Cerritos, C.P. 36100",
+      "telefono": "472 722 2417",
+      "email": "iecasilao@guanajuato.gob.mx",
+      "lat": 20.9412,
+      "lng": -101.4111,
+      "especialidades": [
+        "Robótica Yaskawa / KUKA",
+        "Inyección de Plásticos",
+        "Diseño Electrónico CEDECI"
+      ],
+      "equipamiento": "Célula de Ensamble Robótico, Inyectora Arburg 120T, Torno CNC Haas",
+      "horario": "Lunes a Sábado 07:30 - 19:30 hrs"
+    },
+    {
+      "id": "plan-04",
+      "municipio": "León",
+      "nombre": "Plantel León & CCAT (Centro Alta Tecnología)",
+      "direccion": "Av. de los Industriales, Col. Julián de Obregón / Predio El Crespo, C.P. 37290",
+      "telefono": "477 711 3576",
+      "email": "iecaleon@guanajuato.gob.mx",
+      "lat": 21.1075,
+      "lng": -101.6322,
+      "especialidades": [
+        "Manufactura Avanzada CCAT",
+        "Calzado & Marroquinería 4.0",
+        "Programación PLC"
+      ],
+      "equipamiento": "Escáner 3D Láser, Cortadora de Agua Flow, Célula Festo CP-Lab",
+      "horario": "Lunes a Sábado 08:00 - 20:00 hrs"
+    },
+    {
+      "id": "plan-05",
+      "municipio": "Celaya",
+      "nombre": "Plantel Celaya",
+      "direccion": "Av. Tecnológico S/N / Zona Industrial Celaya, C.P. 38010",
+      "telefono": "461 616 4811",
+      "email": "iecacelaya_vinculacion@guanajuato.gob.mx",
+      "lat": 20.5365,
+      "lng": -100.8142,
+      "especialidades": [
+        "Autogestión Automotriz",
+        "Mantenimiento Electromecánico",
+        "Hidráulica Bosch"
+      ],
+      "equipamiento": "Banco de Pruebas Hidráulicas Rexroth, Centro de Maquinado 5 Ejes",
+      "horario": "Lunes a Viernes 08:00 - 18:00 hrs"
+    },
+    {
+      "id": "plan-06",
+      "municipio": "Salamanca",
+      "nombre": "Plantel Salamanca / Valtierrilla",
+      "direccion": "Prol. 5 de Febrero S/N, Comunidad Valtierrilla, C.P. 36881",
+      "telefono": "464 656 3397",
+      "email": "iecasalamanca@guanajuato.gob.mx",
+      "lat": 20.5312,
+      "lng": -101.1284,
+      "especialidades": [
+        "Procesos Petroquímicos",
+        "Soldadura Industrial AWS",
+        "Seguridad LOTO"
+      ],
+      "equipamiento": "Arcos de Soldadura Miller MIG/TIG, Simulador de Procesos Químicos",
+      "horario": "Lunes a Viernes 08:00 - 17:00 hrs"
+    },
+    {
+      "id": "plan-07",
+      "municipio": "San Francisco del Rincón",
+      "nombre": "Plantel San Francisco del Rincón",
+      "direccion": "Blvr. Juventino Rosas S/N, Centro, C.P. 36300",
+      "telefono": "476 757 7213",
+      "email": "iecasanfranciscodelrincon_controlescolar@guanajuato.gob.mx",
+      "lat": 20.9912,
+      "lng": -101.859,
+      "especialidades": [
+        "Automatización Textil",
+        "Diseño de Sombreros y Calzado",
+        "Seguridad Industrial STPS"
+      ],
+      "equipamiento": "Taller de Corte Láser Textil, Prensas Neumáticas",
+      "horario": "Lunes a Viernes 08:00 - 17:00 hrs"
+    },
+    {
+      "id": "plan-08",
+      "municipio": "Purísima del Rincón",
+      "nombre": "Plantel Purísima / Núcleo Tecnológico",
+      "direccion": "Libramiento Sur Purísima S/N, C.P. 36400",
+      "telefono": "476 688 1536",
+      "email": "iecapurisima@guanajuato.gob.mx",
+      "lat": 20.9381,
+      "lng": -101.8782,
+      "especialidades": [
+        "Diseño Industrial CAD/CAM",
+        "Calzado Deportivo",
+        "Gestión de Calidad ISO"
+      ],
+      "equipamiento": "Software SolidWorks / CATIA, Impresoras 3D Formlabs",
+      "horario": "Lunes a Viernes 08:00 - 17:00 hrs"
+    },
+    {
+      "id": "plan-09",
+      "municipio": "Villagrán",
+      "nombre": "Plantel Villagrán",
+      "direccion": "Camino a Suchitlán S/N, C.P. 38260",
+      "telefono": "411 165 0707",
+      "email": "iecavillagran@guanajuato.gob.mx",
+      "lat": 20.5181,
+      "lng": -100.9982,
+      "especialidades": [
+        "Procesamiento de Alimentos",
+        "Mantenimiento Agroindustrial",
+        "Cadena de Frío"
+      ],
+      "equipamiento": "Planta Piloto Agroalimentaria, Embotelladora Automatizada",
+      "horario": "Lunes a Viernes 08:00 - 16:30 hrs"
+    },
+    {
+      "id": "plan-10",
+      "municipio": "Yuriria",
+      "nombre": "Plantel Yuriria",
+      "direccion": "Río Laja No. 1, Fracc. Campestre del Río, C.P. 38940",
+      "telefono": "445 168 4000",
+      "email": "iecayuriria_instructor@guanajuato.gob.mx",
+      "lat": 20.2105,
+      "lng": -101.1321,
+      "especialidades": [
+        "Confección Industrial",
+        "Textiles Técnicos",
+        "Electricidad Industrial"
+      ],
+      "equipamiento": "Maquinaria de Costura Programable Juki, Tableros de Control Eléctrico",
+      "horario": "Lunes a Viernes 08:00 - 17:00 hrs"
+    },
+    {
+      "id": "plan-11",
+      "municipio": "Moroleón",
+      "nombre": "Plantel Moroleón",
+      "direccion": "Prolongación Morelos S/N, C.P. 38800",
+      "telefono": "445 458 0679",
+      "email": "iecamoroleon_promotor3@guanajuato.gob.mx",
+      "lat": 20.1283,
+      "lng": -101.1921,
+      "especialidades": [
+        "Diseño de Modas CAD",
+        "Bordado Computarizado",
+        "Comercio Electrónico"
+      ],
+      "equipamiento": "Plotter de Traje Gerber, Máquinas de Bordado Multi-Cabezal Tajima",
+      "horario": "Lunes a Viernes 08:00 - 17:00 hrs"
+    },
+    {
+      "id": "plan-12",
+      "municipio": "Tarandacuao",
+      "nombre": "Plantel Tarandacuao",
+      "direccion": "Blvd. Luis Donaldo Colosio No. 550, La Providencia, C.P. 38790",
+      "telefono": "421 474 1021",
+      "email": "iecatarandacuao@guanajuato.gob.mx",
+      "lat": 19.9928,
+      "lng": -100.5211,
+      "especialidades": [
+        "Artesanías & Cerámica Alta Temperatura",
+        "Carpintería CNC",
+        "Emprendimiento"
+      ],
+      "equipamiento": "Hornos Cerámicos Digitales, Enrutador CNC para Madera",
+      "horario": "Lunes a Viernes 08:00 - 16:00 hrs"
+    },
+    {
+      "id": "plan-13",
+      "municipio": "Tierra Blanca",
+      "nombre": "Plantel Tierra Blanca",
+      "direccion": "Carretera San José Iturbide-Santa Catarina, Los Aguacates, C.P. 37970",
+      "telefono": "419 234 0044",
+      "email": "iecatierrablanca@guanajuato.gob.mx",
+      "lat": 21.1011,
+      "lng": -100.1611,
+      "especialidades": [
+        "Construcción Sustentable",
+        "Instalaciones Solares Fotovoltaicas",
+        "Oficios Industriales"
+      ],
+      "equipamiento": "Bancos de Pruebas Solar Fotovoltaico, Laboratorio de Electricidad",
+      "horario": "Lunes a Viernes 08:00 - 16:30 hrs"
+    },
+    {
+      "id": "plan-14",
+      "municipio": "Victoria",
+      "nombre": "Plantel Victoria",
+      "direccion": "Carretera Victoria-San Luis de la Paz Km 1, Paso Hondo, C.P. 37920",
+      "telefono": "419 293 9233",
+      "email": "iecavictoria@guanajuato.gob.mx",
+      "lat": 21.212,
+      "lng": -100.221,
+      "especialidades": [
+        "Mecánica de Motocicletas",
+        "Soldadura Básica",
+        "Sistemas de Riego"
+      ],
+      "equipamiento": "Taller Mecánico Automotriz, Equipo de Soldadura Electrónica",
+      "horario": "Lunes a Viernes 08:00 - 16:30 hrs"
+    },
+    {
+      "id": "plan-15",
+      "municipio": "Acámbaro",
+      "nombre": "Plantel Acámbaro",
+      "direccion": "Libramiento Sur Acámbaro-Tarandacuao S/N, C.P. 38600",
+      "telefono": "466 663 2845",
+      "email": "iecaacambaro@guanajuato.gob.mx",
+      "lat": 20.0211,
+      "lng": -100.7221,
+      "especialidades": [
+        "Panificación Industrial",
+        "Electrónica de Potencia",
+        "Refrigeración Commercial"
+      ],
+      "equipamiento": "Horno Giratorio Industrial, Módulos PLC Siemens S7-1200",
+      "horario": "Lunes a Viernes 08:00 - 17:00 hrs"
+    },
+    {
+      "id": "plan-16",
+      "municipio": "Guanajuato Capital",
+      "nombre": "Plantel Guanajuato",
+      "direccion": "Carretera Puentecillas S/N, C.P. 36260",
+      "telefono": "473 734 1372",
+      "email": "iecaguanajuato_promotor@guanajuato.gob.mx",
+      "lat": 20.9781,
+      "lng": -101.2721,
+      "especialidades": [
+        "Desarrollo de Software",
+        "Servicios Turísticos & Idiomas",
+        "Administración Pública"
+      ],
+      "equipamiento": "Laboratorio Mac & PC, Aula de Idiomas Interactiva",
+      "horario": "Lunes a Sábado 08:00 - 18:00 hrs"
+    },
+    {
+      "id": "plan-17",
+      "municipio": "San Miguel de Allende",
+      "nombre": "Plantel / Núcleo San Miguel",
+      "direccion": "Salida a Querétaro Km 2.5, C.P. 37700",
+      "telefono": "415 152 2817",
+      "email": "iecasanmiguel@guanajuato.gob.mx",
+      "lat": 20.9082,
+      "lng": -100.7321,
+      "especialidades": [
+        "Gastronomía & Hotelería",
+        "Diseño de Joyería",
+        "Idiomas Inglés / Francés"
+      ],
+      "equipamiento": "Cocina Industrial de Grado Restaurante, Taller de Fundición de Joyería",
+      "horario": "Lunes a Sábado 08:00 - 18:00 hrs"
+    },
+    {
+      "id": "plan-18",
+      "municipio": "San José Iturbide",
+      "nombre": "Plantel San José Iturbide",
+      "direccion": "Libramiento Poniente S/N, Parque Industrial Opción, C.P. 37980",
+      "telefono": "419 198 2911",
+      "email": "iecasanjoseiturbide@guanajuato.gob.mx",
+      "lat": 21.0021,
+      "lng": -100.3881,
+      "especialidades": [
+        "Inyección de Plásticos",
+        "Mantenimiento Electromecánico",
+        "Logística & Almacenes"
+      ],
+      "equipamiento": "Inyectora Battenfeld, Simulador Logístico de Almacén",
+      "horario": "Lunes a Sábado 07:30 - 19:00 hrs"
+    }
+  ]
+}

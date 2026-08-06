@@ -1,0 +1,112 @@
+# ChatBotEducativo — Stack unificado (dev + prod)
+# Uso: docker compose --env-file .env up -d --build
+# Nota Fase 0: esqueleto; los Dockerfiles se agregan en fases posteriores.
+
+name: chatbot-educativo
+
+networks:
+  edu_network:
+    driver: bridge
+
+services:
+  postgres:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_DB: edu_chatbot_db
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: ${DATABASE_PASSWORD:-postgres}
+      TZ: America/Mexico_City
+    command: ["postgres", "-c", "timezone=America/Mexico_City"]
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - edu_network
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d edu_chatbot_db"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  mcp-server:
+    build:
+      context: ../mcp-server
+      dockerfile: Dockerfile
+    environment:
+      PORT: 8002
+      DATA_DIR: /app/data
+    ports:
+      - "8002:8002"
+    volumes:
+      - ../mcp-server/data:/app/data:ro
+    networks:
+      - edu_network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8002/health"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+      start_period: 15s
+
+  ai-service:
+    build:
+      context: ../ai-service
+      dockerfile: Dockerfile
+    environment:
+      PORT: 8001
+      MCP_SERVER_URL: http://mcp-server:8002
+      DATABASE_URL: postgresql://postgres:${DATABASE_PASSWORD:-postgres}@postgres:5432/edu_chatbot_db
+      LLM_PROVIDER: ${LLM_PROVIDER:-gemini}
+      LLM_MODEL: ${LLM_MODEL:-gemini-3.5-flash}
+      GOOGLE_GEMINI_API_KEY: ${GOOGLE_GEMINI_API_KEY:-}
+      LANGCHAIN_TRACING_V2: ${LANGCHAIN_TRACING_V2:-false}
+      LANGCHAIN_API_KEY: ${LANGCHAIN_API_KEY:-}
+    ports:
+      - "8001:8001"
+    depends_on:
+      postgres:
+        condition: service_healthy
+      mcp-server:
+        condition: service_started
+    networks:
+      - edu_network
+
+  backend:
+    build:
+      context: ../backend
+      dockerfile: Dockerfile
+    environment:
+      NODE_ENV: ${NODE_ENV:-development}
+      PORT: 4001
+      DATABASE_URL: postgresql://postgres:${DATABASE_PASSWORD:-postgres}@postgres:5432/edu_chatbot_db
+      AI_SERVICE_URL: http://ai-service:8001
+      JWT_SECRET: ${JWT_SECRET:-dev-secret-change-in-production}
+      JWT_EXPIRES_IN: ${JWT_EXPIRES_IN:-7d}
+      CORS_ORIGINS: ${CORS_ORIGINS:-http://localhost:3001,http://127.0.0.1:3001}
+    ports:
+      - "4001:4001"
+    depends_on:
+      postgres:
+        condition: service_healthy
+      ai-service:
+        condition: service_started
+    networks:
+      - edu_network
+
+  frontend:
+    build:
+      context: ../frontend
+      dockerfile: Dockerfile
+    environment:
+      NEXT_PUBLIC_API_URL: ${NEXT_PUBLIC_API_URL:-http://localhost:4001}
+      NEXT_PUBLIC_EDU_CHAT_URL: ${NEXT_PUBLIC_EDU_CHAT_URL:-http://localhost:4001}
+    ports:
+      - "3001:3001"
+    depends_on:
+      - backend
+    networks:
+      - edu_network
+
+volumes:
+  postgres_data:

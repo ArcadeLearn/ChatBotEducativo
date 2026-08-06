@@ -1,0 +1,52 @@
+# Dependencias
+node_modules/
+__pycache__/
+*.py[cod]
+*$py.class
+.Python
+.venv/
+venv/
+env/
+
+# Build / dist
+dist/
+build/
+.next/
+out/
+*.egg-info/
+
+# Entorno — .env nunca se sube; .env.example sí (plantilla sin secretos)
+.env
+.env.local
+.env.*.local
+!.env.example
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+
+# IDE / OS
+.idea/
+.vscode/
+*.swp
+.DS_Store
+Thumbs.db
+
+# Testing / cobertura
+coverage/
+.coverage
+htmlcov/
+.pytest_cache/
+.nyc_output/
+
+# Docker
+*.pid
+
+# Temporales
+tmp/
+temp/
+*.tmp
+
+# Feedback de chat (Golden Dataset local)
+backend/data/chat-feedback.jsonl

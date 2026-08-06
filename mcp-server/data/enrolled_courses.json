@@ -1,0 +1,549 @@
+{
+  "enrollments": [
+    {
+      "student_id": "user-01",
+      "courses": [
+        {
+          "id": "curso-01",
+          "title": "Programación de Células de Robótica Yaskawa",
+          "category": "TI & Robótica",
+          "description": "Aprende la configuración, calibración de puntos e integración de controladores Yaskawa Motoman en líneas de ensamblaje.",
+          "instructor": "Ing. Alejandro Morales",
+          "durationHours": 40,
+          "progressPercentage": 65,
+          "thumbnail": "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=600",
+          "level": "Avanzado",
+          "modules": [
+            {
+              "id": "mod-1",
+              "title": "Módulo 1: Introducción y Mandos del Pendant",
+              "lessons": [
+                {
+                  "id": "les-1",
+                  "title": "1.1 Arquitectura del Controlador YRC1000 & Paro de Emergencia",
+                  "duration": "18 min",
+                  "videoUrl": "https://www.w3schools.com/html/mov_bbb.mp4",
+                  "completed": true
+                },
+                {
+                  "id": "les-2",
+                  "title": "1.2 Calibración de Sistemas de Coordenadas (USER/TOOL)",
+                  "duration": "25 min",
+                  "videoUrl": "https://www.w3schools.com/html/mov_bbb.mp4",
+                  "completed": true
+                },
+                {
+                  "id": "les-1-3",
+                  "title": "1.3 Modos de Operación: TEACH, PLAY y REMOTE",
+                  "duration": "22 min",
+                  "videoUrl": "https://www.w3schools.com/html/mov_bbb.mp4",
+                  "completed": true
+                },
+                {
+                  "id": "les-1-4",
+                  "title": "1.4 Práctica en Simulador: Movimientos JOG Manuales",
+                  "duration": "30 min",
+                  "videoUrl": "https://www.w3schools.com/html/mov_bbb.mp4",
+                  "completed": true
+                }
+              ]
+            },
+            {
+              "id": "mod-2",
+              "title": "Módulo 2: Trayectorias y Sensores I/O",
+              "lessons": [
+                {
+                  "id": "les-3",
+                  "title": "2.1 Instrucciones MOVJ, MOVL y MOV-C",
+                  "duration": "30 min",
+                  "videoUrl": "https://www.w3schools.com/html/mov_bbb.mp4",
+                  "completed": true
+                },
+                {
+                  "id": "les-4",
+                  "title": "2.2 Configuración de PLC e Interfaces PROFINET",
+                  "duration": "40 min",
+                  "videoUrl": "https://www.w3schools.com/html/mov_bbb.mp4",
+                  "completed": true
+                },
+                {
+                  "id": "les-2-3",
+                  "title": "2.3 Configuración de Sensores de Presencia y Grippers",
+                  "duration": "28 min",
+                  "videoUrl": "https://www.w3schools.com/html/mov_bbb.mp4",
+                  "completed": true
+                },
+                {
+                  "id": "les-2-4",
+                  "title": "2.4 Taller de Alineación de Piña y Anticolisión",
+                  "duration": "35 min",
+                  "videoUrl": "https://www.w3schools.com/html/mov_bbb.mp4",
+                  "completed": false
+                }
+              ]
+            },
+            {
+              "id": "mod-3",
+              "title": "Módulo 3: Programación Avanzada & Cadenas de Ejecución",
+              "lessons": [
+                {
+                  "id": "les-3-1",
+                  "title": "3.1 Subrutinas CALL, JUMP y Control de Bucles",
+                  "duration": "32 min",
+                  "videoUrl": "https://www.w3schools.com/html/mov_bbb.mp4",
+                  "completed": false
+                },
+                {
+                  "id": "les-3-2",
+                  "title": "3.2 Manejo de Interrupciones de Seguridad y Zonas de Interferencia",
+                  "duration": "38 min",
+                  "videoUrl": "https://www.w3schools.com/html/mov_bbb.mp4",
+                  "completed": false
+                },
+                {
+                  "id": "les-3-3",
+                  "title": "3.3 Comunicación Modbus TCP con Pantallas HMI Pro-face",
+                  "duration": "45 min",
+                  "videoUrl": "https://www.w3schools.com/html/mov_bbb.mp4",
+                  "completed": false
+                },
+                {
+                  "id": "les-3-4",
+                  "title": "3.4 Laboratorio Práctico: Ensamblado de Piezas Automotrices",
+                  "duration": "50 min",
+                  "videoUrl": "https://www.w3schools.com/html/mov_bbb.mp4",
+                  "completed": false
+                }
+              ]
+            },
+            {
+              "id": "mod-4",
+              "title": "Módulo 4: Evaluación & Certificación Técnica",
+              "lessons": [
+                {
+                  "id": "les-4-1",
+                  "title": "4.1 Caso Práctico: Algoritmo de Paletizado Multicapa",
+                  "duration": "45 min",
+                  "videoUrl": "https://www.w3schools.com/html/mov_bbb.mp4",
+                  "completed": false
+                },
+                {
+                  "id": "les-4-2",
+                  "title": "4.2 Examen Final Técnico & Emisión de Constancia Yaskawa",
+                  "duration": "60 min",
+                  "videoUrl": "https://www.w3schools.com/html/mov_bbb.mp4",
+                  "completed": false
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "curso-02",
+          "title": "Metrología 3D y Escaneo Láser FARO",
+          "category": "Industria 4.0",
+          "description": "Control de calidad dimensional, tolerancia GD&T e inspección mediante brazos articulados FARO y software Geomagic.",
+          "instructor": "Dra. Sofía Mendoza",
+          "durationHours": 30,
+          "progressPercentage": 40,
+          "thumbnail": "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&q=80&w=600",
+          "level": "Intermedio",
+          "modules": [
+            {
+              "id": "mod-201",
+              "title": "Módulo 1: Calibración y Nube de Puntos",
+              "lessons": [
+                {
+                  "id": "les-201",
+                  "title": "1.1 Tolerancias Geométricas y Dimensionamiento (GD&T)",
+                  "duration": "22 min",
+                  "videoUrl": "https://www.w3schools.com/html/mov_bbb.mp4",
+                  "completed": true
+                },
+                {
+                  "id": "les-202",
+                  "title": "1.2 Montaje, Nivelación y Calibración de Palpador FARO Arm",
+                  "duration": "35 min",
+                  "videoUrl": "https://www.w3schools.com/html/mov_bbb.mp4",
+                  "completed": true
+                },
+                {
+                  "id": "les-203",
+                  "title": "1.3 Alineación de Piezas por Datums A-B-C en PolyWorks",
+                  "duration": "28 min",
+                  "videoUrl": "https://www.w3schools.com/html/mov_bbb.mp4",
+                  "completed": true
+                },
+                {
+                  "id": "les-204",
+                  "title": "1.4 Adquisición de Nube de Puntos con Escáner Láser HD",
+                  "duration": "40 min",
+                  "videoUrl": "https://www.w3schools.com/html/mov_bbb.mp4",
+                  "completed": true
+                }
+              ]
+            },
+            {
+              "id": "mod-202",
+              "title": "Módulo 2: Análisis de Desviaciones y Modelado CAD",
+              "lessons": [
+                {
+                  "id": "les-205",
+                  "title": "2.1 Malla Poligonal, Limpieza de Ruido y Triangulación",
+                  "duration": "30 min",
+                  "videoUrl": "https://www.w3schools.com/html/mov_bbb.mp4",
+                  "completed": true
+                },
+                {
+                  "id": "les-206",
+                  "title": "2.2 Comparativa Colorimétrica contra Modelo CAD Nominal (STEP)",
+                  "duration": "42 min",
+                  "videoUrl": "https://www.w3schools.com/html/mov_bbb.mp4",
+                  "completed": false
+                },
+                {
+                  "id": "les-207",
+                  "title": "2.3 Inspección de Secciones Transversales y Diámetros",
+                  "duration": "25 min",
+                  "videoUrl": "https://www.w3schools.com/html/mov_bbb.mp4",
+                  "completed": false
+                },
+                {
+                  "id": "les-208",
+                  "title": "2.4 Análisis de Esfericidad, Planeidad y Perfil de Superficie",
+                  "duration": "35 min",
+                  "videoUrl": "https://www.w3schools.com/html/mov_bbb.mp4",
+                  "completed": false
+                }
+              ]
+            },
+            {
+              "id": "mod-203",
+              "title": "Módulo 3: Automatización de Reportes & Calidad",
+              "lessons": [
+                {
+                  "id": "les-209",
+                  "title": "3.1 Creación de Plantillas Automatizadas de Inspección QC",
+                  "duration": "30 min",
+                  "videoUrl": "https://www.w3schools.com/html/mov_bbb.mp4",
+                  "completed": false
+                },
+                {
+                  "id": "les-210",
+                  "title": "3.2 Exportación de Mallas a Geomagic para Ingeniería Inversa",
+                  "duration": "45 min",
+                  "videoUrl": "https://www.w3schools.com/html/mov_bbb.mp4",
+                  "completed": false
+                },
+                {
+                  "id": "les-211",
+                  "title": "3.3 Estudio de Repetibilidad y Reproducibilidad (Gage R&R)",
+                  "duration": "38 min",
+                  "videoUrl": "https://www.w3schools.com/html/mov_bbb.mp4",
+                  "completed": false
+                },
+                {
+                  "id": "les-212",
+                  "title": "3.4 Laboratorio Práctico: Inspección de Bloque de Motor Al",
+                  "duration": "50 min",
+                  "videoUrl": "https://www.w3schools.com/html/mov_bbb.mp4",
+                  "completed": false
+                }
+              ]
+            },
+            {
+              "id": "mod-204",
+              "title": "Módulo 4: Proyecto Integrador de Calidad",
+              "lessons": [
+                {
+                  "id": "les-213",
+                  "title": "4.1 Auditoría de Calidad a Pieza Estampada Automotriz",
+                  "duration": "45 min",
+                  "videoUrl": "https://www.w3schools.com/html/mov_bbb.mp4",
+                  "completed": false
+                },
+                {
+                  "id": "les-214",
+                  "title": "4.2 Certificación en Inspección Dimensional FARO 3D",
+                  "duration": "60 min",
+                  "videoUrl": "https://www.w3schools.com/html/mov_bbb.mp4",
+                  "completed": false
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "curso-03",
+          "title": "Inglés Técnico Industrial: Sector Automotriz",
+          "category": "Idiomas",
+          "description": "Dominio de terminología especializada para manuales de mantenimiento, datasheets de seguridad y juntas de ingeniería.",
+          "instructor": "Prof. Robert Jenkins",
+          "durationHours": 50,
+          "progressPercentage": 85,
+          "thumbnail": "https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?auto=format&fit=crop&q=80&w=600",
+          "level": "Intermedio",
+          "modules": [
+            {
+              "id": "mod-301",
+              "title": "Módulo 1: Technical Vocabulary & Equipment Manuals",
+              "lessons": [
+                {
+                  "id": "les-301",
+                  "title": "1.1 Reading Automotive Datasheets & Safety Procedures",
+                  "duration": "20 min",
+                  "videoUrl": "https://www.w3schools.com/html/mov_bbb.mp4",
+                  "completed": true
+                },
+                {
+                  "id": "les-302",
+                  "title": "1.2 Preventive Maintenance Terminology (TPM & OEE)",
+                  "duration": "25 min",
+                  "videoUrl": "https://www.w3schools.com/html/mov_bbb.mp4",
+                  "completed": true
+                },
+                {
+                  "id": "les-303",
+                  "title": "1.3 Describing Pneumatic, Hydraulic & Electrical Schematics",
+                  "duration": "30 min",
+                  "videoUrl": "https://www.w3schools.com/html/mov_bbb.mp4",
+                  "completed": true
+                },
+                {
+                  "id": "les-304",
+                  "title": "1.4 Listening Practice: Shift Handover Meetings",
+                  "duration": "22 min",
+                  "videoUrl": "https://www.w3schools.com/html/mov_bbb.mp4",
+                  "completed": true
+                }
+              ]
+            },
+            {
+              "id": "mod-302",
+              "title": "Módulo 2: Engineering Communication & Troubleshooting",
+              "lessons": [
+                {
+                  "id": "les-305",
+                  "title": "2.1 Reporting Technical Failures & Downtime Root Causes",
+                  "duration": "28 min",
+                  "videoUrl": "https://www.w3schools.com/html/mov_bbb.mp4",
+                  "completed": true
+                },
+                {
+                  "id": "les-306",
+                  "title": "2.2 Writing 8D Quality Reports & Corrective Actions",
+                  "duration": "35 min",
+                  "videoUrl": "https://www.w3schools.com/html/mov_bbb.mp4",
+                  "completed": true
+                },
+                {
+                  "id": "les-307",
+                  "title": "2.3 Participating in Engineering Audits & APQP Reviews",
+                  "duration": "40 min",
+                  "videoUrl": "https://www.w3schools.com/html/mov_bbb.mp4",
+                  "completed": true
+                },
+                {
+                  "id": "les-308",
+                  "title": "2.4 Roleplay: Vendor & Equipment Calibration Discussions",
+                  "duration": "32 min",
+                  "videoUrl": "https://www.w3schools.com/html/mov_bbb.mp4",
+                  "completed": true
+                }
+              ]
+            },
+            {
+              "id": "mod-303",
+              "title": "Módulo 3: Technical Presentations & Lean Standards",
+              "lessons": [
+                {
+                  "id": "les-309",
+                  "title": "3.1 Presenting Kaizen Improvements & 5S Projects",
+                  "duration": "30 min",
+                  "videoUrl": "https://www.w3schools.com/html/mov_bbb.mp4",
+                  "completed": true
+                },
+                {
+                  "id": "les-310",
+                  "title": "3.2 Technical Email Etiquette for Global OEM Suppliers",
+                  "duration": "25 min",
+                  "videoUrl": "https://www.w3schools.com/html/mov_bbb.mp4",
+                  "completed": true
+                },
+                {
+                  "id": "les-311",
+                  "title": "3.3 Negotiating Spare Part Orders with International Vendors",
+                  "duration": "35 min",
+                  "videoUrl": "https://www.w3schools.com/html/mov_bbb.mp4",
+                  "completed": true
+                },
+                {
+                  "id": "les-312",
+                  "title": "3.4 Simulation Activity: Virtual Assembly Line Inspection",
+                  "duration": "45 min",
+                  "videoUrl": "https://www.w3schools.com/html/mov_bbb.mp4",
+                  "completed": false
+                }
+              ]
+            },
+            {
+              "id": "mod-304",
+              "title": "Módulo 4: Final Certification",
+              "lessons": [
+                {
+                  "id": "les-313",
+                  "title": "4.1 Mock Technical Job Interview with Automotive Recruiter",
+                  "duration": "40 min",
+                  "videoUrl": "https://www.w3schools.com/html/mov_bbb.mp4",
+                  "completed": false
+                },
+                {
+                  "id": "les-314",
+                  "title": "4.2 Comprehensive Industrial English Certification Exam",
+                  "duration": "60 min",
+                  "videoUrl": "https://www.w3schools.com/html/mov_bbb.mp4",
+                  "completed": false
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "store-ia-02",
+          "title": "Prompt Engineering & Chatbots Empresariales Avanzados",
+          "category": "Inteligencia Artificial",
+          "description": "Aprende a diseñar prompts de alta precisión, cadenas Few-Shot y asistentes virtuales integrados con APIs REST.",
+          "instructor": "Mtra. Sofía Mendoza",
+          "durationHours": 30,
+          "progressPercentage": 25,
+          "thumbnail": "https://images.unsplash.com/photo-1677442136019-21780efad99a?auto=format&fit=crop&q=80&w=600",
+          "level": "Principiante",
+          "modules": [
+            {
+              "id": "mod-pe-1",
+              "title": "Módulo 1: Fundamentos de Prompt Engineering y LLMs",
+              "lessons": [
+                {
+                  "id": "les-pe-1",
+                  "title": "1.1 Estructura del Prompt: Contexto, Instrucción y Ejemplos",
+                  "duration": "20 min",
+                  "videoUrl": "https://www.w3schools.com/html/mov_bbb.mp4",
+                  "completed": true
+                },
+                {
+                  "id": "les-pe-2",
+                  "title": "1.2 Técnicas Few-Shot, Zero-Shot y Chain-of-Thought (CoT)",
+                  "duration": "25 min",
+                  "videoUrl": "https://www.w3schools.com/html/mov_bbb.mp4",
+                  "completed": true
+                },
+                {
+                  "id": "les-pe-3",
+                  "title": "1.3 Control de Temperatura, Top-P y Frecuencia de Penalización",
+                  "duration": "28 min",
+                  "videoUrl": "https://www.w3schools.com/html/mov_bbb.mp4",
+                  "completed": true
+                },
+                {
+                  "id": "les-pe-4",
+                  "title": "1.4 Laboratorio: Optimización de Prompts en Playground OpenAI",
+                  "duration": "35 min",
+                  "videoUrl": "https://www.w3schools.com/html/mov_bbb.mp4",
+                  "completed": false
+                }
+              ]
+            },
+            {
+              "id": "mod-pe-2",
+              "title": "Módulo 2: Salidas Estructuradas y Agentes con Herramientas",
+              "lessons": [
+                {
+                  "id": "les-pe-5",
+                  "title": "2.1 Extracción de Datos en JSON y Validación con Pydantic",
+                  "duration": "30 min",
+                  "videoUrl": "https://www.w3schools.com/html/mov_bbb.mp4",
+                  "completed": false
+                },
+                {
+                  "id": "les-pe-6",
+                  "title": "2.2 Integración de LLMs con APIs REST via Function Calling",
+                  "duration": "40 min",
+                  "videoUrl": "https://www.w3schools.com/html/mov_bbb.mp4",
+                  "completed": false
+                },
+                {
+                  "id": "les-pe-7",
+                  "title": "2.3 Creación de Cadenas Complejas con LangChain y LlamaIndex",
+                  "duration": "45 min",
+                  "videoUrl": "https://www.w3schools.com/html/mov_bbb.mp4",
+                  "completed": false
+                },
+                {
+                  "id": "les-pe-8",
+                  "title": "2.4 Taller: Agente de Atención al Cliente con Memoria Conversacional",
+                  "duration": "50 min",
+                  "videoUrl": "https://www.w3schools.com/html/mov_bbb.mp4",
+                  "completed": false
+                }
+              ]
+            },
+            {
+              "id": "mod-pe-3",
+              "title": "Módulo 3: Arquitectura RAG & Asistentes de Empresa",
+              "lessons": [
+                {
+                  "id": "les-pe-9",
+                  "title": "3.1 Embeddings, Chunking de Documentos PDF/Docs y Vectores",
+                  "duration": "32 min",
+                  "videoUrl": "https://www.w3schools.com/html/mov_bbb.mp4",
+                  "completed": false
+                },
+                {
+                  "id": "les-pe-10",
+                  "title": "3.2 Conexión a Base de Datos Vectorial Pinecone / ChromaDB",
+                  "duration": "42 min",
+                  "videoUrl": "https://www.w3schools.com/html/mov_bbb.mp4",
+                  "completed": false
+                },
+                {
+                  "id": "les-pe-11",
+                  "title": "3.3 Estrategias Anti-Alucinaciones y Filtros de Seguridad",
+                  "duration": "35 min",
+                  "videoUrl": "https://www.w3schools.com/html/mov_bbb.mp4",
+                  "completed": false
+                },
+                {
+                  "id": "les-pe-12",
+                  "title": "3.4 Laboratorio: Bot Empresarial de Consulta de Manuales Internos",
+                  "duration": "55 min",
+                  "videoUrl": "https://www.w3schools.com/html/mov_bbb.mp4",
+                  "completed": false
+                }
+              ]
+            },
+            {
+              "id": "mod-pe-4",
+              "title": "Módulo 4: Despliegue & Evaluación de Asistentes",
+              "lessons": [
+                {
+                  "id": "les-pe-13",
+                  "title": "4.1 Proyecto Integrador: Despliegue de Chatbot en Next.js con Vercel AI SDK",
+                  "duration": "50 min",
+                  "videoUrl": "https://www.w3schools.com/html/mov_bbb.mp4",
+                  "completed": false
+                },
+                {
+                  "id": "les-pe-14",
+                  "title": "4.2 Evaluador de Calidad RAG & Certificación Prompt Engineer IECA",
+                  "duration": "60 min",
+                  "videoUrl": "https://www.w3schools.com/html/mov_bbb.mp4",
+                  "completed": false
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

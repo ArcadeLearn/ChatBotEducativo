@@ -1,0 +1,124 @@
+{
+  "announcements": [
+    {
+      "id": "aviso-1",
+      "title": "🚀 ¡Beca del 50% en Especialización de IA para Desarrollo!",
+      "type": "promocion",
+      "summary": "Aprovecha la beca impulsada por el Gobierno del Estado de Guanajuato e IECA para dominar Python, LLMs e IA generativa industrial.",
+      "content": "Inscríbete antes del 31 de Julio y obtén un 50% de descuento en el costo de certificación. Incluye acceso ilimitado a laboratorios de cómputo GPU de alta capacidad y mentorías personalizadas.",
+      "date": "Válido al 31 de Julio 2026",
+      "badgeText": "🔥 PROMOCIÓN EXCLUSIVA",
+      "imageUrl": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&q=80&w=800",
+      "actionText": "Inscribirme con Beca",
+      "actionUrl": "/cursos/curso-01"
+    },
+    {
+      "id": "aviso-2",
+      "title": "⚡ Promoción 2x1 en Certificación de Inglés Técnico Automotriz",
+      "type": "promocion",
+      "summary": "Inscribe a un colega o compañero sin costo adicional en el nivel intermedio o avanzado.",
+      "content": "Domina los términos clave de TPM, schematics e ingeniería industrial. Oferta limitada a los primeros 50 alumnos registrados este mes.",
+      "date": "Válido esta semana",
+      "badgeText": "🎁 OFERTA 2X1",
+      "imageUrl": "https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?auto=format&fit=crop&q=80&w=800",
+      "actionText": "Aprovechar Promoción",
+      "actionUrl": "/idiomas"
+    },
+    {
+      "id": "aviso-3",
+      "title": "🛠️ Acceso Gratuito a Simuladores CNC & Robótica Markforged",
+      "type": "promocion",
+      "summary": "Obtén 10 horas adicionales de simulador virtual sin costo al reservar tu práctica en Plantel Silao.",
+      "content": "Practica el calibrado de herramientas y simulación de trayectorias en entornos virtuales 3D antes de operar la maquinaria física.",
+      "date": "Promoción de Verano",
+      "badgeText": "💡 ACCESO GRATUITO",
+      "imageUrl": "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=800",
+      "actionText": "Reservar Simulador",
+      "actionUrl": "/sedes"
+    },
+    {
+      "id": "aviso-4",
+      "title": "💳 6 Meses Sin Intereses en Exámenes de Certificación GD&T",
+      "type": "promocion",
+      "summary": "Realiza tu evaluación de tolerancias dimensionales e inspección 3D pagando con tarjetas participantes.",
+      "content": "Obtén tu comprobante CFDI 4.0 deducible de impuestos inmediatamente después de registrar tu pago.",
+      "date": "Vigencia de Verano",
+      "badgeText": "💳 FACILIDADES DE PAGO",
+      "imageUrl": "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&q=80&w=800",
+      "actionText": "Ver Detalles de Pago",
+      "actionUrl": "/historial/pagos"
+    },
+    {
+      "id": "aviso-5",
+      "title": "🤖 Hackathon Estatal de Robótica Industrial IECA 2026",
+      "type": "evento",
+      "summary": "Compite resolviendo retos reales de manufactura con células de robots Yaskawa y FANUC en Plantel León.",
+      "content": "Premio de $50,000 MXN al primer lugar e incorporación directa al programa de vinculación laboral con empresas del clúster automotriz.",
+      "date": "15 y 16 de Agosto, 2026",
+      "badgeText": "🏆 HACKATHON OFICIAL",
+      "imageUrl": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&q=80&w=800",
+      "actionText": "Registrar Mi Equipo",
+      "actionUrl": "/bolsa-trabajo"
+    },
+    {
+      "id": "aviso-6",
+      "title": "🌐 Simposio Internacional de Manufactura 4.0 & IoT Industrial",
+      "type": "evento",
+      "summary": "Conferencias magistrales con directivos de General Motors, Mazda, Siemens y Festo.",
+      "content": "Evento híbrido (presencial en Plantel Silao y transmisión en vivo para alumnos matriculados en Campus IECA).",
+      "date": "08 de Agosto, 2026 • 09:00 AM",
+      "badgeText": "🎙️ SIMPOSIO INTERNACIONAL",
+      "imageUrl": "https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&q=80&w=800",
+      "actionText": "Ver Agenda del Evento",
+      "actionUrl": "/dashboard"
+    },
+    {
+      "id": "aviso-7",
+      "title": "🎓 Ceremonia de Entrega de Certificados Digitales Verificables",
+      "type": "evento",
+      "summary": "Evento de graduación y entrega de constancias oficiales acreditadas por el Gobierno de Guanajuato.",
+      "content": "Acompaña a la generación de graduados 2026 en el auditorio principal del Plantel Celaya o sintoniza el streaming.",
+      "date": "28 de Agosto, 2026",
+      "badgeText": "📜 CEREMONIA DE GRADUACIÓN",
+      "imageUrl": "https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&q=80&w=800",
+      "actionText": "Ver Mis Certificados",
+      "actionUrl": "/historial/constancias"
+    },
+    {
+      "id": "aviso-8",
+      "title": "🏭 Nueva Célula de Mantenimiento Neumático en Plantel Celaya",
+      "type": "noticia",
+      "summary": "IECA inaugura banco de pruebas Festo Didactic de última generación para capacitación en automatización.",
+      "content": "El equipo cuenta con comunicación PROFINET, sensores capacitivos e inductivos, y pantallas HMI táctiles de alta resolución.",
+      "date": "Noticia Reciente",
+      "badgeText": "📰 NUEVA INFRAESTRUCTURA",
+      "imageUrl": "https://images.unsplash.com/photo-1581092335397-9583fe92d232?auto=format&fit=crop&q=80&w=800",
+      "actionText": "Conocer Equipamiento",
+      "actionUrl": "/sedes"
+    },
+    {
+      "id": "aviso-9",
+      "title": "🤝 Alianza Estratégica IECA & Clúster Automotriz para Vacantes Directas",
+      "type": "noticia",
+      "summary": "Más de 120 vacantes abiertas exclusivas para egresados de especialidades técnicas.",
+      "content": "Empresas socias contratarán directamente a estudiantes que completen el módulo de Inglés Técnico y Metrología 3D en Campus IECA.",
+      "date": "Noticia del Mes",
+      "badgeText": "💼 VINCULACIÓN LABORAL",
+      "imageUrl": "https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&q=80&w=800",
+      "actionText": "Ver Vacantes Disponibles",
+      "actionUrl": "/bolsa-trabajo"
+    },
+    {
+      "id": "aviso-10",
+      "title": "📚 Repositorio Digital Actualizado: Nuevos Planos .STEP y Datasheets 2026",
+      "type": "noticia",
+      "summary": "Se agregaron 40 nuevos archivos de librerías CAD 3D y códigos de comunicación PLC Siemens.",
+      "content": "Descarga libre de derechos para todos los estudiantes activos en la plataforma para sus proyectos de práctica.",
+      "date": "Actualización Reciente",
+      "badgeText": "📁 BIBLIOTECA DIGITAL",
+      "imageUrl": "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&q=80&w=800",
+      "actionText": "Explorar Biblioteca CAD",
+      "actionUrl": "/biblioteca"
+    }
+  ]
+}

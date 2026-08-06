@@ -1,0 +1,1061 @@
+{
+  "student_id": "user-01",
+  "dimensions": [
+    {
+      "id": "dim-dev",
+      "name": "Desarrollo & IA Generativa",
+      "code": "DEV",
+      "score": 100,
+      "totalPoints": 3100,
+      "iconName": "Code",
+      "color": "text-purple-400",
+      "gradient": "from-purple-500 to-indigo-600",
+      "description": "Python, Next.js, LLMs, LangChain y microservicios cloud."
+    },
+    {
+      "id": "dim-ind",
+      "name": "Industria 4.0 & IoT",
+      "code": "IND",
+      "score": 100,
+      "totalPoints": 1800,
+      "iconName": "Cpu",
+      "color": "text-teal-400",
+      "gradient": "from-teal-400 to-emerald-600",
+      "description": "Telemetría MQTT, gemelos digitales y arquitectura de sensores OT."
+    },
+    {
+      "id": "dim-mec",
+      "name": "Mecatrónica & Robótica",
+      "code": "MEC",
+      "score": 100,
+      "totalPoints": 1800,
+      "iconName": "Bot",
+      "color": "text-sky-400",
+      "gradient": "from-sky-500 to-blue-600",
+      "description": "Programación de brazos robóticos KUKA/ABB y sistemas mecánicos."
+    },
+    {
+      "id": "dim-met",
+      "name": "Metrología & Calidad",
+      "code": "MET",
+      "score": 100,
+      "totalPoints": 1700,
+      "iconName": "Compass",
+      "color": "text-amber-400",
+      "gradient": "from-amber-400 to-orange-500",
+      "description": "Tolerancias GD&T ASME Y14.5 y medición CMM Zeiss."
+    },
+    {
+      "id": "dim-idi",
+      "name": "Idiomas Industriales",
+      "code": "IDI",
+      "score": 100,
+      "totalPoints": 1450,
+      "iconName": "Languages",
+      "color": "text-rose-400",
+      "gradient": "from-rose-500 to-pink-600",
+      "description": "Inglés para ingeniería de clientes y Japonés Monozukuri."
+    },
+    {
+      "id": "dim-seg",
+      "name": "Seguridad & Agilidad STPS",
+      "code": "SEG",
+      "score": 100,
+      "totalPoints": 2600,
+      "iconName": "ShieldCheck",
+      "color": "text-emerald-400",
+      "gradient": "from-emerald-400 to-teal-500",
+      "description": "Normativa NFPA 70E, LOTO, SCRUM Master y Lean Six Sigma."
+    }
+  ],
+  "sub_skills": [
+    {
+      "id": "sub-py-ai",
+      "dimensionCode": "DEV",
+      "name": "Análisis de Datos & Python IA",
+      "level": 7,
+      "currentExp": 750,
+      "nextLevelExp": 800,
+      "category": "Desarrollo & IA"
+    },
+    {
+      "id": "sub-fullstack",
+      "dimensionCode": "DEV",
+      "name": "Desarrollo Full-Stack (Next.js/React)",
+      "level": 10,
+      "currentExp": 1600,
+      "nextLevelExp": 1600,
+      "category": "Desarrollo & IA"
+    },
+    {
+      "id": "sub-cloud",
+      "dimensionCode": "DEV",
+      "name": "Cloud Computing & AWS",
+      "level": 7,
+      "currentExp": 750,
+      "nextLevelExp": 800,
+      "category": "Desarrollo & IA"
+    },
+    {
+      "id": "sub-dtwins",
+      "dimensionCode": "IND",
+      "name": "Gemelos Digitales (Digital Twins)",
+      "level": 7,
+      "currentExp": 700,
+      "nextLevelExp": 800,
+      "category": "Industria 4.0 & IoT"
+    },
+    {
+      "id": "sub-otsec",
+      "dimensionCode": "IND",
+      "name": "Ciberseguridad OT & Visión IA",
+      "level": 4,
+      "currentExp": 450,
+      "nextLevelExp": 500,
+      "category": "Industria 4.0 & IoT"
+    },
+    {
+      "id": "sub-3dprint",
+      "dimensionCode": "IND",
+      "name": "Impresión 3D & Polímeros Carbono",
+      "level": 6,
+      "currentExp": 650,
+      "nextLevelExp": 700,
+      "category": "Industria 4.0 & IoT"
+    },
+    {
+      "id": "sub-kuka",
+      "dimensionCode": "MEC",
+      "name": "Programación Robots KUKA KRL",
+      "level": 6,
+      "currentExp": 650,
+      "nextLevelExp": 700,
+      "category": "Mecatrónica & Robótica"
+    },
+    {
+      "id": "sub-cobots",
+      "dimensionCode": "MEC",
+      "name": "Cobots Universal Robots UR10e",
+      "level": 4,
+      "currentExp": 450,
+      "nextLevelExp": 500,
+      "category": "Mecatrónica & Robótica"
+    },
+    {
+      "id": "sub-plc",
+      "dimensionCode": "MEC",
+      "name": "PLCs Allen-Bradley Studio 5000",
+      "level": 7,
+      "currentExp": 700,
+      "nextLevelExp": 800,
+      "category": "Mecatrónica & Robótica"
+    },
+    {
+      "id": "sub-gdt",
+      "dimensionCode": "MET",
+      "name": "Tolerancias Geométricas (GD&T)",
+      "level": 6,
+      "currentExp": 650,
+      "nextLevelExp": 700,
+      "category": "Metrología & Calidad"
+    },
+    {
+      "id": "sub-cmm",
+      "dimensionCode": "MET",
+      "name": "Programación CMM Zeiss Calypso",
+      "level": 4,
+      "currentExp": 450,
+      "nextLevelExp": 500,
+      "category": "Metrología & Calidad"
+    },
+    {
+      "id": "sub-msa",
+      "dimensionCode": "MET",
+      "name": "Análisis de Medición (MSA AIAG)",
+      "level": 6,
+      "currentExp": 600,
+      "nextLevelExp": 700,
+      "category": "Metrología & Calidad"
+    },
+    {
+      "id": "sub-eng",
+      "dimensionCode": "IDI",
+      "name": "Inglés para Presentaciones Técnicas",
+      "level": 5,
+      "currentExp": 500,
+      "nextLevelExp": 600,
+      "category": "Idiomas Industriales"
+    },
+    {
+      "id": "sub-jap",
+      "dimensionCode": "IDI",
+      "name": "Japonés Industrial Monozukuri",
+      "level": 5,
+      "currentExp": 500,
+      "nextLevelExp": 600,
+      "category": "Idiomas Industriales"
+    },
+    {
+      "id": "sub-ger",
+      "dimensionCode": "IDI",
+      "name": "Alemán Técnico para Estampado",
+      "level": 4,
+      "currentExp": 450,
+      "nextLevelExp": 500,
+      "category": "Idiomas Industriales"
+    },
+    {
+      "id": "sub-loto",
+      "dimensionCode": "SEG",
+      "name": "Seguridad NFPA 70E & LOTO",
+      "level": 10,
+      "currentExp": 1300,
+      "nextLevelExp": 1300,
+      "category": "Seguridad & Agilidad STPS"
+    },
+    {
+      "id": "sub-sixsigma",
+      "dimensionCode": "SEG",
+      "name": "Lean Six Sigma Green Belt",
+      "level": 4,
+      "currentExp": 450,
+      "nextLevelExp": 500,
+      "category": "Seguridad & Agilidad STPS"
+    },
+    {
+      "id": "sub-scrum",
+      "dimensionCode": "SEG",
+      "name": "SCRUM Master & Product Owner",
+      "level": 8,
+      "currentExp": 850,
+      "nextLevelExp": 900,
+      "category": "Seguridad & Agilidad STPS"
+    }
+  ],
+  "completed_courses": [
+    {
+      "id": "log-01",
+      "title": "Master en IA Generativa, LLMs y LangChain con Python",
+      "type": "Diplomado",
+      "accreditationDate": "18 Enero, 2026",
+      "grade": 99,
+      "certificateId": "IECA-2026-IA-9921",
+      "xpBoosts": [
+        {
+          "subSkillId": "sub-py-ai",
+          "xpPoints": 400
+        },
+        {
+          "subSkillId": "sub-cloud",
+          "xpPoints": 250
+        }
+      ]
+    },
+    {
+      "id": "log-02",
+      "title": "Programación Avanzada de Robots KUKA y Comunicación KRL",
+      "type": "Curso",
+      "accreditationDate": "10 Diciembre, 2025",
+      "grade": 96,
+      "certificateId": "IECA-2025-ROB-8834",
+      "xpBoosts": [
+        {
+          "subSkillId": "sub-kuka",
+          "xpPoints": 450
+        },
+        {
+          "subSkillId": "sub-loto",
+          "xpPoints": 150
+        }
+      ]
+    },
+    {
+      "id": "log-03",
+      "title": "Tolerancias Geométricas y Dimensionales (GD&T ASME Y14.5)",
+      "type": "Curso",
+      "accreditationDate": "05 Noviembre, 2025",
+      "grade": 98,
+      "certificateId": "IECA-2025-MET-7712",
+      "xpBoosts": [
+        {
+          "subSkillId": "sub-gdt",
+          "xpPoints": 500
+        }
+      ]
+    },
+    {
+      "id": "log-04",
+      "title": "Desarrollo Web Full-Stack con Next.js 14, React y TypeScript",
+      "type": "Diplomado",
+      "accreditationDate": "22 Octubre, 2025",
+      "grade": 100,
+      "certificateId": "IECA-2025-WEB-9011",
+      "xpBoosts": [
+        {
+          "subSkillId": "sub-fullstack",
+          "xpPoints": 550
+        },
+        {
+          "subSkillId": "sub-py-ai",
+          "xpPoints": 150
+        }
+      ]
+    },
+    {
+      "id": "log-05",
+      "title": "Lean Six Sigma Green Belt Acreditado por el Clúster Industrial",
+      "type": "Certificación",
+      "accreditationDate": "15 Septiembre, 2025",
+      "grade": 95,
+      "certificateId": "IECA-2025-LSS-4429",
+      "xpBoosts": [
+        {
+          "subSkillId": "sub-sixsigma",
+          "xpPoints": 450
+        },
+        {
+          "subSkillId": "sub-msa",
+          "xpPoints": 200
+        }
+      ]
+    },
+    {
+      "id": "log-06",
+      "title": "Gemelos Digitales (Digital Twins) con Siemens Process Simulate",
+      "type": "Curso",
+      "accreditationDate": "28 Agosto, 2025",
+      "grade": 94,
+      "certificateId": "IECA-2025-DT-3382",
+      "xpBoosts": [
+        {
+          "subSkillId": "sub-dtwins",
+          "xpPoints": 400
+        },
+        {
+          "subSkillId": "sub-kuka",
+          "xpPoints": 200
+        }
+      ]
+    },
+    {
+      "id": "log-07",
+      "title": "Japonés Industrial y Filosofía Monozukuri para Plantas Automotrices",
+      "type": "Curso",
+      "accreditationDate": "12 Julio, 2025",
+      "grade": 97,
+      "certificateId": "IECA-2025-JAP-1192",
+      "xpBoosts": [
+        {
+          "subSkillId": "sub-jap",
+          "xpPoints": 500
+        }
+      ]
+    },
+    {
+      "id": "log-08",
+      "title": "Seguridad en Trabajos con Alto Voltaje y Vehículos Eléctricos (NFPA 70E)",
+      "type": "Taller Presencial",
+      "accreditationDate": "04 Junio, 2025",
+      "grade": 99,
+      "certificateId": "IECA-2025-STPS-6610",
+      "xpBoosts": [
+        {
+          "subSkillId": "sub-loto",
+          "xpPoints": 500
+        }
+      ]
+    },
+    {
+      "id": "log-09",
+      "title": "Unreal Engine 5: Desarrollo de Videojuegos 3D y Blueprints",
+      "type": "Diplomado",
+      "accreditationDate": "20 Mayo, 2025",
+      "grade": 98,
+      "certificateId": "IECA-2025-UE5-9988",
+      "xpBoosts": [
+        {
+          "subSkillId": "sub-fullstack",
+          "xpPoints": 300
+        },
+        {
+          "subSkillId": "sub-3dprint",
+          "xpPoints": 200
+        }
+      ]
+    },
+    {
+      "id": "log-10",
+      "title": "Certificación Profesional Scrum Master (PSM I & II)",
+      "type": "Certificación",
+      "accreditationDate": "02 Abril, 2025",
+      "grade": 96,
+      "certificateId": "IECA-2025-SCRUM-5514",
+      "xpBoosts": [
+        {
+          "subSkillId": "sub-scrum",
+          "xpPoints": 450
+        }
+      ]
+    },
+    {
+      "id": "log-11",
+      "title": "Operación de Máquinas de Medición por Coordenadas (CMM Zeiss)",
+      "type": "Taller Presencial",
+      "accreditationDate": "18 Marzo, 2025",
+      "grade": 93,
+      "certificateId": "IECA-2025-CMM-2201",
+      "xpBoosts": [
+        {
+          "subSkillId": "sub-cmm",
+          "xpPoints": 450
+        },
+        {
+          "subSkillId": "sub-gdt",
+          "xpPoints": 150
+        }
+      ]
+    },
+    {
+      "id": "log-12",
+      "title": "Arquitectura Cloud en Amazon Web Services (AWS Solutions Architect)",
+      "type": "Certificación",
+      "accreditationDate": "25 Febrero, 2025",
+      "grade": 95,
+      "certificateId": "IECA-2025-AWS-7744",
+      "xpBoosts": [
+        {
+          "subSkillId": "sub-cloud",
+          "xpPoints": 500
+        },
+        {
+          "subSkillId": "sub-otsec",
+          "xpPoints": 150
+        }
+      ]
+    },
+    {
+      "id": "log-13",
+      "title": "Integración de Cobots Universal Robots (UR10e) para Ensamble",
+      "type": "Curso",
+      "accreditationDate": "10 Enero, 2025",
+      "grade": 97,
+      "certificateId": "IECA-2025-UR-1002",
+      "xpBoosts": [
+        {
+          "subSkillId": "sub-cobots",
+          "xpPoints": 450
+        }
+      ]
+    },
+    {
+      "id": "log-14",
+      "title": "Inglés para Presentaciones Técnicas e Ingeniería de Clientes",
+      "type": "Curso",
+      "accreditationDate": "14 Diciembre, 2024",
+      "grade": 94,
+      "certificateId": "IECA-2024-ENG-8833",
+      "xpBoosts": [
+        {
+          "subSkillId": "sub-eng",
+          "xpPoints": 500
+        }
+      ]
+    },
+    {
+      "id": "log-15",
+      "title": "Mantenimiento Predictivo con Análisis de Vibración y Termografía",
+      "type": "Taller Presencial",
+      "accreditationDate": "22 Noviembre, 2024",
+      "grade": 92,
+      "certificateId": "IECA-2024-MANT-3311",
+      "xpBoosts": [
+        {
+          "subSkillId": "sub-dtwins",
+          "xpPoints": 300
+        },
+        {
+          "subSkillId": "sub-plc",
+          "xpPoints": 200
+        }
+      ]
+    },
+    {
+      "id": "log-16",
+      "title": "Programación Backend en Rust de Alto Rendimiento",
+      "type": "Curso",
+      "accreditationDate": "08 Octubre, 2024",
+      "grade": 96,
+      "certificateId": "IECA-2024-RUST-6622",
+      "xpBoosts": [
+        {
+          "subSkillId": "sub-fullstack",
+          "xpPoints": 400
+        }
+      ]
+    },
+    {
+      "id": "log-17",
+      "title": "Formación de Comisiones de Seguridad e Higiene NOM-019-STPS",
+      "type": "Curso",
+      "accreditationDate": "19 Septiembre, 2024",
+      "grade": 98,
+      "certificateId": "IECA-2024-STPS-1902",
+      "xpBoosts": [
+        {
+          "subSkillId": "sub-loto",
+          "xpPoints": 350
+        }
+      ]
+    },
+    {
+      "id": "log-18",
+      "title": "Visión Artificial Industrial con Cognex In-Sight e IA",
+      "type": "Curso",
+      "accreditationDate": "01 Agosto, 2024",
+      "grade": 95,
+      "certificateId": "IECA-2024-VIS-4488",
+      "xpBoosts": [
+        {
+          "subSkillId": "sub-otsec",
+          "xpPoints": 300
+        },
+        {
+          "subSkillId": "sub-py-ai",
+          "xpPoints": 200
+        }
+      ]
+    },
+    {
+      "id": "log-19",
+      "title": "Certificación de Montacarguistas y Operación de Maquinaria (DC-3)",
+      "type": "Certificación",
+      "accreditationDate": "15 Julio, 2024",
+      "grade": 100,
+      "certificateId": "IECA-2024-DC3-5599",
+      "xpBoosts": [
+        {
+          "subSkillId": "sub-loto",
+          "xpPoints": 300
+        }
+      ]
+    },
+    {
+      "id": "log-20",
+      "title": "Análisis de Sistemas de Medición (MSA 4ta Edición AIAG)",
+      "type": "Curso",
+      "accreditationDate": "02 Junio, 2024",
+      "grade": 91,
+      "certificateId": "IECA-2024-MSA-7722",
+      "xpBoosts": [
+        {
+          "subSkillId": "sub-msa",
+          "xpPoints": 400
+        }
+      ]
+    },
+    {
+      "id": "log-21",
+      "title": "Unity 3D y C#: Desarrollo de Videojuegos de Acción y RPG",
+      "type": "Curso",
+      "accreditationDate": "11 Mayo, 2024",
+      "grade": 97,
+      "certificateId": "IECA-2024-UNITY-3300",
+      "xpBoosts": [
+        {
+          "subSkillId": "sub-fullstack",
+          "xpPoints": 350
+        }
+      ]
+    },
+    {
+      "id": "log-22",
+      "title": "Impresión 3D Industrial con Polímeros de Fibra de Carbono",
+      "type": "Taller Presencial",
+      "accreditationDate": "20 Abril, 2024",
+      "grade": 96,
+      "certificateId": "IECA-2024-3DP-9911",
+      "xpBoosts": [
+        {
+          "subSkillId": "sub-3dprint",
+          "xpPoints": 450
+        }
+      ]
+    },
+    {
+      "id": "log-23",
+      "title": "Controladores Lógicos Allen-Bradley ControlLogix & Studio 5000",
+      "type": "Curso",
+      "accreditationDate": "05 Marzo, 2024",
+      "grade": 94,
+      "certificateId": "IECA-2024-AB-1188",
+      "xpBoosts": [
+        {
+          "subSkillId": "sub-plc",
+          "xpPoints": 500
+        }
+      ]
+    },
+    {
+      "id": "log-24",
+      "title": "Product Owner & Gestión de Product Backlog en Jira",
+      "type": "Curso",
+      "accreditationDate": "18 Febrero, 2024",
+      "grade": 95,
+      "certificateId": "IECA-2024-PO-6677",
+      "xpBoosts": [
+        {
+          "subSkillId": "sub-scrum",
+          "xpPoints": 400
+        }
+      ]
+    },
+    {
+      "id": "log-25",
+      "title": "Alemán Técnico Industrial para Maquinaria de Estampado",
+      "type": "Curso",
+      "accreditationDate": "10 Enero, 2024",
+      "grade": 92,
+      "certificateId": "IECA-2024-GER-8811",
+      "xpBoosts": [
+        {
+          "subSkillId": "sub-ger",
+          "xpPoints": 450
+        }
+      ]
+    }
+  ],
+  "completed_courses_history": [
+    {
+      "id": "log-01",
+      "title": "Master en IA Generativa, LLMs y LangChain con Python",
+      "type": "Diplomado",
+      "accreditationDate": "18 Enero, 2026",
+      "grade": 99,
+      "certificateId": "IECA-2026-IA-9921",
+      "statBoosts": [
+        {
+          "statName": "Análisis de Datos & Python IA",
+          "dimensionCode": "DEV",
+          "points": 400
+        },
+        {
+          "statName": "Cloud Computing & AWS",
+          "dimensionCode": "DEV",
+          "points": 250
+        }
+      ]
+    },
+    {
+      "id": "log-02",
+      "title": "Programación Avanzada de Robots KUKA y Comunicación KRL",
+      "type": "Curso",
+      "accreditationDate": "10 Diciembre, 2025",
+      "grade": 96,
+      "certificateId": "IECA-2025-ROB-8834",
+      "statBoosts": [
+        {
+          "statName": "Programación Robots KUKA KRL",
+          "dimensionCode": "MEC",
+          "points": 450
+        },
+        {
+          "statName": "Seguridad NFPA 70E & LOTO",
+          "dimensionCode": "SEG",
+          "points": 150
+        }
+      ]
+    },
+    {
+      "id": "log-03",
+      "title": "Tolerancias Geométricas y Dimensionales (GD&T ASME Y14.5)",
+      "type": "Curso",
+      "accreditationDate": "05 Noviembre, 2025",
+      "grade": 98,
+      "certificateId": "IECA-2025-MET-7712",
+      "statBoosts": [
+        {
+          "statName": "Tolerancias Geométricas (GD&T)",
+          "dimensionCode": "MET",
+          "points": 500
+        }
+      ]
+    },
+    {
+      "id": "log-04",
+      "title": "Desarrollo Web Full-Stack con Next.js 14, React y TypeScript",
+      "type": "Diplomado",
+      "accreditationDate": "22 Octubre, 2025",
+      "grade": 100,
+      "certificateId": "IECA-2025-WEB-9011",
+      "statBoosts": [
+        {
+          "statName": "Desarrollo Full-Stack (Next.js/React)",
+          "dimensionCode": "DEV",
+          "points": 550
+        },
+        {
+          "statName": "Análisis de Datos & Python IA",
+          "dimensionCode": "DEV",
+          "points": 150
+        }
+      ]
+    },
+    {
+      "id": "log-05",
+      "title": "Lean Six Sigma Green Belt Acreditado por el Clúster Industrial",
+      "type": "Certificación",
+      "accreditationDate": "15 Septiembre, 2025",
+      "grade": 95,
+      "certificateId": "IECA-2025-LSS-4429",
+      "statBoosts": [
+        {
+          "statName": "Lean Six Sigma Green Belt",
+          "dimensionCode": "SEG",
+          "points": 450
+        },
+        {
+          "statName": "Análisis de Medición (MSA AIAG)",
+          "dimensionCode": "MET",
+          "points": 200
+        }
+      ]
+    },
+    {
+      "id": "log-06",
+      "title": "Gemelos Digitales (Digital Twins) con Siemens Process Simulate",
+      "type": "Curso",
+      "accreditationDate": "28 Agosto, 2025",
+      "grade": 94,
+      "certificateId": "IECA-2025-DT-3382",
+      "statBoosts": [
+        {
+          "statName": "Gemelos Digitales (Digital Twins)",
+          "dimensionCode": "IND",
+          "points": 400
+        },
+        {
+          "statName": "Programación Robots KUKA KRL",
+          "dimensionCode": "MEC",
+          "points": 200
+        }
+      ]
+    },
+    {
+      "id": "log-07",
+      "title": "Japonés Industrial y Filosofía Monozukuri para Plantas Automotrices",
+      "type": "Curso",
+      "accreditationDate": "12 Julio, 2025",
+      "grade": 97,
+      "certificateId": "IECA-2025-JAP-1192",
+      "statBoosts": [
+        {
+          "statName": "Japonés Industrial Monozukuri",
+          "dimensionCode": "IDI",
+          "points": 500
+        }
+      ]
+    },
+    {
+      "id": "log-08",
+      "title": "Seguridad en Trabajos con Alto Voltaje y Vehículos Eléctricos (NFPA 70E)",
+      "type": "Taller Presencial",
+      "accreditationDate": "04 Junio, 2025",
+      "grade": 99,
+      "certificateId": "IECA-2025-STPS-6610",
+      "statBoosts": [
+        {
+          "statName": "Seguridad NFPA 70E & LOTO",
+          "dimensionCode": "SEG",
+          "points": 500
+        }
+      ]
+    },
+    {
+      "id": "log-09",
+      "title": "Unreal Engine 5: Desarrollo de Videojuegos 3D y Blueprints",
+      "type": "Diplomado",
+      "accreditationDate": "20 Mayo, 2025",
+      "grade": 98,
+      "certificateId": "IECA-2025-UE5-9988",
+      "statBoosts": [
+        {
+          "statName": "Desarrollo Full-Stack (Next.js/React)",
+          "dimensionCode": "DEV",
+          "points": 300
+        },
+        {
+          "statName": "Impresión 3D & Polímeros Carbono",
+          "dimensionCode": "IND",
+          "points": 200
+        }
+      ]
+    },
+    {
+      "id": "log-10",
+      "title": "Certificación Profesional Scrum Master (PSM I & II)",
+      "type": "Certificación",
+      "accreditationDate": "02 Abril, 2025",
+      "grade": 96,
+      "certificateId": "IECA-2025-SCRUM-5514",
+      "statBoosts": [
+        {
+          "statName": "SCRUM Master & Product Owner",
+          "dimensionCode": "SEG",
+          "points": 450
+        }
+      ]
+    },
+    {
+      "id": "log-11",
+      "title": "Operación de Máquinas de Medición por Coordenadas (CMM Zeiss)",
+      "type": "Taller Presencial",
+      "accreditationDate": "18 Marzo, 2025",
+      "grade": 93,
+      "certificateId": "IECA-2025-CMM-2201",
+      "statBoosts": [
+        {
+          "statName": "Programación CMM Zeiss Calypso",
+          "dimensionCode": "MET",
+          "points": 450
+        },
+        {
+          "statName": "Tolerancias Geométricas (GD&T)",
+          "dimensionCode": "MET",
+          "points": 150
+        }
+      ]
+    },
+    {
+      "id": "log-12",
+      "title": "Arquitectura Cloud en Amazon Web Services (AWS Solutions Architect)",
+      "type": "Certificación",
+      "accreditationDate": "25 Febrero, 2025",
+      "grade": 95,
+      "certificateId": "IECA-2025-AWS-7744",
+      "statBoosts": [
+        {
+          "statName": "Cloud Computing & AWS",
+          "dimensionCode": "DEV",
+          "points": 500
+        },
+        {
+          "statName": "Ciberseguridad OT & Visión IA",
+          "dimensionCode": "IND",
+          "points": 150
+        }
+      ]
+    },
+    {
+      "id": "log-13",
+      "title": "Integración de Cobots Universal Robots (UR10e) para Ensamble",
+      "type": "Curso",
+      "accreditationDate": "10 Enero, 2025",
+      "grade": 97,
+      "certificateId": "IECA-2025-UR-1002",
+      "statBoosts": [
+        {
+          "statName": "Cobots Universal Robots UR10e",
+          "dimensionCode": "MEC",
+          "points": 450
+        }
+      ]
+    },
+    {
+      "id": "log-14",
+      "title": "Inglés para Presentaciones Técnicas e Ingeniería de Clientes",
+      "type": "Curso",
+      "accreditationDate": "14 Diciembre, 2024",
+      "grade": 94,
+      "certificateId": "IECA-2024-ENG-8833",
+      "statBoosts": [
+        {
+          "statName": "Inglés para Presentaciones Técnicas",
+          "dimensionCode": "IDI",
+          "points": 500
+        }
+      ]
+    },
+    {
+      "id": "log-15",
+      "title": "Mantenimiento Predictivo con Análisis de Vibración y Termografía",
+      "type": "Taller Presencial",
+      "accreditationDate": "22 Noviembre, 2024",
+      "grade": 92,
+      "certificateId": "IECA-2024-MANT-3311",
+      "statBoosts": [
+        {
+          "statName": "Gemelos Digitales (Digital Twins)",
+          "dimensionCode": "IND",
+          "points": 300
+        },
+        {
+          "statName": "PLCs Allen-Bradley Studio 5000",
+          "dimensionCode": "MEC",
+          "points": 200
+        }
+      ]
+    },
+    {
+      "id": "log-16",
+      "title": "Programación Backend en Rust de Alto Rendimiento",
+      "type": "Curso",
+      "accreditationDate": "08 Octubre, 2024",
+      "grade": 96,
+      "certificateId": "IECA-2024-RUST-6622",
+      "statBoosts": [
+        {
+          "statName": "Desarrollo Full-Stack (Next.js/React)",
+          "dimensionCode": "DEV",
+          "points": 400
+        }
+      ]
+    },
+    {
+      "id": "log-17",
+      "title": "Formación de Comisiones de Seguridad e Higiene NOM-019-STPS",
+      "type": "Curso",
+      "accreditationDate": "19 Septiembre, 2024",
+      "grade": 98,
+      "certificateId": "IECA-2024-STPS-1902",
+      "statBoosts": [
+        {
+          "statName": "Seguridad NFPA 70E & LOTO",
+          "dimensionCode": "SEG",
+          "points": 350
+        }
+      ]
+    },
+    {
+      "id": "log-18",
+      "title": "Visión Artificial Industrial con Cognex In-Sight e IA",
+      "type": "Curso",
+      "accreditationDate": "01 Agosto, 2024",
+      "grade": 95,
+      "certificateId": "IECA-2024-VIS-4488",
+      "statBoosts": [
+        {
+          "statName": "Ciberseguridad OT & Visión IA",
+          "dimensionCode": "IND",
+          "points": 300
+        },
+        {
+          "statName": "Análisis de Datos & Python IA",
+          "dimensionCode": "DEV",
+          "points": 200
+        }
+      ]
+    },
+    {
+      "id": "log-19",
+      "title": "Certificación de Montacarguistas y Operación de Maquinaria (DC-3)",
+      "type": "Certificación",
+      "accreditationDate": "15 Julio, 2024",
+      "grade": 100,
+      "certificateId": "IECA-2024-DC3-5599",
+      "statBoosts": [
+        {
+          "statName": "Seguridad NFPA 70E & LOTO",
+          "dimensionCode": "SEG",
+          "points": 300
+        }
+      ]
+    },
+    {
+      "id": "log-20",
+      "title": "Análisis de Sistemas de Medición (MSA 4ta Edición AIAG)",
+      "type": "Curso",
+      "accreditationDate": "02 Junio, 2024",
+      "grade": 91,
+      "certificateId": "IECA-2024-MSA-7722",
+      "statBoosts": [
+        {
+          "statName": "Análisis de Medición (MSA AIAG)",
+          "dimensionCode": "MET",
+          "points": 400
+        }
+      ]
+    },
+    {
+      "id": "log-21",
+      "title": "Unity 3D y C#: Desarrollo de Videojuegos de Acción y RPG",
+      "type": "Curso",
+      "accreditationDate": "11 Mayo, 2024",
+      "grade": 97,
+      "certificateId": "IECA-2024-UNITY-3300",
+      "statBoosts": [
+        {
+          "statName": "Desarrollo Full-Stack (Next.js/React)",
+          "dimensionCode": "DEV",
+          "points": 350
+        }
+      ]
+    },
+    {
+      "id": "log-22",
+      "title": "Impresión 3D Industrial con Polímeros de Fibra de Carbono",
+      "type": "Taller Presencial",
+      "accreditationDate": "20 Abril, 2024",
+      "grade": 96,
+      "certificateId": "IECA-2024-3DP-9911",
+      "statBoosts": [
+        {
+          "statName": "Impresión 3D & Polímeros Carbono",
+          "dimensionCode": "IND",
+          "points": 450
+        }
+      ]
+    },
+    {
+      "id": "log-23",
+      "title": "Controladores Lógicos Allen-Bradley ControlLogix & Studio 5000",
+      "type": "Curso",
+      "accreditationDate": "05 Marzo, 2024",
+      "grade": 94,
+      "certificateId": "IECA-2024-AB-1188",
+      "statBoosts": [
+        {
+          "statName": "PLCs Allen-Bradley Studio 5000",
+          "dimensionCode": "MEC",
+          "points": 500
+        }
+      ]
+    },
+    {
+      "id": "log-24",
+      "title": "Product Owner & Gestión de Product Backlog en Jira",
+      "type": "Curso",
+      "accreditationDate": "18 Febrero, 2024",
+      "grade": 95,
+      "certificateId": "IECA-2024-PO-6677",
+      "statBoosts": [
+        {
+          "statName": "SCRUM Master & Product Owner",
+          "dimensionCode": "SEG",
+          "points": 400
+        }
+      ]
+    },
+    {
+      "id": "log-25",
+      "title": "Alemán Técnico Industrial para Maquinaria de Estampado",
+      "type": "Curso",
+      "accreditationDate": "10 Enero, 2024",
+      "grade": 92,
+      "certificateId": "IECA-2024-GER-8811",
+      "statBoosts": [
+        {
+          "statName": "Alemán Técnico para Estampado",
+          "dimensionCode": "IDI",
+          "points": 450
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "total_completed_courses": 25,
+    "total_xp": 12450,
+    "certificates_count": 4,
+    "completed_hours": 128,
+    "streak_days": 14
+  }
+}

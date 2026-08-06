@@ -1,0 +1,45 @@
+/**
+ * Estilos globales — tema oscuro campus IECA con soporte .light.
+ */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: dark;
+  }
+
+  html,
+  body {
+    @apply min-h-full bg-slate-950 text-slate-100 antialiased;
+  }
+
+  html.light body {
+    @apply bg-slate-50 text-slate-900;
+  }
+}
+
+@layer components {
+  .glass-panel {
+    @apply border border-white/10 bg-slate-900/70 backdrop-blur-xl;
+  }
+
+  html.light .glass-panel {
+    @apply border-slate-200 bg-white/90;
+  }
+
+  .edu-gradient {
+    background: linear-gradient(135deg, #0284c7 0%, #14b8a6 100%);
+  }
+}
+
+@layer utilities {
+  .animate-typing-dot:nth-child(2) {
+    animation-delay: 0.15s;
+  }
+
+  .animate-typing-dot:nth-child(3) {
+    animation-delay: 0.3s;
+  }
+}

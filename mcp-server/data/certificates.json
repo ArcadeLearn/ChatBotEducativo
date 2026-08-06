@@ -1,0 +1,204 @@
+{
+  "certificates": [
+    {
+      "student_id": "user-01",
+      "certificate_id": "IECA-2026-IA-9921",
+      "course_title": "Master en IA Generativa, LLMs y LangChain con Python",
+      "course_type": "Diplomado",
+      "accreditation_date": "18 Enero, 2026",
+      "grade": 99
+    },
+    {
+      "student_id": "user-01",
+      "certificate_id": "IECA-2025-ROB-8834",
+      "course_title": "Programación Avanzada de Robots KUKA y Comunicación KRL",
+      "course_type": "Curso",
+      "accreditation_date": "10 Diciembre, 2025",
+      "grade": 96
+    },
+    {
+      "student_id": "user-01",
+      "certificate_id": "IECA-2025-MET-7712",
+      "course_title": "Tolerancias Geométricas y Dimensionales (GD&T ASME Y14.5)",
+      "course_type": "Curso",
+      "accreditation_date": "05 Noviembre, 2025",
+      "grade": 98
+    },
+    {
+      "student_id": "user-01",
+      "certificate_id": "IECA-2025-WEB-9011",
+      "course_title": "Desarrollo Web Full-Stack con Next.js 14, React y TypeScript",
+      "course_type": "Diplomado",
+      "accreditation_date": "22 Octubre, 2025",
+      "grade": 100
+    },
+    {
+      "student_id": "user-01",
+      "certificate_id": "IECA-2025-LSS-4429",
+      "course_title": "Lean Six Sigma Green Belt Acreditado por el Clúster Industrial",
+      "course_type": "Certificación",
+      "accreditation_date": "15 Septiembre, 2025",
+      "grade": 95
+    },
+    {
+      "student_id": "user-01",
+      "certificate_id": "IECA-2025-DT-3382",
+      "course_title": "Gemelos Digitales (Digital Twins) con Siemens Process Simulate",
+      "course_type": "Curso",
+      "accreditation_date": "28 Agosto, 2025",
+      "grade": 94
+    },
+    {
+      "student_id": "user-01",
+      "certificate_id": "IECA-2025-JAP-1192",
+      "course_title": "Japonés Industrial y Filosofía Monozukuri para Plantas Automotrices",
+      "course_type": "Curso",
+      "accreditation_date": "12 Julio, 2025",
+      "grade": 97
+    },
+    {
+      "student_id": "user-01",
+      "certificate_id": "IECA-2025-STPS-6610",
+      "course_title": "Seguridad en Trabajos con Alto Voltaje y Vehículos Eléctricos (NFPA 70E)",
+      "course_type": "Taller Presencial",
+      "accreditation_date": "04 Junio, 2025",
+      "grade": 99
+    },
+    {
+      "student_id": "user-01",
+      "certificate_id": "IECA-2025-UE5-9988",
+      "course_title": "Unreal Engine 5: Desarrollo de Videojuegos 3D y Blueprints",
+      "course_type": "Diplomado",
+      "accreditation_date": "20 Mayo, 2025",
+      "grade": 98
+    },
+    {
+      "student_id": "user-01",
+      "certificate_id": "IECA-2025-SCRUM-5514",
+      "course_title": "Certificación Profesional Scrum Master (PSM I & II)",
+      "course_type": "Certificación",
+      "accreditation_date": "02 Abril, 2025",
+      "grade": 96
+    },
+    {
+      "student_id": "user-01",
+      "certificate_id": "IECA-2025-CMM-2201",
+      "course_title": "Operación de Máquinas de Medición por Coordenadas (CMM Zeiss)",
+      "course_type": "Taller Presencial",
+      "accreditation_date": "18 Marzo, 2025",
+      "grade": 93
+    },
+    {
+      "student_id": "user-01",
+      "certificate_id": "IECA-2025-AWS-7744",
+      "course_title": "Arquitectura Cloud en Amazon Web Services (AWS Solutions Architect)",
+      "course_type": "Certificación",
+      "accreditation_date": "25 Febrero, 2025",
+      "grade": 95
+    },
+    {
+      "student_id": "user-01",
+      "certificate_id": "IECA-2025-UR-1002",
+      "course_title": "Integración de Cobots Universal Robots (UR10e) para Ensamble",
+      "course_type": "Curso",
+      "accreditation_date": "10 Enero, 2025",
+      "grade": 97
+    },
+    {
+      "student_id": "user-01",
+      "certificate_id": "IECA-2024-ENG-8833",
+      "course_title": "Inglés para Presentaciones Técnicas e Ingeniería de Clientes",
+      "course_type": "Curso",
+      "accreditation_date": "14 Diciembre, 2024",
+      "grade": 94
+    },
+    {
+      "student_id": "user-01",
+      "certificate_id": "IECA-2024-MANT-3311",
+      "course_title": "Mantenimiento Predictivo con Análisis de Vibración y Termografía",
+      "course_type": "Taller Presencial",
+      "accreditation_date": "22 Noviembre, 2024",
+      "grade": 92
+    },
+    {
+      "student_id": "user-01",
+      "certificate_id": "IECA-2024-RUST-6622",
+      "course_title": "Programación Backend en Rust de Alto Rendimiento",
+      "course_type": "Curso",
+      "accreditation_date": "08 Octubre, 2024",
+      "grade": 96
+    },
+    {
+      "student_id": "user-01",
+      "certificate_id": "IECA-2024-STPS-1902",
+      "course_title": "Formación de Comisiones de Seguridad e Higiene NOM-019-STPS",
+      "course_type": "Curso",
+      "accreditation_date": "19 Septiembre, 2024",
+      "grade": 98
+    },
+    {
+      "student_id": "user-01",
+      "certificate_id": "IECA-2024-VIS-4488",
+      "course_title": "Visión Artificial Industrial con Cognex In-Sight e IA",
+      "course_type": "Curso",
+      "accreditation_date": "01 Agosto, 2024",
+      "grade": 95
+    },
+    {
+      "student_id": "user-01",
+      "certificate_id": "IECA-2024-DC3-5599",
+      "course_title": "Certificación de Montacarguistas y Operación de Maquinaria (DC-3)",
+      "course_type": "Certificación",
+      "accreditation_date": "15 Julio, 2024",
+      "grade": 100
+    },
+    {
+      "student_id": "user-01",
+      "certificate_id": "IECA-2024-MSA-7722",
+      "course_title": "Análisis de Sistemas de Medición (MSA 4ta Edición AIAG)",
+      "course_type": "Curso",
+      "accreditation_date": "02 Junio, 2024",
+      "grade": 91
+    },
+    {
+      "student_id": "user-01",
+      "certificate_id": "IECA-2024-UNITY-3300",
+      "course_title": "Unity 3D y C#: Desarrollo de Videojuegos de Acción y RPG",
+      "course_type": "Curso",
+      "accreditation_date": "11 Mayo, 2024",
+      "grade": 97
+    },
+    {
+      "student_id": "user-01",
+      "certificate_id": "IECA-2024-3DP-9911",
+      "course_title": "Impresión 3D Industrial con Polímeros de Fibra de Carbono",
+      "course_type": "Taller Presencial",
+      "accreditation_date": "20 Abril, 2024",
+      "grade": 96
+    },
+    {
+      "student_id": "user-01",
+      "certificate_id": "IECA-2024-AB-1188",
+      "course_title": "Controladores Lógicos Allen-Bradley ControlLogix & Studio 5000",
+      "course_type": "Curso",
+      "accreditation_date": "05 Marzo, 2024",
+      "grade": 94
+    },
+    {
+      "student_id": "user-01",
+      "certificate_id": "IECA-2024-PO-6677",
+      "course_title": "Product Owner & Gestión de Product Backlog en Jira",
+      "course_type": "Curso",
+      "accreditation_date": "18 Febrero, 2024",
+      "grade": 95
+    },
+    {
+      "student_id": "user-01",
+      "certificate_id": "IECA-2024-GER-8811",
+      "course_title": "Alemán Técnico Industrial para Maquinaria de Estampado",
+      "course_type": "Curso",
+      "accreditation_date": "10 Enero, 2024",
+      "grade": 92
+    }
+  ]
+}
