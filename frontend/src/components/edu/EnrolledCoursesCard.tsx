@@ -19,7 +19,7 @@ interface EnrolledCoursesCardProps {
 
 function CourseCard({ course }: { course: EnrolledCourse }) {
   return (
-    <article className="overflow-hidden rounded-xl border border-white/10 bg-slate-900/60">
+    <article className="overflow-hidden rounded-xl border border-slate-200 bg-white dark:border-white/10 dark:bg-slate-900/60">
       {course.thumbnail && (
         <div className="relative h-28 w-full overflow-hidden">
           {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -36,7 +36,9 @@ function CourseCard({ course }: { course: EnrolledCourse }) {
         </div>
       )}
       <div className="space-y-2 p-3">
-        <h4 className="line-clamp-2 text-sm font-semibold text-white">{course.title}</h4>
+        <h4 className="line-clamp-2 text-sm font-semibold text-slate-900 dark:text-white">
+          {course.title}
+        </h4>
         {course.instructor && (
           <p className="text-xs text-slate-400">{course.instructor}</p>
         )}

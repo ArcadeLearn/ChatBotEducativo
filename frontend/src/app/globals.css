@@ -66,6 +66,27 @@
   html.light .chat-payload-theme [class*="border-white"] {
     border-color: rgb(226 232 240);
   }
+
+  html.light .chat-payload-theme .text-teal-200 {
+    color: rgb(17 94 89);
+  }
+
+  html.light .chat-payload-theme .text-sky-300 {
+    color: rgb(3 105 161);
+  }
+
+  html.light .chat-payload-theme [class*="bg-slate-950"] {
+    background-color: rgb(241 245 249);
+  }
+
+  /* Hero de curso: texto claro sobre imagen (no aplicar override de .text-white) */
+  html.light .chat-payload-theme .edu-hero-text {
+    color: rgb(255 255 255);
+  }
+
+  html.light .chat-payload-theme .edu-hero-subtext {
+    color: rgb(203 213 225);
+  }
 }
 
 @layer utilities {

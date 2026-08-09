@@ -16,12 +16,12 @@ export function ProgressBar({
   return (
     <div className="w-full">
       {label && (
-        <div className="mb-1 flex justify-between text-xs text-slate-400">
+        <div className="mb-1 flex justify-between text-xs text-slate-600 dark:text-slate-400">
           <span>{label}</span>
           <span>{clamped}%</span>
         </div>
       )}
-      <div className="h-2 overflow-hidden rounded-full bg-slate-800">
+      <div className="h-2 overflow-hidden rounded-full bg-slate-200 dark:bg-slate-800">
         <div
           className={`h-full rounded-full transition-all ${colorClass}`}
           style={{ width: `${clamped}%` }}
