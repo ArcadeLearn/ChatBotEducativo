@@ -20,9 +20,10 @@ Base de datos dedicada en el **mismo Postgres** que ChatBotInteligente (`n8n-pos
 
 ## Ejecucion desde el VPS
 
-Copia la carpeta `sql/` al VPS o clona el repo en `/docker/ChatBotEducativo`.
+Clona el repo en el VPS:
 
 ```bash
+git clone https://github.com/ArcadeLearn/ChatBotEducativo.git /docker/ChatBotEducativo
 cd /docker/ChatBotEducativo/infrastructure/sql
 
 # 1) Crear BD y usuario

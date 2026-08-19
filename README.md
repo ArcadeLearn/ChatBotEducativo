@@ -1,5 +1,7 @@
 # ChatBotEducativo
 
+Repositorio: [github.com/ArcadeLearn/ChatBotEducativo](https://github.com/ArcadeLearn/ChatBotEducativo)
+
 Chatbot educativo con arquitectura híbrida: **Frontend Next.js**, **Backend NestJS**, **AI Service (LangGraph + Gemini)** y **MCP Server** con datos de campus IECA.
 
 ## Inicio rápido

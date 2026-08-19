@@ -1,12 +1,18 @@
 # ChatBotEducativo en produccion interna (sin DNS publico)
 
+Repositorio: `https://github.com/ArcadeLearn/ChatBotEducativo`
+
 Este despliegue crea un unico contenedor `edu-app` (frontend + backend + ai-service + mcp-server)
 conectado a Postgres existente (`n8n-postgres`) usando una base de datos nueva (`edu_chatbot_db`).
 
 ## 1) Prerrequisitos en VPS
 
 - Red Docker existente: `n8n_default` (la misma de Traefik/n8n).
-- Repositorio clonado en: `/docker/ChatBotEducativo`.
+- Repositorio clonado en: `/docker/ChatBotEducativo`:
+
+```bash
+git clone https://github.com/ArcadeLearn/ChatBotEducativo.git /docker/ChatBotEducativo
+```
 - Archivo `infrastructure/.env.prod` creado desde `infrastructure/.env.prod.example`.
 
 ## 2) Preparar base de datos (una sola vez)
