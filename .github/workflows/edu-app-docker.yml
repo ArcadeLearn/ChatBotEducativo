@@ -1,0 +1,55 @@
+name: ChatBotEducativo CI/CD
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "backend/**"
+      - "frontend/**"
+      - "ai-service/**"
+      - "mcp-server/**"
+      - "infrastructure/**"
+      - ".github/workflows/edu-app-docker.yml"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Build edu-app image
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          file: ./infrastructure/Dockerfile.edu-app
+          push: false
+          tags: edu-app:latest
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+    steps:
+      - name: Deploy on VPS
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USER }}
+          port: ${{ secrets.VPS_PORT }}
+          key: ${{ secrets.VPS_SSH_KEY }}
+          timeout: 120s
+          command_timeout: 30m
+          script: |
+            cd ${{ secrets.VPS_DEPLOY_PATH_EDU }}
+            git pull origin main
+            cd infrastructure
+            if [ ! -f .env.prod ]; then
+              cp .env.prod.example .env.prod
+            fi
+            docker compose --env-file .env.prod -f docker-compose.prod-internal.yml up -d --build

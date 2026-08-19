@@ -16,7 +16,7 @@ def get_settings() -> dict[str, str | int]:
         "port": int(os.getenv("PORT", "8001")),
         "mcp_server_url": os.getenv("MCP_SERVER_URL", "http://127.0.0.1:8002"),
         "llm_provider": os.getenv("LLM_PROVIDER", "gemini"),
-        "llm_model": os.getenv("LLM_MODEL", "gemini-3.5-flash"),
+        "llm_model": os.getenv("LLM_MODEL", "gemini-3.7-flash"),
         "llm_fallback_model": os.getenv("LLM_FALLBACK_MODEL", "gemini-3.5-flash-lite"),
         "google_api_key": (
             os.getenv("GOOGLE_GEMINI_API_KEY") or os.getenv("GEMINI_API_KEY") or ""

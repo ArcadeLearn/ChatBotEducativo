@@ -1,6 +1,6 @@
 """
 Factory del LLM Gemini para el agente educativo.
-Default: gemini-3.5-flash (reemplazo de 2.5-flash, retiro ~oct 2026).
+Default: gemini-3.7-flash (con fallback configurado en 3.5-flash-lite).
 """
 
 from langchain_google_genai import ChatGoogleGenerativeAI

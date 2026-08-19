@@ -4,7 +4,7 @@ Agente educativo que procesa preguntas en lenguaje natural y delega al MCP Serve
 
 **Puerto:** 8001  
 **Fase:** 3 ✅ Completada  
-**Modelo default:** `gemini-3.5-flash` (reemplazo de 2.5-flash, retiro ~oct 2026)
+**Modelo default:** `gemini-3.7-flash` (fallback configurado: `gemini-3.5-flash-lite`)
 
 ## Arranque local
 
@@ -13,7 +13,7 @@ Agente educativo que procesa preguntas en lenguaje natural y delega al MCP Serve
 ```powershell
 Set-Location "d:\Proyectos\ProyectosDemos\ChatBotEducativo\ai-service"
 copy .env.example .env
-# Editar .env: GOOGLE_GEMINI_API_KEY, LLM_MODEL=gemini-3.5-flash
+# Editar .env: GOOGLE_GEMINI_API_KEY, LLM_MODEL=gemini-3.7-flash
 pip install -r requirements.txt
 python -m uvicorn app.main:app --reload --host 0.0.0.0 --port 8001
 ```

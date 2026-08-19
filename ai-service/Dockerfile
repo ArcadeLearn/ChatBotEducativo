@@ -10,7 +10,7 @@ COPY main.py .
 
 ENV PORT=8001
 ENV MCP_SERVER_URL=http://mcp-server:8002
-ENV LLM_MODEL=gemini-3.5-flash
+ENV LLM_MODEL=gemini-3.7-flash
 
 EXPOSE 8001
 

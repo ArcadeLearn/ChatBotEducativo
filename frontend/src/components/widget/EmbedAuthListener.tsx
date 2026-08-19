@@ -18,7 +18,8 @@ interface EmbedAuthPayload {
 function isAllowedOrigin(origin: string): boolean {
   if (typeof window === "undefined") return false;
   if (origin === window.location.origin) return true;
-  return /^https?:\/\/(localhost|127\.0\.0\.1)(:\d+)?$/.test(origin);
+  if (/^https?:\/\/(localhost|127\.0\.0\.1)(:\d+)?$/.test(origin)) return true;
+  return origin === "https://iecacampus.arcadevs.cloud";
 }
 
 interface EmbedAuthListenerProps {

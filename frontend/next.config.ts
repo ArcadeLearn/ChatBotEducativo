@@ -4,7 +4,7 @@
 import type { NextConfig } from "next";
 
 const embedFrameAncestors =
-  "frame-ancestors 'self' http://localhost:3000 http://localhost:3005 http://127.0.0.1:3000 http://127.0.0.1:3005";
+  "frame-ancestors 'self' http://localhost:3000 http://localhost:3005 http://127.0.0.1:3000 http://127.0.0.1:3005 https://iecacampus.arcadevs.cloud";
 
 const nextConfig: NextConfig = {
   reactStrictMode: true,

@@ -1,0 +1,41 @@
+FROM node:20-bookworm-slim
+
+WORKDIR /app
+
+RUN apt-get update \
+  && apt-get install -y --no-install-recommends python3 python3-pip supervisor curl \
+  && rm -rf /var/lib/apt/lists/*
+
+# Instala dependencias Node primero para cachear capas
+COPY backend/package*.json /app/backend/
+COPY frontend/package*.json /app/frontend/
+RUN cd /app/backend && npm ci
+RUN cd /app/frontend && npm ci
+
+# Copia codigo Node y compila
+COPY backend /app/backend
+COPY frontend /app/frontend
+RUN cd /app/backend && npm run build
+RUN cd /app/frontend && npm run build
+
+# Instala dependencias Python
+COPY ai-service/requirements.txt /app/ai-service/
+COPY mcp-server/requirements.txt /app/mcp-server/
+RUN pip3 install --no-cache-dir -r /app/ai-service/requirements.txt \
+  && pip3 install --no-cache-dir -r /app/mcp-server/requirements.txt
+
+# Copia codigo Python y supervisor config
+COPY ai-service /app/ai-service
+COPY mcp-server /app/mcp-server
+COPY infrastructure/supervisord.edu-app.conf /app/infrastructure/supervisord.edu-app.conf
+
+ENV NODE_ENV=production
+ENV PORT=4001
+ENV AI_PORT=8001
+ENV MCP_PORT=8002
+ENV FRONTEND_PORT=3001
+ENV HOSTNAME=0.0.0.0
+
+EXPOSE 3001 4001 8001 8002
+
+CMD ["supervisord", "-n", "-c", "/app/infrastructure/supervisord.edu-app.conf"]

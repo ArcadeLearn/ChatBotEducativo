@@ -19,6 +19,8 @@ out/
 .env
 .env.local
 .env.*.local
+.env.prod
+.env.*.prod
 !.env.example
 
 # Logs
@@ -42,6 +44,7 @@ htmlcov/
 
 # Docker
 *.pid
+infrastructure/docker-compose.override.yml
 
 # Temporales
 tmp/
