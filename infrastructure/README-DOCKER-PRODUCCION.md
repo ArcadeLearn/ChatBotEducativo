@@ -40,6 +40,8 @@ docker exec -i n8n-postgres psql -U postgres -d postgres < 04-harden-edu-chatbot
 DATABASE_URL=postgresql://edu_chatbot_user:TU_PASSWORD_SEGURO@n8n-postgres:5432/edu_chatbot_db
 ```
 
+**Nota:** si la password tiene `$`, escapala como `$$` en `.env.prod` (Docker Compose interpreta `$VAR`).
+
 ## 3) Levantar contenedor interno
 
 **Primer arranque (crear tablas):** en `.env.prod` usa temporalmente `NODE_ENV=development` para que TypeORM cree `users`, `sessions` y `messages` y el backend inserte usuarios seed. Luego vuelve a `NODE_ENV=production` y recrea el contenedor.
