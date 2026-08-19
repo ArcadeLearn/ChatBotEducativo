@@ -42,33 +42,32 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Install SSH key
-        uses: shimataro/ssh-key-action@v2
+      # Mismos secrets que campusdemo: VPS_HOST, VPS_USER, VPS_PORT, VPS_SSH_KEY, VPS_SSH_PASSPHRASE
+      - name: Copy repo to VPS
+        uses: appleboy/scp-action@v0.1.7
         with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USER }}
+          port: ${{ secrets.VPS_PORT }}
           key: ${{ secrets.VPS_SSH_KEY }}
           passphrase: ${{ secrets.VPS_SSH_PASSPHRASE }}
-          known_hosts: ${{ secrets.VPS_HOST }}
-
-      - name: Copy repo to VPS
-        env:
-          VPS_HOST: ${{ secrets.VPS_HOST }}
-          VPS_USER: ${{ secrets.VPS_USER }}
-          VPS_PORT: ${{ secrets.VPS_PORT }}
-          VPS_DEPLOY_PATH: ${{ secrets.VPS_DEPLOY_PATH_EDU }}
-        run: |
-          rsync -avz \
-            -e "ssh -p ${VPS_PORT} -o StrictHostKeyChecking=accept-new" \
-            backend/ frontend/ ai-service/ mcp-server/ infrastructure/ \
-            "${VPS_USER}@${VPS_HOST}:${VPS_DEPLOY_PATH}/"
+          timeout: 120s
+          source: "backend,frontend,ai-service,mcp-server,infrastructure"
+          target: ${{ secrets.VPS_DEPLOY_PATH_EDU }}
 
       - name: Deploy on VPS
-        env:
-          VPS_HOST: ${{ secrets.VPS_HOST }}
-          VPS_USER: ${{ secrets.VPS_USER }}
-          VPS_PORT: ${{ secrets.VPS_PORT }}
-          VPS_DEPLOY_PATH: ${{ secrets.VPS_DEPLOY_PATH_EDU }}
-        run: |
-          ssh -p "${VPS_PORT}" -o StrictHostKeyChecking=accept-new "${VPS_USER}@${VPS_HOST}" \
-            "cd ${VPS_DEPLOY_PATH}/infrastructure && \
-             if [ ! -f .env.prod ]; then cp .env.prod.example .env.prod; fi && \
-             docker compose --env-file .env.prod -f docker-compose.prod-internal.yml up -d --build"
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USER }}
+          port: ${{ secrets.VPS_PORT }}
+          key: ${{ secrets.VPS_SSH_KEY }}
+          passphrase: ${{ secrets.VPS_SSH_PASSPHRASE }}
+          timeout: 120s
+          command_timeout: 30m
+          script: |
+            cd ${{ secrets.VPS_DEPLOY_PATH_EDU }}/infrastructure
+            if [ ! -f .env.prod ]; then
+              cp .env.prod.example .env.prod
+            fi
+            docker compose --env-file .env.prod -f docker-compose.prod-internal.yml up -d --build
