@@ -9,7 +9,7 @@ import { useChat as useAiChat, type Message } from "ai/react";
 import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { apiFetch } from "@/lib/api";
 import { decodePayloadHeader } from "@/lib/payloadCodec";
-import { SESSION_STORAGE_KEY } from "@/lib/constants";
+import { CHAT_API_PATH, SESSION_STORAGE_KEY } from "@/lib/constants";
 import { normalizeAssistantResponse } from "@/lib/normalizeResponse";
 import { useAuthStore } from "@/stores/authStore";
 import type { BackendMessage, EduPayload } from "@/types/chat";
@@ -84,7 +84,7 @@ export function useEduChat(options: UseEduChatOptions = {}) {
   });
 
   const chat = useAiChat({
-    api: "/api/chat",
+    api: CHAT_API_PATH,
     id: sessionId ?? "new-session",
     headers: token ? { Authorization: `Bearer ${token}` } : undefined,
     body: { sessionId },

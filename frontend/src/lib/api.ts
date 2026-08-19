@@ -1,7 +1,7 @@
 /**
  * Cliente HTTP centralizado hacia el backend NestJS (:4001).
  */
-import { API_URL } from "./constants";
+import { API_URL, LOGIN_PATH } from "./constants";
 import { useAuthStore } from "@/stores/authStore";
 
 export interface ApiFetchOptions extends RequestInit {
@@ -45,7 +45,7 @@ export async function apiFetch<T>(
     if (res.status === 401 && requireAuth && typeof window !== "undefined") {
       useAuthStore.getState().logout();
       if (!window.location.pathname.includes("/login")) {
-        window.location.href = "/login";
+        window.location.href = LOGIN_PATH;
       }
     }
 

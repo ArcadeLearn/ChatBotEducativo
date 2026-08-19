@@ -5,6 +5,9 @@ services:
     build:
       context: ..
       dockerfile: infrastructure/Dockerfile.edu-app
+      args:
+        NEXT_PUBLIC_EDU_BASE_PATH: /edu-chat
+        NEXT_PUBLIC_API_URL: ${NEXT_PUBLIC_API_URL:-https://iecacampus.arcadevs.cloud/api/edu-chat-proxy}
     container_name: edu-app
     restart: always
     env_file:

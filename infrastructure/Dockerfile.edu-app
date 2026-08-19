@@ -22,7 +22,9 @@ COPY backend /app/backend
 COPY frontend /app/frontend
 RUN cd /app/backend && npm run build
 ARG NEXT_PUBLIC_EDU_BASE_PATH=/edu-chat
+ARG NEXT_PUBLIC_API_URL=https://iecacampus.arcadevs.cloud/api/edu-chat-proxy
 ENV NEXT_PUBLIC_EDU_BASE_PATH=${NEXT_PUBLIC_EDU_BASE_PATH}
+ENV NEXT_PUBLIC_API_URL=${NEXT_PUBLIC_API_URL}
 RUN cd /app/frontend && npm run build
 
 # Instala dependencias Python

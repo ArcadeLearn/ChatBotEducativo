@@ -28,6 +28,9 @@ jobs:
           file: ./infrastructure/Dockerfile.edu-app
           push: false
           tags: edu-app:latest
+          build-args: |
+            NEXT_PUBLIC_EDU_BASE_PATH=/edu-chat
+            NEXT_PUBLIC_API_URL=https://iecacampus.arcadevs.cloud/api/edu-chat-proxy
           cache-from: type=gha
           cache-to: type=gha,mode=max
 
