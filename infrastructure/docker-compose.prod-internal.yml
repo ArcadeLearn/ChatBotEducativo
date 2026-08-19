@@ -10,7 +10,7 @@ services:
     env_file:
       - ./.env.prod
     environment:
-      - NODE_ENV=production
+      - NODE_ENV=${NODE_ENV:-production}
       - PORT=${PORT:-4001}
       - AI_PORT=${AI_PORT:-8001}
       - MCP_PORT=${MCP_PORT:-8002}
