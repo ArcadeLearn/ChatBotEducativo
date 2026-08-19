@@ -1,78 +1,96 @@
 # Secrets de GitHub Actions — deploy VPS
 
-## Problema habitual
+## Cómo debe funcionar
 
-`campusdemo` despliega bien pero `ChatBotEducativo` falla con:
+Ambos repos (`campusdemo` y `ChatBotEducativo`) usan el **mismo patrón**:
+
+1. `appleboy/scp-action` copia archivos al VPS
+2. `appleboy/ssh-action` ejecuta `docker compose up -d --build`
+
+Secrets compartidos:
+
+| Secret | Ejemplo |
+|--------|---------|
+| `VPS_HOST` | `191.101.232.219` |
+| `VPS_USER` | `root` |
+| `VPS_PORT` | `22` |
+| `VPS_SSH_KEY` | Llave privada para CI |
+
+Secrets solo del repo:
+
+| Repo | Secret | Valor |
+|------|--------|-------|
+| campusdemo | `VPS_DEPLOY_PATH_CAMPUS` | `/docker/campusdemo` |
+| ChatBotEducativo | `VPS_DEPLOY_PATH_EDU` | `/docker/ChatBotEducativo` |
+
+**No hay `VPS_SSH_PASSPHRASE`** — la llave en `VPS_SSH_KEY` debe ser **sin contraseña**.
+
+---
+
+## Problema actual
+
+Si CI falla con:
 
 ```text
-ssh.ParsePrivateKey: ssh: this private key is passphrase protected
+ssh: this private key is passphrase protected
 ```
 
-Eso **no es un bug del workflow**. Significa que el secret **`VPS_SSH_KEY` del repo ChatBotEducativo** no es la misma llave sin passphrase que usa `campusdemo`.
+la llave pegada en GitHub **tiene passphrase**. Eso rompe CI en **ambos** repos aunque el valor “sea el mismo”.
 
-Los secrets son **por repositorio**. Aunque se llamen igual, pueden tener valores distintos.
-
----
-
-## Secrets requeridos
-
-### Compartidos (mismo valor en ambos repos u organización)
-
-| Secret     | Ejemplo              |
-|------------|----------------------|
-| `VPS_HOST` | `191.101.232.219`    |
-| `VPS_USER` | `root`               |
-| `VPS_PORT` | `22`                 |
-| `VPS_SSH_KEY` | Llave privada **sin passphrase** |
-
-### Solo por repo (ruta de deploy)
-
-| Repo              | Secret                    | Valor                      |
-|-------------------|---------------------------|----------------------------|
-| campusdemo        | `VPS_DEPLOY_PATH_CAMPUS`  | `/docker/campusdemo`       |
-| ChatBotEducativo  | `VPS_DEPLOY_PATH_EDU`     | `/docker/ChatBotEducativo` |
-
-**No se usa** `VPS_SSH_PASSPHRASE`.
+El sitio en producción puede seguir funcionando si el deploy fue **manual** por SSH; eso no significa que CI funcione.
 
 ---
 
-## Solución recomendada: Organization secrets (ArcadeLearn)
+## Solución (una sola vez)
 
-1. **ArcadeLearn → Settings → Secrets and variables → Actions → New organization secret**
-2. Crear: `VPS_HOST`, `VPS_USER`, `VPS_PORT`, `VPS_SSH_KEY`
-3. En **Repository access**, habilitar `campusdemo` y `ChatBotEducativo`
-4. En **ChatBotEducativo → Settings → Secrets**, **eliminar** los secrets duplicados (`VPS_HOST`, `VPS_USER`, `VPS_PORT`, `VPS_SSH_KEY`) para que aplique la organización
-5. Dejar solo en cada repo su path: `VPS_DEPLOY_PATH_CAMPUS` / `VPS_DEPLOY_PATH_EDU`
+### 1. Crear llave solo para CI, sin passphrase
 
-> Si existe un secret a nivel repo con el mismo nombre, **gana el del repo** y puede seguir siendo el incorrecto.
-
----
-
-## Comprobar la llave en tu PC (PowerShell)
-
-Usa el archivo privado que funciona con campusdemo:
+En PowerShell:
 
 ```powershell
-# Debe conectar SIN pedir passphrase
-ssh -i "C:\ruta\a\tu_llave_deploy" -p 22 root@191.101.232.219 "echo OK"
-
-# Debe mostrar la clave pública sin pedir contraseña
-ssh-keygen -y -f "C:\ruta\a\tu_llave_deploy"
+ssh-keygen -t ed25519 -f "$env:USERPROFILE\.ssh\deploy_ci_arcadelearn" -N '""'
 ```
 
-Copiar al secret (contenido completo, con saltos de línea):
+### 2. Autorizarla en el VPS
 
 ```powershell
-Get-Content -Raw "C:\ruta\a\tu_llave_deploy" | Set-Clipboard
+type "$env:USERPROFILE\.ssh\deploy_ci_arcadelearn.pub" | ssh root@191.101.232.219 "mkdir -p ~/.ssh && chmod 700 ~/.ssh && cat >> ~/.ssh/authorized_keys && chmod 600 ~/.ssh/authorized_keys"
 ```
 
-Pegar en GitHub → **Update** en `VPS_SSH_KEY`.
+(Usa tu llave actual para entrar al VPS en ese comando.)
+
+### 3. Probar que entra sin pedir contraseña
+
+```powershell
+ssh -i "$env:USERPROFILE\.ssh\deploy_ci_arcadelearn" -p 22 root@191.101.232.219 "echo OK"
+```
+
+Debe imprimir `OK` **sin** pedir passphrase.
+
+### 4. Copiar la privada al portapapeles
+
+```powershell
+Get-Content -Raw "$env:USERPROFILE\.ssh\deploy_ci_arcadelearn" | Set-Clipboard
+```
+
+### 5. Actualizar GitHub Secrets
+
+En **campusdemo** y **ChatBotEducativo** (o en Organization secrets de ArcadeLearn):
+
+- **Update** `VPS_SSH_KEY` → pegar la nueva privada
+- Mantener `VPS_HOST`, `VPS_USER`, `VPS_PORT` iguales
+- Cada repo conserva su path de deploy
+
+Recomendado: **Organization secrets** en ArcadeLearn para `VPS_HOST`, `VPS_USER`, `VPS_PORT`, `VPS_SSH_KEY` y borrar duplicados a nivel repo.
 
 ---
 
-## Flujo CI (idéntico en SSH)
+## Alternativa: quitar passphrase a la llave actual
 
-1. `appleboy/scp-action` — copia archivos al VPS
-2. `appleboy/ssh-action` — `docker compose up -d --build`
+Solo si recuerdas la contraseña:
 
-Única diferencia: carpetas y archivos copiados según cada proyecto.
+```powershell
+ssh-keygen -p -f "C:\ruta\a\tu_llave_actual" -N '""'
+```
+
+Luego vuelve a pegar esa llave en `VPS_SSH_KEY` de ambos repos.

@@ -42,25 +42,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Verify VPS_SSH_KEY (sin passphrase)
-        env:
-          VPS_SSH_KEY: ${{ secrets.VPS_SSH_KEY }}
-        run: |
-          if [ -z "$VPS_SSH_KEY" ]; then
-            echo "::error::Falta VPS_SSH_KEY. Configura organization secret o repo secret."
-            exit 1
-          fi
-          printf '%s' "$VPS_SSH_KEY" > /tmp/deploy_key
-          chmod 600 /tmp/deploy_key
-          if ! ssh-keygen -y -f /tmp/deploy_key -P "" >/dev/null 2>&1; then
-            echo "::error::VPS_SSH_KEY tiene passphrase o formato invalido."
-            echo "::error::Usa la misma llave SIN passphrase que campusdemo."
-            echo "::error::Ver infrastructure/GITHUB-SECRETS.md"
-            exit 1
-          fi
-          echo "VPS_SSH_KEY OK"
-          rm -f /tmp/deploy_key
-
       - name: Copy repo to VPS
         uses: appleboy/scp-action@v0.1.7
         with:
