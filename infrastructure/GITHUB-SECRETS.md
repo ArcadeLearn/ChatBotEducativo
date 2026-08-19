@@ -83,6 +83,8 @@ En **campusdemo** y **ChatBotEducativo** (o en Organization secrets de ArcadeLea
 
 Recomendado: **Organization secrets** en ArcadeLearn para `VPS_HOST`, `VPS_USER`, `VPS_PORT`, `VPS_SSH_KEY` y borrar duplicados a nivel repo.
 
+> **Nota CI:** los commits vacíos no disparan el workflow (filtro `paths`). Usa **Run workflow** en Actions o cambia un archivo bajo `infrastructure/`.
+
 ---
 
 ## Alternativa: quitar passphrase a la llave actual

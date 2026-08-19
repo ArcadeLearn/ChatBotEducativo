@@ -10,6 +10,7 @@ on:
       - "mcp-server/**"
       - "infrastructure/**"
       - ".github/workflows/edu-app-docker.yml"
+  workflow_dispatch:
 
 jobs:
   build:
