@@ -91,8 +91,12 @@ export function ChatWindow({
           : "h-full min-h-0 rounded-2xl border border-slate-200 bg-slate-50 shadow-2xl dark:border-white/10 dark:bg-slate-950"
       }`}
     >
-      <header className="sticky top-0 z-10 flex shrink-0 items-center justify-between border-b border-slate-200 bg-white/95 px-4 py-3 backdrop-blur dark:border-white/10 dark:bg-slate-950/95">
-        <div>
+      <header
+        className={`sticky top-0 z-10 flex shrink-0 items-center justify-between border-b border-slate-200 bg-white/95 py-3 backdrop-blur dark:border-white/10 dark:bg-slate-950/95 ${
+          compact ? "px-4 pr-14" : "px-4"
+        }`}
+      >
+        <div className="min-w-0 flex-1 pr-3">
           <h2 className="text-sm font-semibold text-slate-900 dark:text-white">
             {compact ? "Asistente Campus IECA" : "Chat Educativo IECA"}
           </h2>
@@ -100,12 +104,14 @@ export function ChatWindow({
             Cursos, avance, certificados y eventos
           </p>
         </div>
-        <div className="flex items-center gap-2">
+        <div className="flex shrink-0 items-center gap-1.5 sm:gap-2">
           <ThemeToggle compact={compact} />
           <button
             type="button"
             onClick={startNewSession}
-            className="rounded-lg border border-slate-200 px-3 py-1.5 text-xs text-slate-600 hover:bg-slate-100 dark:border-white/10 dark:text-slate-300 dark:hover:bg-white/5"
+            className={`rounded-lg border border-slate-200 text-xs text-slate-600 hover:bg-slate-100 dark:border-white/10 dark:text-slate-300 dark:hover:bg-white/5 ${
+              compact ? "whitespace-nowrap px-2 py-1.5" : "px-3 py-1.5"
+            }`}
           >
             Nueva sesión
           </button>
