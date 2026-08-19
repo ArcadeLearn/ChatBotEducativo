@@ -1,19 +1,19 @@
 /**
  * Configuración Next.js — ChatBot Educativo (puerto 3001).
- * En producción embebido vía campusdemo, assetPrefix=/edu-chat para que
- * /edu-chat/_next/* se reescriba correctamente hacia edu-app:3001.
+ * En producción embebido vía campusdemo usa basePath=/edu-chat para que
+ * rutas y assets (_next) se sirvan bajo /edu-chat/* en el mismo dominio.
  */
 import type { NextConfig } from "next";
 
 const embedFrameAncestors =
   "frame-ancestors 'self' http://localhost:3000 http://localhost:3005 http://127.0.0.1:3000 http://127.0.0.1:3005 https://iecacampus.arcadevs.cloud";
 
-/** Prefijo de assets cuando el embed se sirve bajo /edu-chat (prod). Vacío en local. */
-const assetPrefix = process.env.NEXT_PUBLIC_EDU_ASSET_PREFIX?.trim() || undefined;
+/** Vacío en local (:3001/embed). En prod embebido: /edu-chat */
+const eduBasePath = process.env.NEXT_PUBLIC_EDU_BASE_PATH?.trim() ?? "";
 
 const nextConfig: NextConfig = {
   reactStrictMode: true,
-  assetPrefix,
+  ...(eduBasePath ? { basePath: eduBasePath, assetPrefix: eduBasePath } : {}),
   async headers() {
     return [
       {

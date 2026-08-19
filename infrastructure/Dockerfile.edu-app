@@ -21,8 +21,8 @@ RUN cd /app/frontend && npm ci
 COPY backend /app/backend
 COPY frontend /app/frontend
 RUN cd /app/backend && npm run build
-ARG NEXT_PUBLIC_EDU_ASSET_PREFIX=/edu-chat
-ENV NEXT_PUBLIC_EDU_ASSET_PREFIX=${NEXT_PUBLIC_EDU_ASSET_PREFIX}
+ARG NEXT_PUBLIC_EDU_BASE_PATH=/edu-chat
+ENV NEXT_PUBLIC_EDU_BASE_PATH=${NEXT_PUBLIC_EDU_BASE_PATH}
 RUN cd /app/frontend && npm run build
 
 # Instala dependencias Python
