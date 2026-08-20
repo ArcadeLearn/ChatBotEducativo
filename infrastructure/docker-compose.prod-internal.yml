@@ -19,6 +19,8 @@ services:
       - MCP_PORT=${MCP_PORT:-8002}
       - FRONTEND_PORT=${FRONTEND_PORT:-3001}
       - HOSTNAME=0.0.0.0
+      # Next.js route /api/chat → Nest en el mismo contenedor (no URL pública)
+      - API_URL_INTERNAL=${API_URL_INTERNAL:-http://127.0.0.1:4001}
     volumes:
       - ../mcp-server/data:/app/mcp-server/data
     healthcheck:

@@ -42,8 +42,16 @@ export class AiProxyService {
       );
       return data;
     } catch (error) {
+      const axiosMsg =
+        axios.isAxiosError(error) && error.response?.data
+          ? typeof error.response.data === "string"
+            ? error.response.data
+            : JSON.stringify(error.response.data)
+          : error instanceof Error
+            ? error.message
+            : "error desconocido";
       throw new ServiceUnavailableException(
-        "AI Service no disponible. Verifica que esté corriendo en :8001",
+        `AI Service no disponible (${this.baseUrl()}/chat): ${axiosMsg}`,
       );
     }
   }

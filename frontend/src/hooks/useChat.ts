@@ -73,7 +73,11 @@ export function useEduChat(options: UseEduChatOptions = {}) {
     Record<string, "positive" | "negative">
   >({});
   const [timestampByMessageId, setTimestampByMessageId] = useState<Record<string, string>>({});
-  const pendingPayloadRef = useRef<{ messageId: string; payload: EduPayload } | null>(null);
+  const pendingPayloadRef = useRef<{
+    messageId: string;
+    payload: EduPayload | null;
+    deferred?: boolean;
+  } | null>(null);
   const historyHydratedRef = useRef(false);
 
   const historyQuery = useQuery({
@@ -97,51 +101,84 @@ export function useEduChat(options: UseEduChatOptions = {}) {
       }
       const payloadHeader = response.headers.get("X-Chat-Payload");
       const assistantMessageId = response.headers.get("X-Assistant-Message-Id");
-      if (payloadHeader && assistantMessageId) {
+      const deferred = response.headers.get("X-Chat-Payload-Deferred") === "1";
+      if (assistantMessageId && payloadHeader) {
         const payload = decodePayloadHeader(payloadHeader);
         if (payload) {
           pendingPayloadRef.current = { messageId: assistantMessageId, payload };
         }
+      } else if (assistantMessageId && deferred) {
+        pendingPayloadRef.current = {
+          messageId: assistantMessageId,
+          payload: null,
+          deferred: true,
+        };
       }
     },
     onFinish: (message: Message) => {
       const pending = pendingPayloadRef.current;
       const dbId = pending?.messageId;
       const now = new Date().toISOString();
+      const activeSessionId =
+        (typeof sessionId === "string" && sessionId) ||
+        readStoredSessionId();
+
+      const applyMessageIdRemap = (targetId: string) => {
+        if (targetId === message.id) return;
+        chat.setMessages((prev) =>
+          prev.map((m) =>
+            m.id === message.id && m.role === "assistant" ? { ...m, id: targetId } : m,
+          ),
+        );
+        setTimestampByMessageId((prev) => {
+          const ts = prev[targetId] ?? prev[message.id] ?? now;
+          const next = { ...prev, [targetId]: ts };
+          if (message.id !== targetId) delete next[message.id];
+          return next;
+        });
+        setFeedbackByMessageId((prev) => {
+          const rating = prev[targetId] ?? prev[message.id];
+          if (!rating) return prev;
+          const next = { ...prev, [targetId]: rating };
+          if (message.id !== targetId) delete next[message.id];
+          return next;
+        });
+      };
 
       if (pending?.payload) {
         const targetId = dbId ?? message.id;
-        setPayloadByMessageId((prev) => ({ ...prev, [targetId]: pending.payload }));
+        setPayloadByMessageId((prev) => ({ ...prev, [targetId]: pending.payload as EduPayload }));
         pendingPayloadRef.current = null;
-
-        if (dbId && dbId !== message.id) {
-          chat.setMessages((prev) =>
-            prev.map((m) =>
-              m.id === message.id && m.role === "assistant" ? { ...m, id: dbId } : m,
-            ),
-          );
-          setTimestampByMessageId((prev) => {
-            const ts = prev[dbId] ?? prev[message.id] ?? now;
-            const next = { ...prev, [dbId]: ts };
-            if (message.id !== dbId) delete next[message.id];
-            return next;
-          });
-          setFeedbackByMessageId((prev) => {
-            const rating = prev[dbId] ?? prev[message.id];
-            if (!rating) return prev;
-            const next = { ...prev, [dbId]: rating };
-            if (message.id !== dbId) delete next[message.id];
-            return next;
-          });
-        } else if (message.id) {
+        if (dbId) applyMessageIdRemap(dbId);
+        else if (message.id) {
           setTimestampByMessageId((prev) => ({ ...prev, [message.id]: prev[message.id] ?? now }));
         }
+      } else if (pending?.deferred && dbId && activeSessionId) {
+        pendingPayloadRef.current = null;
+        applyMessageIdRemap(dbId);
+        setTimestampByMessageId((prev) => ({ ...prev, [dbId]: prev[dbId] ?? now }));
+        void (async () => {
+          try {
+            const rows = await apiFetch<BackendMessage[]>(
+              `/sessions/${activeSessionId}/messages`,
+            );
+            const row = rows.find((r) => r.id === dbId);
+            if (row?.payload?.type && row.payload.data !== undefined) {
+              setPayloadByMessageId((prev) => ({
+                ...prev,
+                [dbId]: row.payload as EduPayload,
+              }));
+            }
+          } catch {
+            /* payload opcional; el texto del asistente ya se mostró */
+          }
+        })();
       } else if (message.id) {
         setTimestampByMessageId((prev) => ({ ...prev, [message.id]: now }));
       }
 
-      if (sessionId) {
-        void queryClient.invalidateQueries({ queryKey: ["session-messages", sessionId] });
+      if (activeSessionId) {
+        void queryClient.invalidateQueries({ queryKey: ["session-messages", activeSessionId] });
       }
     },
   });
